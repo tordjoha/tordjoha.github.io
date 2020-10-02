@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 10</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="Tenth lecture - Cross-site scripting"><h1 id="Tenth lecture - Cross-site scripting" class="header"><a href="#Tenth lecture - Cross-site scripting">Tenth lecture - Cross-site scripting</a></h1></div>
+
+<div id="Tenth lecture - Cross-site scripting-Samy - a bit of XSS-history"><h2 id="Samy - a bit of XSS-history" class="header"><a href="#Tenth lecture - Cross-site scripting-Samy - a bit of XSS-history">Samy - a bit of XSS-history</a></h2></div>
+<p>
+The Samy worm aka JS.spacehero
+</p>
+<ul>
+<li>
+Spread through MySpace profile pages
+
+<li>
+Fastest spreading worm ever: over one million infected pages within 20 hours
+
+<li>
+Mostly harmless
+
+<li>
+The works author, Samy Kamkar, was raided by US seret service
+
+</ul>
+
+<div id="Tenth lecture - Cross-site scripting-Samy - a bit of XSS-history-How did the worm work?"><h3 id="How did the worm work?" class="header"><a href="#Tenth lecture - Cross-site scripting-Samy - a bit of XSS-history-How did the worm work?">How did the worm work?</a></h3></div>
+<p>
+The Samy word was a cross-site scripting worm: Samy found a way to put JavaScript on his own profile page, and the script spread the work whenever someone visited an infected profile page.
+</p>
+
+<p>
+MySpace had some protection against this:
+</p>
+<ul>
+<li>
+Only allow: &lt;a&gt;, &lt;img&gt;, and <div>
+
+<li>
+Strip out any occurance of the word javascript
+
+</ul>
+
+<p>
+But: JavaScript in CSS style attributes meant any tag could be used:
+<div style="background:url('javascript:alert(1)')">
+</p>
+
+<p>
+And: Browsers will actually also accept java/nscript:
+<div style="background:url('javascript:alert(1)')">
+</p>
+
+<p>
+Whole code and explenation of worm <a href="https://samy.pl/myspace/tech.html">https://samy.pl/myspace/tech.html</a>
+</p>
+
+<div id="Tenth lecture - Cross-site scripting-Same-origin policy"><h2 id="Same-origin policy" class="header"><a href="#Tenth lecture - Cross-site scripting-Same-origin policy">Same-origin policy</a></h2></div>
+
+<div id="Tenth lecture - Cross-site scripting-Same-origin policy-Origin"><h3 id="Origin" class="header"><a href="#Tenth lecture - Cross-site scripting-Same-origin policy-Origin">Origin</a></h3></div>
+<p>
+An <span id="Tenth lecture - Cross-site scripting-Same-origin policy-Origin-origin"></span><strong id="origin">origin</strong> is a triple:
+</p>
+<ul>
+<li>
+Protocol
+
+<li>
+Domain
+
+<li>
+Port number
+
+</ul>
+
+<p>
+Example: uib.no give:
+</p>
+<ul>
+<li>
+Protocol: https
+
+<li>
+Hostname: ww.uib.no
+
+<li>
+Port number: 443
+
+</ul>
+
+<div id="Tenth lecture - Cross-site scripting-Same-origin policy-Same-origin policy"><h3 id="Same-origin policy" class="header"><a href="#Tenth lecture - Cross-site scripting-Same-origin policy-Same-origin policy">Same-origin policy</a></h3></div>
+<p>
+The <span id="Tenth lecture - Cross-site scripting-Same-origin policy-Same-origin policy-same-origin policy"></span><strong id="same-origin policy">same-origin policy</strong> restricts scripts run in the browser to only access resources from the same origin
+</p>
+
+<p>
+Examples:
+</p>
+<ul>
+<li>
+A script can only access the DOM for pages in the same origin
+
+<li>
+A script can only access local storage from the same origin
+
+<li>
+A script can only send XMLHttpRequest GET/POST requests to the same origin
+
+</ul>
+
+<div id="Tenth lecture - Cross-site scripting-Cross-site scripting"><h2 id="Cross-site scripting" class="header"><a href="#Tenth lecture - Cross-site scripting-Cross-site scripting">Cross-site scripting</a></h2></div>
+<ul>
+<li>
+Web browsers insulate resources, such as cookies or Javascript from different origins
+
+<li>
+Cross-site scripting (XSS) occurs when a web-server unintentionally serves Javascript from an attacker to client browsers
+
+<li>
+This allows attacker code to access resouces from victim server origin
+
+</ul>
+
+<pre>
+$username = $_GET['username']
+echo '&lt;div class="header"&gt; Welcome, ' . $username . '&lt;/div&gt;';
+</pre>
+
+<p>
+Now username could contain JS which can:
+</p>
+<ul>
+<li>
+Steal session cookies
+
+<li>
+Trick the user to give their password by showing fake login
+
+<li>
+Mine bitcoins 
+
+</ul>
+
+</body>
+</html>
