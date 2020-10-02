@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 9</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="9th Lecture - Code constructs for security"><h1 id="9th Lecture - Code constructs for security" class="header"><a href="#9th Lecture - Code constructs for security">9th Lecture - Code constructs for security</a></h1></div>
+
+<div id="9th Lecture - Code constructs for security-Immutability"><h2 id="Immutability" class="header"><a href="#9th Lecture - Code constructs for security-Immutability">Immutability</a></h2></div>
+<p>
+An object is <em>immutable</em> if it cannot be changed after creation.
+</p>
+
+
+
+<div id="9th Lecture - Code constructs for security-Immutability-Why are Strings immutable in Java?"><h3 id="Why are Strings immutable in Java?" class="header"><a href="#9th Lecture - Code constructs for security-Immutability-Why are Strings immutable in Java?">Why are Strings immutable in Java?</a></h3></div>
+<ul>
+<li>
+Because of string intering: every copy of a string is stored only once
+
+<li>
+Allows memoization of hashcode (for say HashMap)
+
+<ul>
+<li>
+Since the string doesn't change, we never have to recompute the hashcode.
+
+</ul>
+<li>
+Thread safety: if object doesn't change, its safe to access it through different threads
+
+<li>
+Security: not throwing around permissions for other functions to change something
+
+</ul>
+
+<div id="9th Lecture - Code constructs for security-Immutability-The problem of mutation"><h3 id="The problem of mutation" class="header"><a href="#9th Lecture - Code constructs for security-Immutability-The problem of mutation">The problem of mutation</a></h3></div>
+<ul>
+<li>
+If you pass reference to a mutable object, you give permission to mutate the object.
+
+<li>
+If you receive a reference to a mutable object, you must accept that if mutates beyond your control.
+
+</ul>
+
+<div id="9th Lecture - Code constructs for security-Immutability-Immutable objects"><h3 id="Immutable objects" class="header"><a href="#9th Lecture - Code constructs for security-Immutability-Immutable objects">Immutable objects</a></h3></div>
+<ul>
+<li>
+Passing a reference only gives "read access"
+
+<li>
+When receiving a reference, you can safely test for invariants
+
+<li>
+Thread safety for free!
+
+</ul>
+
+<hr />
+
+<div id="9th Lecture - Code constructs for security-Immutability in Java"><h2 id="Immutability in Java" class="header"><a href="#9th Lecture - Code constructs for security-Immutability in Java">Immutability in Java</a></h2></div>
+
+<p>
+The <em>final</em> keyword for variables mean:
+</p>
+<ul>
+<li>
+The reference cannot be changed after initialisation
+
+<li>
+Any constructor must initialise the field
+
+</ul>
+
+<div id="9th Lecture - Code constructs for security-Immutability in Java-Immutable classes"><h3 id="Immutable classes" class="header"><a href="#9th Lecture - Code constructs for security-Immutability in Java-Immutable classes">Immutable classes</a></h3></div>
+<p>
+How to make them:
+</p>
+<ul>
+<li>
+Declaring all fields final is not enough
+
+<ul>
+<li>
+Sufficient for; Strings, primitive types and immutable classes
+
+</ul>
+<li>
+An immutable class can hide a mutable object by:
+
+<ul>
+<li>
+Keeping the only reference to this object
+
+<li>
+Not modify the object
+
+<li>
+Not providing setters
+
+<li>
+Declare your class final
+
+<li>
+<span id="9th Lecture - Code constructs for security-Immutability in Java-Immutable classes-NB"></span><strong id="NB">NB</strong> any getter for such a hidden object must make a copy of that object!
+
+</ul>
+</ul>
+
+<div id="9th Lecture - Code constructs for security-Immutability in Java-Immutable classes-Example of immutable class"><h4 id="Example of immutable class" class="header"><a href="#9th Lecture - Code constructs for security-Immutability in Java-Immutable classes-Example of immutable class">Example of immutable class</a></h4></div>
+<pre java>
+
+final class TimeIntervall {
+	public final Instant start;
+	public final Instant stop;
+	public TimeIntervall(Instant start, Instant stop) {
+		if(start.compareTo(stop) &gt;= 0)
+			throw new IllegalArgumentException("stop must be after start");
+		this.start = start;
+		this.stop = stop;
+	}
+}
+
+</pre>
+
+<hr />
+
+<div id="9th Lecture - Code constructs for security-Validation"><h2 id="Validation" class="header"><a href="#9th Lecture - Code constructs for security-Validation">Validation</a></h2></div>
+
+<div id="9th Lecture - Code constructs for security-Validation-Contracts"><h3 id="Contracts" class="header"><a href="#9th Lecture - Code constructs for security-Validation-Contracts">Contracts</a></h3></div>
+<ul>
+<li>
+Preconditions: Checks assumptions on inputs
+
+<li>
+Postconditions: Verifies requirements on the output
+
+</ul>
+
+<div id="9th Lecture - Code constructs for security-Validation-Input Validation"><h3 id="Input Validation" class="header"><a href="#9th Lecture - Code constructs for security-Validation-Input Validation">Input Validation</a></h3></div>
+<p>
+Different forms of checks on the data:
+</p>
+<ul>
+<li>
+Size, Lexical, Syntactical, Semantic
+
+</ul>
+
+</body>
+</html>

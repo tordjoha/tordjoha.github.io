@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 6</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="Sixth Lecture - Access control"><h1 id="Sixth Lecture - Access control" class="header"><a href="#Sixth Lecture - Access control">Sixth Lecture - Access control</a></h1></div>
+
+<div id="Sixth Lecture - Access control-What is access control?"><h2 id="What is access control?" class="header"><a href="#Sixth Lecture - Access control-What is access control?">What is access control?</a></h2></div>
+<p>
+Access control decides which users can
+</p>
+<ul>
+<li>
+read/write to objects
+
+<li>
+perform operations
+
+<li>
+grant / revoke access
+
+</ul>
+
+<p>
+We are studying logical aspects of access control.
+</p>
+
+<div id="Sixth Lecture - Access control-Logical aspects"><h2 id="Logical aspects" class="header"><a href="#Sixth Lecture - Access control-Logical aspects">Logical aspects</a></h2></div>
+<ul>
+<li>
+An access control system consists of: subjects, objects and actions
+
+<li>
+and a model for how to relate these things (permissions)
+
+</ul>
+
+<div id="Sixth Lecture - Access control-Two axes of access control"><h2 id="Two axes of access control" class="header"><a href="#Sixth Lecture - Access control-Two axes of access control">Two axes of access control</a></h2></div>
+<ul>
+<li>
+classified according to:
+
+<ul>
+<li>
+mandatory / discretionary
+
+<li>
+permission model:
+
+<ul>
+<li>
+access control list
+
+<li>
+role based
+
+<li>
+capability based
+
+</ul>
+</ul>
+</ul>
+<p>
+Models are equivalent staticially, but have different dynamic behaviors.
+</p>
+
+<div id="Sixth Lecture - Access control-Discretionary and mandatory"><h2 id="Discretionary and mandatory" class="header"><a href="#Sixth Lecture - Access control-Discretionary and mandatory">Discretionary and mandatory</a></h2></div>
+<ul>
+<li>
+In a mandatory access control system: the access control policies are fixed by a central authority
+
+<li>
+In a discretionary access control system a subject who has access to an object can specify permissions for it or transfer access to another actor
+
+</ul>
+
+<div id="Sixth Lecture - Access control-Discretionary and mandatory-Examples of mandatory access control"><h3 id="Examples of mandatory access control" class="header"><a href="#Sixth Lecture - Access control-Discretionary and mandatory-Examples of mandatory access control" class="justcenter">Examples of mandatory access control</a></h3></div>
+<p>
+ Modern operating systems have mandatory access control on resources such as CPU, memory and storage.
+</p>
+ 
+<div id="Sixth Lecture - Access control-Discretionary and mandatory-Examples of discretionary access control"><h3 id="Examples of discretionary access control" class="header"><a href="#Sixth Lecture - Access control-Discretionary and mandatory-Examples of discretionary access control" class="justcenter">Examples of discretionary access control</a></h3></div>
+<ul>
+<li>
+file systems, e-mail, wifi passwords etc
+
+</ul>
+
+<div id="Sixth Lecture - Access control-Access control models"><h2 id="Access control models" class="header"><a href="#Sixth Lecture - Access control-Access control models">Access control models</a></h2></div>
+
+<div id="Sixth Lecture - Access control-Access control models-Access control lists"><h3 id="Access control lists" class="header"><a href="#Sixth Lecture - Access control-Access control models-Access control lists">Access control lists</a></h3></div>
+<ul>
+<li>
+permissions are assigned to objects
+
+<li>
+each object has a list of permissions assigned to different users
+
+</ul>
+
+<div id="Sixth Lecture - Access control-Access control models-Role based access control"><h3 id="Role based access control" class="header"><a href="#Sixth Lecture - Access control-Access control models-Role based access control">Role based access control</a></h3></div>
+<ul>
+<li>
+a set of roles abstrac the permissions from users
+
+<li>
+we have sets P(permissions), R(Roles) and U(Users)
+
+<li>
+actions arae always performed by a role. To change role user must reauthenticate.
+
+</ul>
+
+<div id="Sixth Lecture - Access control-Access control models-Capability based access control"><h3 id="Capability based access control" class="header"><a href="#Sixth Lecture - Access control-Access control models-Capability based access control">Capability based access control</a></h3></div>
+<ul>
+<li>
+users have capabilities
+
+<li>
+a capability consists of:
+
+<ul>
+<li>
+a <span id="Sixth Lecture - Access control-Access control models-Capability based access control-reference"></span><strong id="reference">reference</strong> to an object
+
+<li>
+a set of <span id="Sixth Lecture - Access control-Access control models-Capability based access control-permissions"></span><strong id="permissions">permissions</strong> for that object
+
+</ul>
+<li>
+a capability is used whenever a resouce is accessed.
+
+</ul>
+
+</body>
+</html>

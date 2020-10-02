@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 3</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="Third lecture - Towards thread models"><h1 id="Third lecture - Towards thread models" class="header"><a href="#Third lecture - Towards thread models">Third lecture - Towards thread models</a></h1></div>
+
+<div id="Third lecture - Towards thread models-The meaning of secure software"><h2 id="The meaning of secure software" class="header"><a href="#Third lecture - Towards thread models-The meaning of secure software">The meaning of secure software</a></h2></div>
+<ul>
+<li>
+etymology: without risk, riskfree
+
+<ul>
+<li>
+not useful as definition, since its negative
+
+</ul>
+<li>
+<em>DEF:</em> /software security is the ability to function according to intentions in an adverserial environment/
+
+<ul>
+<li>
+Adverserial environment: our program is only a small part of the bigger sea, the adverserial environment.
+
+</ul>
+</ul>
+
+<div id="Third lecture - Towards thread models-Examples of assumptions"><h2 id="Examples of assumptions" class="header"><a href="#Third lecture - Towards thread models-Examples of assumptions">Examples of assumptions</a></h2></div>
+<div id="Third lecture - Towards thread models-Examples of assumptions-Assumptions pointing towards problems:"><h3 id="Assumptions pointing towards problems:" class="header"><a href="#Third lecture - Towards thread models-Examples of assumptions-Assumptions pointing towards problems:">Assumptions pointing towards problems:</a></h3></div>
+<ul>
+<li>
+user input cannot be trusted to have property X
+
+<li>
+IP addresses can be spoofed
+
+<li>
+Computer resources are finite
+
+<li>
+Programmers write bugs
+
+</ul>
+
+<div id="Third lecture - Towards thread models-Examples of assumptions-Assumptions pointing towards solutions:"><h3 id="Assumptions pointing towards solutions:" class="header"><a href="#Third lecture - Towards thread models-Examples of assumptions-Assumptions pointing towards solutions:">Assumptions pointing towards solutions:</a></h3></div>
+<ul>
+<li>
+if the program checks the input, we know it has property X
+
+<li>
+an attacker cannot guess a random 128 bit number
+
+<li>
+the semantics of the program
+
+<li>
+the type checker is correct
+
+<li>
+internet routing is quite robust
+
+</ul>
+
+<div id="Third lecture - Towards thread models-Sequrity requirements"><h2 id="Sequrity requirements" class="header"><a href="#Third lecture - Towards thread models-Sequrity requirements">Sequrity requirements</a></h2></div>
+<p>
+Examples of requirements:
+</p>
+<ul>
+<li>
+availability of the service
+
+<li>
+capacity
+
+<li>
+integrity of data
+
+<li>
+authenticity of data
+
+<li>
+recoverability
+
+</ul>
+
+<div id="Third lecture - Towards thread models-Sequrity mechanisms"><h2 id="Sequrity mechanisms" class="header"><a href="#Third lecture - Towards thread models-Sequrity mechanisms">Sequrity mechanisms</a></h2></div>
+<p>
+Examples of mechanisms:
+</p>
+<ul>
+<li>
+choice of programming languages
+
+<li>
+rate limiting
+
+<li>
+sanity checks on user inputs
+
+<li>
+access control lists
+
+<li>
+optimisaton of algorithms
+
+<li>
+encryption
+
+</ul>
+
+<div id="Third lecture - Towards thread models-Software security"><h2 id="Software security" class="header"><a href="#Third lecture - Towards thread models-Software security">Software security</a></h2></div>
+<ul>
+<li>
+Put together we get: assumptions + security mechanism = sequrity requirements
+
+</ul>
+
+<div id="Third lecture - Towards thread models-Threat model"><h2 id="Threat model" class="header"><a href="#Third lecture - Towards thread models-Threat model">Threat model</a></h2></div>
+<ul>
+<li>
+the threat model explicates our assumptions about the system:
+
+<ul>
+<li>
+what threats applies to each component?
+
+<li>
+what are the trust relationships betweeen components?
+
+<li>
+which threats apply to each relationship?
+
+</ul>
+</ul>
+<div id="Third lecture - Towards thread models-Threat model-Example:"><h3 id="Example:" class="header"><a href="#Third lecture - Towards thread models-Threat model-Example:">Example:</a></h3></div>
+<p>
+Most transport encryption has requirements: confidentiability, integrity, authenticity. And assumptions:
+</p>
+<ul>
+<li>
+attacker can read the messages when passing between sender and recipient
+
+<li>
+attacker cannot access messages after decryption
+
+</ul>
+<p>
+Either:
+</p>
+<ul>
+<li>
+attacker cannot alter messages (passive attacker)
+
+<li>
+attacker can alter messages (active attacker)
+
+</ul>
+
+<div id="Third lecture - Towards thread models-Threat model-Functional decomposition"><h3 id="Functional decomposition" class="header"><a href="#Third lecture - Towards thread models-Threat model-Functional decomposition">Functional decomposition</a></h3></div>
+<p>
+For a specific program or system, a functional decomposition will help identify threats and clarify the relationship between different pieces of the system
+</p>
+
+</body>
+</html>

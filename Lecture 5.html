@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 5</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="Fifth lecture - Authentication"><h1 id="Fifth lecture - Authentication" class="header"><a href="#Fifth lecture - Authentication">Fifth lecture - Authentication</a></h1></div>
+
+<div id="Fifth lecture - Authentication-What is authentication?"><h2 id="What is authentication?" class="header"><a href="#Fifth lecture - Authentication-What is authentication?">What is authentication?</a></h2></div>
+<ul>
+<li>
+authentication is the act of verifying the identity of actors in the system
+
+<li>
+example: passwords authenticate the user when logging in to a computer
+
+<li>
+another example: certificates issued by a Certificate Authority (CA) authenticates websites visited over HTTPS by the browser
+
+</ul>
+
+<div id="Fifth lecture - Authentication-Public key cryptography"><h2 id="Public key cryptography" class="header"><a href="#Fifth lecture - Authentication-Public key cryptography">Public key cryptography</a></h2></div>
+<ul>
+<li>
+the goal of a public key exchange is to establish a shared secret
+
+<li>
+the shared secret can then be used as an encryption key, and signing key.
+
+<li>
+enryption ensures <span id="Fifth lecture - Authentication-Public key cryptography-confidentiality"></span><strong id="confidentiality">confidentiality</strong>
+
+<li>
+signing ensures <span id="Fifth lecture - Authentication-Public key cryptography-integrity"></span><strong id="integrity">integrity</strong>
+
+<li>
+public keys must be authenticated - many different schemes for this, like web-of-trust, trust upon first use, centralised certificate authorities etc
+
+<li>
+man in the middle attacks: both parts thinks they are talking to eachother while that is not the case, there is a third part which intercepts the messages between them.
+
+<li>
+trust upon first use
+
+<ul>
+<li>
+assumption: the man in the middle does not strike the first time
+
+<li>
+mechanism: trust the public key used in first session. use that for authentication of later sessions
+
+<li>
+works well for long-lasting trust-relationships. Or when no existing trust relationship exists (i.e website registration)
+
+<li>
+example: SSH key trust
+
+</ul>
+</ul>
+
+<div id="Fifth lecture - Authentication-password based authentication"><h2 id="password based authentication" class="header"><a href="#Fifth lecture - Authentication-password based authentication">password based authentication</a></h2></div>
+<ul>
+<li>
+passwords are still the most common form of authentication method on computers
+
+<li>
+advantages:
+
+<ul>
+<li>
+easy to understand
+
+</ul>
+<li>
+disadvantages compared to public key encryption:
+
+</ul>
+
+<div id="Fifth lecture - Authentication-Cryptographic hash functions"><h2 id="Cryptographic hash functions" class="header"><a href="#Fifth lecture - Authentication-Cryptographic hash functions">Cryptographic hash functions</a></h2></div>
+<ul>
+<li>
+requirements of a cryptographic hash function
+
+<ul>
+<li>
+<em>one way</em>: given y, difficult to find x such that h(x) = y
+
+<li>
+<em>collision free</em>: difficult to find x and x' such that h(x) = h(x')
+
+<li>
+a small change in input yield a large difference in output
+
+<li>
+quick to compute
+
+</ul>
+</ul>
+
+<div id="Fifth lecture - Authentication-hashing passwords"><h2 id="hashing passwords" class="header"><a href="#Fifth lecture - Authentication-hashing passwords">hashing passwords</a></h2></div>
+<ul>
+<li>
+easy (but not reccomended) way to verify passwords without storing the password itself
+
+<li>
+if the application database is leaked, only hashes of passwords are disclosed - issues with this strategy
+
+<ul>
+<li>
+easy to compute hashes and crosscheck these with leaked passwords to identify passwords.
+
+</ul>
+</ul>
+
+<div id="Fifth lecture - Authentication-salting"><h2 id="salting" class="header"><a href="#Fifth lecture - Authentication-salting">salting</a></h2></div>
+<ul>
+<li>
+efficient solution to make rainbow tables / hash dictionaries infeasible
+
+<li>
+instead of storing h(x), generate a random byte-string s and store s, h(h(x) ø s)
+
+</ul>
+
+<div id="Fifth lecture - Authentication-key derivation functions"><h2 id="key derivation functions" class="header"><a href="#Fifth lecture - Authentication-key derivation functions">key derivation functions</a></h2></div>
+<ul>
+<li>
+fact of life: users chose passwords with low entropy
+
+<li>
+idea: what if we made computing the hash really expensive?
+
+<li>
+if each attempt as guessing is expensive: it will be more difficult to guess the password
+
+<li>
+<span id="Fifth lecture - Authentication-key derivation functions-requirements"></span><strong id="requirements">requirements</strong>: one way - collision free - a small change in input yeild a large difference in output - cpu intensive - memory expensive - sequential (difficult to compute in paralell)
+
+</ul>
+
+<div id="Fifth lecture - Authentication-other password guessing prevention measures"><h2 id="other password guessing prevention measures" class="header"><a href="#Fifth lecture - Authentication-other password guessing prevention measures">other password guessing prevention measures</a></h2></div>
+<ul>
+<li>
+rate-limiting password attempts
+
+<li>
+proof-of-work from the client
+
+</ul>
+
+</body>
+</html>

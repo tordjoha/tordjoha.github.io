@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 8</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="8th Lecture - Cross-Site Request Forgery"><h1 id="8th Lecture - Cross-Site Request Forgery" class="header"><a href="#8th Lecture - Cross-Site Request Forgery">8th Lecture - Cross-Site Request Forgery</a></h1></div>
+
+<p>
+Cross-site Request Forgery is possible when:
+</p>
+<ul>
+<li>
+user is logged into site A (with a session cookie)
+
+<li>
+site A will perform actions when the user makes a request (send message etc)
+
+<li>
+user visits site B, which makes the browser send requests to site A
+
+</ul>
+
+<div id="8th Lecture - Cross-Site Request Forgery-Whats the problem?"><h2 id="Whats the problem?" class="header"><a href="#8th Lecture - Cross-Site Request Forgery-Whats the problem?">Whats the problem?</a></h2></div>
+<ul>
+<li>
+if user visits attackers site while logged into another website, and with no prevention, attacker can take over their user on that other website.
+
+<li>
+no check that the info given to site is what the user submitted
+
+</ul>
+
+<div id="8th Lecture - Cross-Site Request Forgery-CSRF - Protecion"><h2 id="CSRF - Protecion" class="header"><a href="#8th Lecture - Cross-Site Request Forgery-CSRF - Protecion">CSRF - Protecion</a></h2></div>
+<p>
+<span id="8th Lecture - Cross-Site Request Forgery-CSRF - Protecion-What must be protected?"></span><strong id="What must be protected?">What must be protected?</strong>
+</p>
+<ul>
+<li>
+links must be protected: https://
+
+<li>
+forms must be protected
+
+<li>
+all other POST/GET requests
+
+</ul>
+
+<div id="8th Lecture - Cross-Site Request Forgery-CSRF - Prevention"><h2 id="CSRF - Prevention" class="header"><a href="#8th Lecture - Cross-Site Request Forgery-CSRF - Prevention">CSRF - Prevention</a></h2></div>
+<ul>
+<li>
+Stored tokens: server side generate a form and token with it, and use the value to validate the requests
+
+<li>
+The SameSite flag - has three possible values
+
+<ul>
+<li>
+none: the cookie is always sent
+
+<li>
+strict: the cookie is only sent the request is initiated from the same origin
+
+<li>
+lax: the cookie is still sent when following links from other origins, but not with otherequests.
+
+<li>
+browser support for this flag is improving, but CSRF tokens are still reccomended.
+
+</ul>
+</ul>
+
+<div id="8th Lecture - Cross-Site Request Forgery-Pitfall: using double submit tokens"><h2 id="Pitfall: using double submit tokens" class="header"><a href="#8th Lecture - Cross-Site Request Forgery-Pitfall: using double submit tokens">Pitfall: using double submit tokens</a></h2></div>
+<ul>
+<li>
+keeping the CSRF-tokens stored on the server is annoying. It is tempting to put them in a cookie
+
+<li>
+but, this means that if the attacker can set a cookie for the domain, he can forge requests
+
+</ul>
+
+<hr />
+
+<div id="Capablities"><h1 id="Capablities" class="header"><a href="#Capablities">Capablities</a></h1></div>
+
+<p>
+A capability consists of:
+</p>
+<ul>
+<li>
+a <span id="Capablities-reference"></span><strong id="reference">reference</strong> to an object
+
+<li>
+a set of <span id="Capablities-permissions"></span><strong id="permissions">permissions</strong> for that object
+
+</ul>
+
+<div id="Capablities-Using capabilities"><h2 id="Using capabilities" class="header"><a href="#Capablities-Using capabilities">Using capabilities</a></h2></div>
+<ul>
+<li>
+restricting access to programs:
+
+<ul>
+<li>
+give only the capabilities needed
+
+<li>
+what capabilities should given to:
+
+<ul>
+<li>
+a word processor?
+
+<li>
+a web site?
+
+<li>
+a system login manager?
+
+</ul>
+<li>
+This allows very fine grained applications of the principle of least priledge.
+
+</ul>
+</ul>
+
+<div id="Capablities-Capability properties: Unforgeable"><h2 id="Capability properties: Unforgeable" class="header"><a href="#Capablities-Capability properties: Unforgeable">Capability properties: Unforgeable</a></h2></div>
+<ul>
+<li>
+If a capability can be forged, it is useless as a security measure.
+
+<li>
+Two approaches to unforgeability:
+
+<ul>
+<li>
+enforced by supervisor
+
+<li>
+unguessable capabilities
+
+</ul>
+</ul>
+
+<div id="Capablities-Abstraction"><h2 id="Abstraction" class="header"><a href="#Capablities-Abstraction">Abstraction</a></h2></div>
+<p>
+Capabilities are described by what you can do with the object, not what is the object.
+In principle, the following are treated the same:
+</p>
+<ul>
+<li>
+reading from a file and reading from a network connection
+
+</ul>
+<p>
+This means capabiloties can be a means of abstraction.
+</p>
+
+<div id="Capablities-Enforced by language: Memory safe capabilities"><h2 id="Enforced by language: Memory safe capabilities" class="header"><a href="#Capablities-Enforced by language: Memory safe capabilities">Enforced by language: Memory safe capabilities</a></h2></div>
+<p>
+In a memory safe <span id="Capablities-Enforced by language: Memory safe capabilities-object capability system"></span><strong id="object capability system">object capability system</strong> can be obtained by:
+</p>
+<ul>
+<li>
+<span id="Capablities-Enforced by language: Memory safe capabilities-endowment:"></span><strong id="endowment:">endowment:</strong> Alice might have intrinsic capabilities given to her at her creation
+
+<li>
+<span id="Capablities-Enforced by language: Memory safe capabilities-creation:"></span><strong id="creation:">creation:</strong> Alice gets capability to access an object she creates.
+
+<li>
+<span id="Capablities-Enforced by language: Memory safe capabilities-introduction:"></span><strong id="introduction:">introduction:</strong> Alice transfers a capability to Bob.
+
+</ul>
+<p>
+This approach <span id="Capablities-Enforced by language: Memory safe capabilities-relies on the memory safety"></span><strong id="relies on the memory safety">relies on the memory safety</strong> of the language
+</p>
+
+</body>
+</html>

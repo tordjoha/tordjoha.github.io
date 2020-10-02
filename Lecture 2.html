@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="Second Lecture - Buffer overflow"><h1 id="Second Lecture - Buffer overflow" class="header"><a href="#Second Lecture - Buffer overflow">Second Lecture - Buffer overflow</a></h1></div>
+
+<p>
+<em>A buffer overflow is an anomaly where a program, while writing data to a buffer, overruns the buffers boundary and overwrites adjecent memory locations.</em>
+</p>
+
+<div id="Second Lecture - Buffer overflow-Memory layout of a C program"><h2 id="Memory layout of a C program" class="header"><a href="#Second Lecture - Buffer overflow-Memory layout of a C program">Memory layout of a C program</a></h2></div>
+<ul>
+<li>
+Diagram outlining the:
+
+<ul>
+<li>
+Stack: grows downwards
+
+<li>
+Free space
+
+<li>
+Heap: grows upwards
+
+</ul>
+</ul>
+
+<div id="Second Lecture - Buffer overflow-The call stack"><h2 id="The call stack" class="header"><a href="#Second Lecture - Buffer overflow-The call stack">The call stack</a></h2></div>
+<ul>
+<li>
+The primary purpose of the call stack is to store return addresses for function calls
+
+<li>
+When a function is called:
+
+<ul>
+<li>
+a return pointer is pushed on the stack
+
+</ul>
+<li>
+When the function is done:
+
+<ul>
+<li>
+the return pointer is popped from the stack
+
+<li>
+... and program flow is returnd to the caller, following the return pointer
+
+</ul>
+</ul>
+
+<div id="Second Lecture - Buffer overflow-Shell code"><h2 id="Shell code" class="header"><a href="#Second Lecture - Buffer overflow-Shell code">Shell code</a></h2></div>
+<ul>
+<li>
+the easist way to exploit a <em>buffer overflow</em> bug:
+
+<ul>
+<li>
+fill the buffer with attack code
+
+<li>
+overwrite the return pointer to point into the array
+
+</ul>
+<li>
+NO-OP sled
+
+<ul>
+<li>
+Difficulty: attacker does not know the address of the buffer
+
+<li>
+if the attacker guesses any address in the NOP part, execution slides to the shell-code
+
+</ul>
+<li>
+Return Oriented Programming
+
+<ul>
+<li>
+exploit technique using preexisting code in the program or libraries instead of uploaded shell code
+
+</ul>
+</ul>
+
+<div id="Second Lecture - Buffer overflow-Mitigations"><h2 id="Mitigations" class="header"><a href="#Second Lecture - Buffer overflow-Mitigations">Mitigations</a></h2></div>
+<ul>
+<li>
+How to prevent failure?
+
+<ul>
+<li>
+write better C code
+
+<li>
+stack canaries
+
+<li>
+W^X
+
+<li>
+Address space layout randomisation
+
+</ul>
+<li>
+Later:
+
+<ul>
+<li>
+privledge seperation: how to limit the consequences of an remote code exploit
+
+<li>
+static analysis
+
+</ul>
+</ul>
+
+<div id="Second Lecture - Buffer overflow-Stack canaries"><h2 id="Stack canaries" class="header"><a href="#Second Lecture - Buffer overflow-Stack canaries">Stack canaries</a></h2></div>
+<ul>
+<li>
+A stack canary is a random integer value written after the function return pointer on the stack.
+
+<li>
+When the function returns the integer value is checked to detect if it (and thus the return pointer) has been overwritten since function call initiated.
+
+<li>
+if attacker can read the memory - can get the value of canary
+
+</ul>
+
+<div id="Second Lecture - Buffer overflow-Rearranging the stack"><h2 id="Rearranging the stack" class="header"><a href="#Second Lecture - Buffer overflow-Rearranging the stack">Rearranging the stack</a></h2></div>
+<ul>
+<li>
+to prevent important values being overwritten, ...
+
+</ul>
+
+<div id="Second Lecture - Buffer overflow-W^X"><h2 id="W^X" class="header"><a href="#Second Lecture - Buffer overflow-W^X">W^X</a></h2></div>
+<ul>
+<li>
+memory allocations can give the allocated memory different properties - writable / executable
+
+<li>
+write xor executable means that the operating system enforces that writable memory cannot be executable
+
+<ul>
+<li>
+prevents loading shell code into writable buffers
+
+<li>
+does not prevent ROP
+
+</ul>
+</ul>
+<div id="Second Lecture - Buffer overflow-Prevention"><h2 id="Prevention" class="header"><a href="#Second Lecture - Buffer overflow-Prevention">Prevention</a></h2></div>
+<ul>
+<li>
+best practice to avoid buffer overflows:
+
+<ul>
+<li>
+use memory safe languages
+
+<li>
+use memory-safe abstractions in unsafe languages
+
+<li>
+use the compilers abilities
+
+<li>
+run static analysers to identify potential bugs
+
+<li>
+enable the protections allowed by the system
+
+<li>
+do not override protetcion mechanisms for convenience
+
+</ul>
+</ul>
+
+</body>
+</html>

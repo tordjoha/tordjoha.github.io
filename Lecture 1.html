@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="First Lecture - Software security"><h1 id="First Lecture - Software security" class="header"><a href="#First Lecture - Software security">First Lecture - Software security</a></h1></div>
+
+<div id="First Lecture - Software security-Motivation"><h2 id="Motivation" class="header"><a href="#First Lecture - Software security-Motivation">Motivation</a></h2></div>
+<ul>
+<li>
+bad security has economic and privacy consequences, and security bugs impacts user experience. 
+
+<li>
+Secure code is often good code. Easy to reason about - easier to maintain - has less (other) bugs.
+
+<li>
+Security is not a feature - has to be assigned for the first second you think about a program.
+
+<li>
+How to produce secure code: understanding - the underlying systems, the problem domain and what the pitfalls and footguns are.
+
+<li>
+<em>Design with security in mind</em>  <em>Plan for failure</em>
+
+</ul>
+
+<div id="First Lecture - Software security-Topics of the course"><h2 id="Topics of the course" class="header"><a href="#First Lecture - Software security-Topics of the course">Topics of the course</a></h2></div>
+<ul>
+<li>
+Writing secure software: software design, access control, authentication
+
+<li>
+Common vulnerabilities: buffer overflows, SQL injection, XSS
+
+</ul>
+
+<div id="First Lecture - Software security-How to learn"><h2 id="How to learn" class="header"><a href="#First Lecture - Software security-How to learn">How to learn</a></h2></div>
+<ul>
+<li>
+Doing
+
+<ul>
+<li>
+mandatory assignments
+
+<li>
+security shepherd exercises
+
+<li>
+etra exercises and quizzes
+
+</ul>
+<li>
+Consuming
+
+<ul>
+<li>
+course books
+
+<li>
+supplementary articles / videos
+
+<li>
+lectures
+
+</ul>
+<li>
+Getting help
+
+<ul>
+<li>
+going to the group sessions on teams
+
+<li>
+write in teams chat
+
+<li>
+write message on MITTUIB
+
+</ul>
+</ul>
+
+<div id="First Lecture - Software security-Security is not a feature"><h2 id="Security is not a feature" class="header"><a href="#First Lecture - Software security-Security is not a feature">Security is not a feature</a></h2></div>
+<p>
+Example: A login page can be correct, but still fail to secure the website.
+</p>
+
+<div id="First Lecture - Software security-Programs"><h2 id="Programs" class="header"><a href="#First Lecture - Software security-Programs">Programs</a></h2></div>
+<ul>
+<li>
+Executable file: programs can be created from source code in different ways.
+
+<li>
+Process: the operating system (OS) manages the different processes running. Each process has:
+
+<ul>
+<li>
+a process ID (which identifies the process)
+
+<li>
+a (virtual) memory space
+
+<li>
+a lot of other metadata(UID, PID, file descriptors,...)
+
+<li>
+How the memory space is managed is called the /runtime environment/, and depends on the computer
+
+<li>
+In particular, the OS does not know about:
+
+<li>
+Variables
+
+<li>
+types
+
+<li>
+objects
+
+<li>
+scopes
+
+<li>
+functions
+
+</ul>
+</ul>
+
+<div id="First Lecture - Software security-Runtime environment"><h2 id="Runtime environment" class="header"><a href="#First Lecture - Software security-Runtime environment">Runtime environment</a></h2></div>
+<div id="First Lecture - Software security-Runtime environment-Difference between C and Java"><h3 id="Difference between C and Java" class="header"><a href="#First Lecture - Software security-Runtime environment-Difference between C and Java">Difference between C and Java</a></h3></div>
+<ul>
+<li>
+C - very thin abstraction over the OS model of a process, Java provides a more robust abstraction. Java guarantee: memory safety
+
+</ul>
+
+<div id="First Lecture - Software security-Runtime environment-Processes interacting with the environment"><h3 id="Processes interacting with the environment" class="header"><a href="#First Lecture - Software security-Runtime environment-Processes interacting with the environment">Processes interacting with the environment</a></h3></div>
+<p>
+Processes make system calls to interact with the world beyond its memory space
+</p>
+<ul>
+<li>
+read / write to files
+
+<li>
+network access
+
+<li>
+time functions
+
+<li>
+inter-process communication
+
+</ul>
+
+<p>
+The OS receives the call and executes the action on behalf of the process.
+<span id="First Lecture - Software security-Runtime environment-Processes interacting with the environment-The system call interface is a security boundary"></span><strong id="The system call interface is a security boundary">The system call interface is a security boundary</strong>
+</p>
+
+<div id="First Lecture - Software security-Tools"><h2 id="Tools" class="header"><a href="#First Lecture - Software security-Tools">Tools</a></h2></div>
+
+<ul>
+<li>
+gcc: c compiler
+
+<li>
+gdb: debugger
+
+<li>
+objdump -d  disasembler
+
+</ul>
+
+<ul>
+<li>
+xdd: convert between hex and bytes
+
+<li>
+python
+
+<li>
+pwntools: python library
+
+<li>
+strace: makes a log of the system calls made by the process
+
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="Fourth lecture - SQL Injection"><h1 id="Fourth lecture - SQL Injection" class="header"><a href="#Fourth lecture - SQL Injection">Fourth lecture - SQL Injection</a></h1></div>
+
+<div id="Fourth lecture - SQL Injection-SQL"><h2 id="SQL" class="header"><a href="#Fourth lecture - SQL Injection-SQL">SQL</a></h2></div>
+<ol>
+<li>
+Structured query language is the dominating language for relational databases.
+
+<li>
+It is a domain specific language
+
+<li>
+Queries are constructed using other languages
+
+<li>
+Queries are constructed from user input
+
+<li>
+SQL is great! But we must be aware of Points 3 and 4 above.
+
+</ol>
+
+<div id="Fourth lecture - SQL Injection-Modeling your domain in SQL"><h2 id="Modeling your domain in SQL" class="header"><a href="#Fourth lecture - SQL Injection-Modeling your domain in SQL">Modeling your domain in SQL</a></h2></div>
+<p>
+Two ways of thinking of SQL databases
+</p>
+<ul>
+<li>
+It is just where the data is stored
+
+<ul>
+<li>
+few constraints
+
+<li>
+invariants exclusively enforced by program code
+
+</ul>
+<li>
+The SQL database is part of the domain model
+
+<ul>
+<li>
+Uses constrains, such as foreign keys to keeep data consistent
+
+<li>
+Leverage ablities such as "cascade delete" to enforce invariants
+
+<li>
+Constraint violations points to bugs in program code
+
+</ul>
+</ul>
+
+<div id="Fourth lecture - SQL Injection-The problem of quoting"><h2 id="The problem of quoting" class="header"><a href="#Fourth lecture - SQL Injection-The problem of quoting">The problem of quoting</a></h2></div>
+<ul>
+<li>
+Problem: Expresions in SQL consists of strings. How to represent strings?
+
+<li>
+First approximation: 'This is a string'
+
+<li>
+but what about strings containing the character ' itself?
+
+<li>
+blacklisting characters is no good
+
+<ul>
+<li>
+they are common in natural language, blacklists most often have loop holes.
+
+</ul>
+</ul>
+
+<div id="Fourth lecture - SQL Injection-Prepared statemets"><h2 id="Prepared statemets" class="header"><a href="#Fourth lecture - SQL Injection-Prepared statemets">Prepared statemets</a></h2></div>
+<ul>
+<li>
+prevents SQL injections
+
+<li>
+allows type-checking of arguments
+
+<li>
+could give better performance if a statement is executed many times
+
+</ul>
+
+<div id="Fourth lecture - SQL Injection-Testing"><h2 id="Testing" class="header"><a href="#Fourth lecture - SQL Injection-Testing">Testing</a></h2></div>
+<ul>
+<li>
+the places in the code which cause SQL injections have a clear signature - string concatenation on a string which ends up in a query.
+
+<li>
+Static tools (such as SonarQube) will detect this.
+
+</ul>
+
+<div id="Fourth lecture - SQL Injection-Conclusion"><h2 id="Conclusion" class="header"><a href="#Fourth lecture - SQL Injection-Conclusion">Conclusion</a></h2></div>
+<p>
+The underlying problem with SQL embedded in order:
+</p>
+<ul>
+<li>
+Confuson between code and data
+
+<li>
+strings are used to represent both:
+
+<ul>
+<li>
+data which goes into database
+
+<li>
+queries and code to be executed into database
+
+</ul>
+</ul>
+
+<div id="Fourth lecture - SQL Injection-Other injection attacks"><h2 id="Other injection attacks" class="header"><a href="#Fourth lecture - SQL Injection-Other injection attacks">Other injection attacks</a></h2></div>
+<ul>
+<li>
+Buffer overflows
+
+<li>
+OS command injection
+
+<li>
+eval injection in scripting languages (ex Python)
+
+</ul>
+
+</body>
+</html>
