@@ -349,7 +349,59 @@ Violations are reported back to the server.
 Only allow content from same site: <em>Content-Security-Policy "default-src 'self';"</em>
 Example violation: _&lt;script src="<a href="https://attacker.com/exploit&quot;&gt;&lt;/script&gt;_">https://attacker.com/exploit"&gt;&lt;/script&gt;_</a>
 <hr />
+Allow images to be loaded from a single external site: <em>Content-Security-Policy "default-src 'self';img-src 'self' cdn.example.com"</em>
+Example violation: _&lt;img src="<a href="https://attacker.com/ping&quot;&gt;&lt;/img&gt;_">https://attacker.com/ping"&gt;&lt;/img&gt;_</a>
 </p>
+
+<div id="Tenth lecture - Cross-site scripting-Content Security Policy-CSP limits inline scripts"><h3 id="CSP limits inline scripts" class="header"><a href="#Tenth lecture - Cross-site scripting-Content Security Policy-CSP limits inline scripts">CSP limits inline scripts</a></h3></div>
+<pre>
+&lt;script&gt;
+	var xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "/doBadThing", true); 
+	xhttp.send();
+&lt;/script&gt;
+</pre>
+<p>
+Will cause a violation.
+</p>
+
+<div id="Tenth lecture - Cross-site scripting-Content Security Policy-CSP limitations"><h3 id="CSP limitations" class="header"><a href="#Tenth lecture - Cross-site scripting-Content Security Policy-CSP limitations">CSP limitations</a></h3></div>
+<p>
+Browser support for CSP is improving, but you still cannot rely on it.
+There are also a number of attacks which fall outside the scope of CSP:
+</p>
+<ul>
+<li>
+Correctly escaping HTML output is still needed - both for security and correctness.
+
+</ul>
+<p>
+CSP has to be taken into account when designing the webpage:
+</p>
+<ul>
+<li>
+It is difficult to get third party scripts to adhere to policies.
+
+</ul>
+
+<div id="Tenth lecture - Cross-site scripting-XSS summary"><h2 id="XSS summary" class="header"><a href="#Tenth lecture - Cross-site scripting-XSS summary">XSS summary</a></h2></div>
+<p>
+XSS can occur anywhere untrusted data is inserted into HTML.
+</p>
+<ul>
+<li>
+Inserted scripts has the same origin as the victim site
+
+<li>
+Scripts can perform any action on user's behalf
+
+<li>
+Prevented by properly escaping the user data
+
+<li>
+Further hardening by CSP
+
+</ul>
 
 </body>
 </html>
