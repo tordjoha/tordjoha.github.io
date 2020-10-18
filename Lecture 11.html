@@ -8,37 +8,155 @@
 </head>
 <body>
 
-<div id="Elleventh lecture - ..."><h1 id="Elleventh lecture - ..." class="header"><a href="#Elleventh lecture - ...">Elleventh lecture - ...</a></h1></div>
+<div id="Elleventh lecture - Priviledge separation"><h1 id="Elleventh lecture - Priviledge separation" class="header"><a href="#Elleventh lecture - Priviledge separation">Elleventh lecture - Priviledge separation</a></h1></div>
 
-<div id="Elleventh lecture - ...-The world wide web"><h2 id="The world wide web" class="header"><a href="#Elleventh lecture - ...-The world wide web">The world wide web</a></h2></div>
-
+<div id="Elleventh lecture - Priviledge separation-Principle of least priviledge"><h2 id="Principle of least priviledge" class="header"><a href="#Elleventh lecture - Priviledge separation-Principle of least priviledge">Principle of least priviledge</a></h2></div>
 <p>
-First three slides go here when the presentation is added
+A process/object/user/service should only have as much priviledge as needed to perform their intended task
 </p>
 
-<div id="Elleventh lecture - ...-The world wide web-Browsers"><h3 id="Browsers" class="header"><a href="#Elleventh lecture - ...-The world wide web-Browsers">Browsers</a></h3></div>
+<div id="Elleventh lecture - Priviledge separation-Principle of least priviledge-Threat model: Defence in depth"><h3 id="Threat model: Defence in depth" class="header"><a href="#Elleventh lecture - Priviledge separation-Principle of least priviledge-Threat model: Defence in depth">Threat model: Defence in depth</a></h3></div>
 <ul>
 <li>
-Perform HTTP requests on behalf of the users
-
-<li>
-Display pages in Hypertext Markup Language (HTML) containing:
+<span id="Elleventh lecture - Priviledge separation-Principle of least priviledge-Threat model: Defence in depth-Assumption:"></span><strong id="Assumption:">Assumption:</strong> Some process on the system is misbehaving
 
 <ul>
 <li>
-Images (JPEG, GIF, SVG, PNG osv..)
-
-<li>
-Video and sound (MP3, MP4, OGG, webm osv...)
+Example: A buffer overflow in a service has caused an attacker to gain remote code execution
 
 </ul>
 <li>
-Style the pages as described in Cascade Style Shet (CSS)
+<span id="Elleventh lecture - Priviledge separation-Principle of least priviledge-Threat model: Defence in depth-Requirement:"></span><strong id="Requirement:">Requirement:</strong> Limit the impact of this break-in.
 
 <li>
-Executes JavaScript embedded in the pages
+<span id="Elleventh lecture - Priviledge separation-Principle of least priviledge-Threat model: Defence in depth-Mechanisms:"></span><strong id="Mechanisms:">Mechanisms:</strong> ?
 
 </ul>
+
+<div id="Elleventh lecture - Priviledge separation-Principle of least priviledge-Abstractions"><h3 id="Abstractions" class="header"><a href="#Elleventh lecture - Priviledge separation-Principle of least priviledge-Abstractions">Abstractions</a></h3></div>
+<p>
+There are different levels at which priviledge separation happens:
+</p>
+<ul>
+<li>
+Scoping in the code
+
+<li>
+Virtual memory
+
+<li>
+OS level priviledge separation
+
+<li>
+File system abstraction
+
+<li>
+Operating system abstraction
+
+<li>
+Virtual machine
+
+<li>
+Running on different machines
+
+</ul>
+<hr />
+<div id="Elleventh lecture - Priviledge separation-OS level protections"><h2 id="OS level protections" class="header"><a href="#Elleventh lecture - Priviledge separation-OS level protections">OS level protections</a></h2></div>
+
+<div id="Elleventh lecture - Priviledge separation-OS level protections-Operating systems"><h3 id="Operating systems" class="header"><a href="#Elleventh lecture - Priviledge separation-OS level protections-Operating systems">Operating systems</a></h3></div>
+<p>
+What is the role of the operating system?
+</p>
+<ul>
+<li>
+Orchestrate processes (software)
+
+<li>
+Provide an abstract interface for hardware (drivers)
+
+</ul>
+
+<p>
+Programs can communicate with the OS through system calls, which interrupt the program and returns the control to the OS.
+Examples:
+</p>
+<ul>
+<li>
+The system call <em>open</em> opens(or creates) a file and returns a file descriptor to the program.
+
+<li>
+The system call <em>socket</em> and <em>connect</em> creates a network connect and return a file descriptor to the program
+
+<li>
+The system call <em>write</em> writes bytes to a given file descriptor
+
+</ul>
+
+<div id="Elleventh lecture - Priviledge separation-OS level protections-System calls"><h3 id="System calls" class="header"><a href="#Elleventh lecture - Priviledge separation-OS level protections-System calls">System calls</a></h3></div>
+<ul>
+<li>
+<span id="Elleventh lecture - Priviledge separation-OS level protections-System calls-Usability perspective:"></span><strong id="Usability perspective:">Usability perspective:</strong> The operating system provides a rich interface for programs.
+
+<li>
+<span id="Elleventh lecture - Priviledge separation-OS level protections-System calls-Security perspective:"></span><strong id="Security perspective:">Security perspective:</strong> System calls form a huge surface for an attacker to work with
+
+<li>
+Linux has more than three hundred system calls:
+
+</ul>
+
+<div id="Elleventh lecture - Priviledge separation-OS level protections-OS level priviledge seperation"><h3 id="OS level priviledge seperation" class="header"><a href="#Elleventh lecture - Priviledge separation-OS level protections-OS level priviledge seperation">OS level priviledge seperation</a></h3></div>
+<p>
+On the OS level individual processes have different protections for different resources:
+</p>
+<ul>
+<li>
+Memory:
+
+<ul>
+<li>
+Virtual memory mapping
+
+<li>
+Limits
+
+</ul>
+<li>
+CPU:
+
+<ul>
+<li>
+Scheduling policy
+
+</ul>
+<li>
+File system:
+
+<ul>
+<li>
+Permissions
+
+<li>
+<em>chroot</em> or other visibility restrictions
+
+<li>
+quotas
+
+</ul>
+<li>
+Open files / sockets / network connections:
+
+<ul>
+<li>
+file descriptors
+
+<li>
+limits
+
+</ul>
+</ul>
+
+<div id="Elleventh lecture - Priviledge separation-Memory protection"><h2 id="Memory protection" class="header"><a href="#Elleventh lecture - Priviledge separation-Memory protection">Memory protection</a></h2></div>
 
 </body>
 </html>
