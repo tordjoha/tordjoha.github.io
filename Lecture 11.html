@@ -158,5 +158,148 @@ limits
 
 <div id="Elleventh lecture - Priviledge separation-Memory protection"><h2 id="Memory protection" class="header"><a href="#Elleventh lecture - Priviledge separation-Memory protection">Memory protection</a></h2></div>
 
+<div id="Elleventh lecture - Priviledge separation-Memory protection-Virtual memory mapping"><h3 id="Virtual memory mapping" class="header"><a href="#Elleventh lecture - Priviledge separation-Memory protection-Virtual memory mapping">Virtual memory mapping</a></h3></div>
+<p>
+Not primarily for security: Letting programs use the physical memory address is <em>really inconvenient.</em>
+</p>
+
+<p>
+With virtual paged memory:
+</p>
+<ul>
+<li>
+Each program gets their own virtual address space
+
+<li>
+Memory locations not decided at compile time
+
+<li>
+Memory fragmentation hidden from programs
+
+<li>
+Easy to page out to swap (store memory on hard drive)
+
+</ul>
+<p>
+But, as a consequence: processes cannot directly address or access the memory of other processes.
+</p>
+
+<p>
+Exceptions:
+</p>
+<ol>
+<li>
+Processes can allocate shared memory
+
+<li>
+A process can attach themselves as a debugger to another process.
+
+</ol>
+<p>
+Nr. 2 is allowed by default in Linux for processes with the same UID.
+</p>
+
+<div id="Elleventh lecture - Priviledge separation-File system abstraction"><h2 id="File system abstraction" class="header"><a href="#Elleventh lecture - Priviledge separation-File system abstraction">File system abstraction</a></h2></div>
+
+<div id="Elleventh lecture - Priviledge separation-File system abstraction-The unix file system"><h3 id="The unix file system" class="header"><a href="#Elleventh lecture - Priviledge separation-File system abstraction-The unix file system">The unix file system</a></h3></div>
+<p>
+Provides a unified way to access file systems based in <span id="Elleventh lecture - Priviledge separation-File system abstraction-The unix file system-the root directory /"></span><strong id="the root directory /">the root directory /</strong>
+Directories group the files into logical parts:
+</p>
+<ul>
+<li>
+/bin: programs
+
+<li>
+/sbin: administrative programs
+
+<li>
+/etc: system configuration
+
+<li>
+/dev: virtal file system of devices
+
+<li>
+/home: individual user's home folders
+
+<li>
+/tmp: temporary files
+
+<li>
+...
+
+</ul>
+
+<div id="Elleventh lecture - Priviledge separation-File system abstraction-Chroot"><h3 id="Chroot" class="header"><a href="#Elleventh lecture - Priviledge separation-File system abstraction-Chroot">Chroot</a></h3></div>
+<p>
+The operating system can restrict process file access by changing the <span id="Elleventh lecture - Priviledge separation-File system abstraction-Chroot-root"></span><strong id="root">root</strong> dir to a <span id="Elleventh lecture - Priviledge separation-File system abstraction-Chroot-different"></span><strong id="different">different</strong> directory (chroot)
+<span id="Elleventh lecture - Priviledge separation-File system abstraction-Chroot-Example"></span><strong id="Example">Example</strong>: After chroot <em>/home/bar</em> the path <em>/bin/foo</em> translates to <em>/home/bar/bin/foo</em>
+<span id="Elleventh lecture - Priviledge separation-File system abstraction-Chroot-Note"></span><strong id="Note">Note</strong>: a UID = 0 (root) process easily access resources outside the new root
+This provides a form of file system virtualisation.
+</p>
+
+<ul>
+<li>
+The usefulness of chroot is limited by the restriction that only root can do it
+
+<li>
+Imagine that a user could set up a root folder with a forged /etc/password and /etc/shadow
+
+<li>
+Then they could fool a SUID program (such as su) to give them a UID = 0 shell.
+
+</ul>
+
+<p>
+Chroot is not a complete sandboxing solution, it does not:
+</p>
+<ul>
+<li>
+restrict network access
+
+<li>
+restrict usage of other system resources
+
+<li>
+prevent communivation with/taking over other processes
+
+</ul>
+
+<p>
+Compare to:
+</p>
+<ul>
+<li>
+Plan9's concept of per process file system (approx. 1990)
+
+<li>
+FreeBSD's jail(8) or Docker
+
+<li>
+OpenBSD's new unveil(2)
+
+</ul>
+
+<div id="Elleventh lecture - Priviledge separation-System call restrictions"><h2 id="System call restrictions" class="header"><a href="#Elleventh lecture - Priviledge separation-System call restrictions">System call restrictions</a></h2></div>
+
+<div id="Elleventh lecture - Priviledge separation-System call restrictions-OpenBSD pledge"><h3 id="OpenBSD pledge" class="header"><a href="#Elleventh lecture - Priviledge separation-System call restrictions-OpenBSD pledge">OpenBSD pledge</a></h3></div>
+<p>
+System calls form a huge surface for an attacker to work with.
+Difficult to restrict which system calls are allowed by a process, but OpenBSD's pledge gives such a mechanism:
+</p>
+<ul>
+<li>
+Calling pledge with a list of system call groups <span id="Elleventh lecture - Priviledge separation-System call restrictions-OpenBSD pledge-restricts the process from accessing most system calls"></span><strong id="restricts the process from accessing most system calls">restricts the process from accessing most system calls</strong> not on the list.
+
+<li>
+Further restrictions can be made at a later point
+
+</ul>
+<p>
+Compare: seccomp for Linux or capsicum for FreeBSD
+</p>
+
+<div id="Elleventh lecture - Priviledge separation-OS virtualisation"><h2 id="OS virtualisation" class="header"><a href="#Elleventh lecture - Priviledge separation-OS virtualisation">OS virtualisation</a></h2></div>
+
 </body>
 </html>

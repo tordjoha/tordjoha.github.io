@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Guest Lecture</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="Guest Lecture"><h1 id="Guest Lecture" class="header"><a href="#Guest Lecture">Guest Lecture</a></h1></div>
+
+<div id="Guest Lecture-Running threads"><h2 id="Running threads" class="header"><a href="#Guest Lecture-Running threads">Running threads</a></h2></div>
+<div id="Guest Lecture-Running threads-Implementing multithreading in Haskell"><h3 id="Implementing multithreading in Haskell" class="header"><a href="#Guest Lecture-Running threads-Implementing multithreading in Haskell">Implementing multithreading in Haskell</a></h3></div>
+<ul>
+<li>
+Library threads (lightweight): n
+
+<li>
+OS threads (heavyweight): m
+
+<li>
+n &gt;&gt; m
+
+<li>
+One OS thread may host many (thousands) library threads
+
+<li>
+Library threads may migrate between OS threads (and CPU cores)
+
+<li>
+Preemptive multitasking
+
+</ul>
+
+<div id="Guest Lecture-Running threads-Basic concurrency operations"><h3 id="Basic concurrency operations" class="header"><a href="#Guest Lecture-Running threads-Basic concurrency operations">Basic concurrency operations</a></h3></div>
+<p>
+Thread Identifier: data ThreadId
+<dl>
+<dt>Running IO-action in a new thread: forkIO </dt>
+<dd>O () -&gt; IO ThreadId</dd>
+</dl>
+</p>
+
+
+
+
+<div id="Guest Lecture-Organize communications in threads"><h2 id="Organize communications in threads" class="header"><a href="#Guest Lecture-Organize communications in threads">Organize communications in threads</a></h2></div>
+
+</body>
+</html>
