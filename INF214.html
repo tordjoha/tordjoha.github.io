@@ -15,6 +15,162 @@
 <a href="Guest Lecture.html">Guest Lecture</a> - Concurrency in Haskell 
 
 </ul>
+  
+<div id="Exam information"><h1 id="Exam information" class="header"><a href="#Exam information">Exam information</a></h1></div>
+<ul>
+<li>
+Course videos enough
+
+<li>
+3 hours exam
+
+<li>
+No negative points for wrong answer
+
+<li>
+Can use course material, notes and videos, but not google
+
+</ul>
+
+<div id="Crash Course"><h1 id="Crash Course" class="header"><a href="#Crash Course">Crash Course</a></h1></div>
+<div id="Crash Course-The await language"><h2 id="The await language" class="header"><a href="#Crash Course-The await language">The await language</a></h2></div>
+<ul>
+<li>
+Declarations as usual (int x = 5)
+
+<li>
+Sequential statements: if (condition) statements; while;...
+
+<li>
+Arrays: a[n]
+
+<li>
+For loops: for [i = 0 to n]...
+
+<li>
+Concurrent statements: co statement1; || ...; || statementN; oc
+
+<li>
+Processes:
+
+<ul>
+<li>
+Process A {...}
+
+<li>
+Process B [i = 1 to N] {...}
+
+<li>
+A process declaration is essentially an abbreviation for a co statement with one arm and/or one quantifier.
+
+<li>
+Process declaration occurs at the syntactic level of a procecure declaration.
+
+<li>
+Informal: process ~thread.
+
+</ul>
+</ul>
+
+<div id="Crash Course-Shared-Variable Programming"><h2 id="Shared-Variable Programming" class="header"><a href="#Crash Course-Shared-Variable Programming">Shared-Variable Programming</a></h2></div>
+<div id="Crash Course-Shared-Variable Programming-Synchronization"><h3 id="Synchronization" class="header"><a href="#Crash Course-Shared-Variable Programming-Synchronization">Synchronization</a></h3></div>
+<ul>
+<li>
+States, Actions, Histories, Properties (safety properties, liveness properties)
+
+</ul>
+<p>
+Section 2.1 in book
+</p>
+<ul>
+<li>
+Mutual exclusion
+
+<li>
+Deadlock
+
+<li>
+Livelock
+
+</ul>
+
+<div id="Crash Course-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book"><h3 id="Atomic actions and await statements - 2.4 in book" class="header"><a href="#Crash Course-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book">Atomic actions and await statements - 2.4 in book</a></h3></div>
+<ul>
+<li>
+Fine-grained atomicity
+
+<li>
+a fine grained atomic action is one that is implemented directly by the hardware
+
+</ul>
+<p>
+on which a concurrent program executes.
+</p>
+<ul>
+<li>
+At most once property
+
+<li>
+Read the cheat sheet MittUib -&gt; glossary.pfd
+
+<ul>
+<li>
+Understand definitions, not just remember
+
+</ul>
+</ul>
+<hr />
+<p>
+<span id="Crash Course-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book-The Await statement"></span><strong id="The Await statement">The Await statement</strong>
+</p>
+
+<p>
+&lt;await (B) S;&gt;
+B - Boolean condition (delay condition)
+S - a list of statements
+</p>
+
+<p>
+&lt;await (x == y) z = a + b; w = c + d; &gt;
+</p>
+<ul>
+<li>
+Atomic actions are specified by means of the angle brackets &lt;..&gt;
+
+<li>
+The await statement can be used to specify arbitrary coarse-grained atomic
+
+</ul>
+<p>
+actions.
+</p>
+<ul>
+<li>
+The general form of the await statement specifies both mutual exclusion and
+
+</ul>
+<p>
+condition synchronization.
+</p>
+<ul>
+<li>
+To specify only mutual exclusion we abbriviate the await statement: &lt;S;&gt;
+
+<li>
+To specify only condition synchronization, we abbriviate the await statement:
+
+</ul>
+<p>
+&lt;await(B);&gt;
+</p>
+<ul>
+<li>
+<span id="Crash Course-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book-Example:"></span><strong id="Example:">Example:</strong> Delaying the executing process until count &gt; 0; &lt;await (count&gt;0);&gt;
+
+<li>
+If B meets the required 
+
+</ul>
 
 </body>
 </html>
