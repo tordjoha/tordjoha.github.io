@@ -32,8 +32,9 @@ Can use course material, notes and videos, but not google
 
 </ul>
 
-<div id="Crash Course"><h1 id="Crash Course" class="header"><a href="#Crash Course">Crash Course</a></h1></div>
-<div id="Crash Course-The await language"><h2 id="The await language" class="header"><a href="#Crash Course-The await language">The await language</a></h2></div>
+<p>
+= Crash Course = == The await language ==
+</p>
 <ul>
 <li>
 Declarations as usual (int x = 5)
@@ -72,8 +73,8 @@ Informal: process ~thread.
 </ul>
 </ul>
 
-<div id="Crash Course-Shared-Variable Programming"><h2 id="Shared-Variable Programming" class="header"><a href="#Crash Course-Shared-Variable Programming">Shared-Variable Programming</a></h2></div>
-<div id="Crash Course-Shared-Variable Programming-Synchronization"><h3 id="Synchronization" class="header"><a href="#Crash Course-Shared-Variable Programming-Synchronization">Synchronization</a></h3></div>
+<div id="Exam information-Shared-Variable Programming"><h2 id="Shared-Variable Programming" class="header"><a href="#Exam information-Shared-Variable Programming">Shared-Variable Programming</a></h2></div>
+<div id="Exam information-Shared-Variable Programming-Synchronization"><h3 id="Synchronization" class="header"><a href="#Exam information-Shared-Variable Programming-Synchronization">Synchronization</a></h3></div>
 <ul>
 <li>
 States, Actions, Histories, Properties (safety properties, liveness properties)
@@ -94,7 +95,7 @@ Livelock
 
 </ul>
 
-<div id="Crash Course-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book"><h3 id="Atomic actions and await statements - 2.4 in book" class="header"><a href="#Crash Course-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book">Atomic actions and await statements - 2.4 in book</a></h3></div>
+<div id="Exam information-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book"><h3 id="Atomic actions and await statements - 2.4 in book" class="header"><a href="#Exam information-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book">Atomic actions and await statements - 2.4 in book</a></h3></div>
 <ul>
 <li>
 Fine-grained atomicity
@@ -121,7 +122,7 @@ Understand definitions, not just remember
 </ul>
 <hr />
 <p>
-<span id="Crash Course-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book-The Await statement"></span><strong id="The Await statement">The Await statement</strong>
+<span id="Exam information-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book-The Await statement"></span><strong id="The Await statement">The Await statement</strong>
 </p>
 
 <p>
@@ -165,10 +166,68 @@ To specify only condition synchronization, we abbriviate the await statement:
 </p>
 <ul>
 <li>
-<span id="Crash Course-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book-Example:"></span><strong id="Example:">Example:</strong> Delaying the executing process until count &gt; 0; &lt;await (count&gt;0);&gt;
+<span id="Exam information-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book-Example:"></span><strong id="Example:">Example:</strong> Delaying the executing process until count &gt; 0; &lt;await (count&gt;0);&gt;
 
 <li>
-If B meets the required 
+If B meets the requirements of the At-Most-Once Property, then &lt;await(B);&gt; can be implemented as:
+
+<ul>
+<li>
+While (not B);
+
+</ul>
+<li>
+an unconditional atomic action
+
+<li>
+a conditional atomic action
+
+</ul>
+
+<div id="Exam information-Shared-Variable Programming-Producer / Consumer Synchronization - 2.5 in book"><h3 id="Producer / Consumer Synchronization - 2.5 in book" class="header"><a href="#Exam information-Shared-Variable Programming-Producer / Consumer Synchronization - 2.5 in book">Producer / Consumer Synchronization - 2.5 in book</a></h3></div>
+<ul>
+<li>
+Producer: local array a[n]
+
+<li>
+Consumer: local array b[n]
+
+<li>
+Goal: copy the contents of a into b
+
+<li>
+Let: buf be a single shared variable that will serve as a communications buffer
+
+<li>
+We used &lt;await(...);&gt; See video 31.
+
+</ul>
+
+<div id="Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs"><h3 id="Axiomatic Semantics / Reasonning about Concurrent Programs" class="header"><a href="#Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs">Axiomatic Semantics / Reasonning about Concurrent Programs</a></h3></div>
+<ul>
+<li>
+Videos 45-48 + extra material
+
+</ul>
+
+<ul>
+<li>
+Triples
+
+<li>
+{P} S {Q}
+
+<li>
+<span id="Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs-S:"></span><strong id="S:">S:</strong> a list of statements
+
+<li>
+<span id="Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs-P:"></span><strong id="P:">P:</strong> precondition
+
+<li>
+<span id="Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs-Q:"></span><strong id="Q:">Q:</strong> postcondition
+
+<li>
+Interferece rules (conposition rule, if statement rule, while statement rule)
 
 </ul>
 
