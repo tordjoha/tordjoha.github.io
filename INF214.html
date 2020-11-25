@@ -55,7 +55,7 @@ public void run(){
 <span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> By modifying the code as such, the thread t2 would halt and sleep, until the condition becomes true, which would break the while loop and produce the output shown in the line under.
 
 </ul>
-
+<hr />
 <ul>
 <li>
 <span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> What could have switched lines 8 and 9 in the video?
@@ -64,7 +64,7 @@ public void run(){
 <span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> The compiler, JVM or the hardware could have "switched" the lines 8 and 9, because they are all allowed to optimize code by reordering.
 
 </ul>
-
+<hr />
 <ul>
 <li>
 <span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> What are the three main problems that may lead to an unexpected behaviour of a concurrent program?
@@ -73,7 +73,7 @@ public void run(){
 <span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> race condition, memory visibility and deadlock.
 
 </ul>
-
+<hr />
 <ul>
 <li>
 <span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> To guarantee correct execution of a concurrent program, it is enough that:
@@ -93,8 +93,7 @@ public void run(){
 <span id="Exam prep-4. Multiple locks and Dining Philosophers-A:"></span><strong id="A:">A:</strong> synchronized(left)
 
 </ul>
-
-
+<hr />
 <ul>
 <li>
 <span id="Exam prep-4. Multiple locks and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> Imagine that all the philosophers decide to eat at the same time, so they all grab their left chopstick. What will happen next?
@@ -113,16 +112,11 @@ public void run(){
 <span id="Exam prep-5. Alien methods-A:"></span><strong id="A:">A:</strong> Yes, true
 
 </ul>
-
+<hr />
 <ul>
 <li>
-<span id="Exam prep-5. Alien methods-Q:"></span><strong id="Q:">Q:</strong> Methods addListener(), removeListener(), and updateProgress() are all synchronized.
+<span id="Exam prep-5. Alien methods-Q:"></span><strong id="Q:">Q:</strong> Methods addListener(), removeListener(), and updateProgress() are all synchronized. Can the deadlock still happen?
 
-</ul>
-<p>
-Can the deadlock still happen?
-</p>
-<ul>
 <li>
 <span id="Exam prep-5. Alien methods-A:"></span><strong id="A:">A:</strong> yes, the deadlock can still happen, because updateProgress() is calling an alien method, and that method could be aquiring another lock, and make a deadlock.
 
@@ -137,7 +131,7 @@ Can the deadlock still happen?
 <span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> No, false
 
 </ul>
-
+<hr />
 <ul>
 <li>
 <span id="Exam prep-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Why did the deadlock happen at 07 min 15 sec?
@@ -146,7 +140,245 @@ Can the deadlock still happen?
 <span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> The deadlock at 7:15 happens because of the intrisic lock, and by rather using reentrant lock with the method lockInterruptedly(), it will work. That method acquires the lock unless the current thread is interrupted, which could happen here,
 
 </ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is a livelock?
 
+<li>
+<span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> A livelock is when all threads time out at the same time, and then entering deadlock again.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is the difference between methods lock() and tryLock()?
+
+<li>
+<span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> A tryLock() times out if it fails to acquire a lock, while lock() doesnt do that.
+
+</ul>
+
+<div id="Exam prep-7. Linked list"><h2 id="7. Linked list" class="header"><a href="#Exam prep-7. Linked list">7. Linked list</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-7. Linked list-Q:"></span><strong id="Q:">Q:</strong> How could you explain hand-over-hand locking?
+
+<li>
+<span id="Exam prep-7. Linked list-A:"></span><strong id="A:">A:</strong> Hand-over-hand locking works by only locking a small part of something, such that the whole object wont be locked and cant be interacted with. In a list hand-over-hand locking can be used to only lock a few elements at a time, instead of the whole list.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-7. Linked list-Q:"></span><strong id="Q:">Q:</strong> Class ReentrantLock supports a fairness parameter. How do you think, what does it mean for a lock to be “fair”? 
+
+<li>
+<span id="Exam prep-7. Linked list-A:"></span><strong id="A:">A:</strong> I think the fairness parameter thinks about time, and how long something has been locked or something like that, and by being fair i think the ReentrantLock prioritizes threads that has been locked the longest.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-7. Linked list-Q:"></span><strong id="Q:">Q:</strong> Method insert() acquires locks starting with the head of the list. Assume we have another method that would acquire locks starting with the tail of the list (this, for example, could be your implementation of the method size()). Is it true that in such case we would break the rule of acquiring locks in a global, fixed order?
+
+<li>
+<span id="Exam prep-7. Linked list-A:"></span><strong id="A:">A:</strong> No, false
+
+</ul>
+
+<div id="Exam prep-8. Condition variables"><h2 id="8. Condition variables" class="header"><a href="#Exam prep-8. Condition variables">8. Condition variables</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-8. Condition variables-Q:"></span><strong id="Q:">Q:</strong> What is the difference between methods signal() and signalAll()?
+
+<li>
+<span id="Exam prep-8. Condition variables-A:"></span><strong id="A:">A:</strong> signal() wakes up one waiting thread, while signalAll() wakes up every waiting thread.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-8. Condition variables-Q:"></span><strong id="Q:">Q:</strong> Why is the solution of the Dining Philosophers Problem that uses condition variables better than our previous solutions?
+
+<li>
+<span id="Exam prep-8. Condition variables-A:"></span><strong id="A:">A:</strong> It's better because this solution covers every possible solution to eating and waiting, while the other solutions could not counter the possibility of only one philosopher eating, and having only one chopstick available. 
+
+</ul>
+
+
+<div id="Exam prep-9. Atomic variables"><h2 id="9. Atomic variables" class="header"><a href="#Exam prep-9. Atomic variables">9. Atomic variables</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-9. Atomic variables-Q:"></span><strong id="Q:">Q:</strong> What are the advantages of using atomic variables?
+
+<li>
+<span id="Exam prep-9. Atomic variables-A:"></span><strong id="A:">A:</strong> The advantages of using atomic variables are that there is no locks, so not possible to deadlock or get asynchronized.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-9. Atomic variables-Q:"></span><strong id="Q:">Q:</strong> What are "volatile" variables? 
+
+<li>
+<span id="Exam prep-9. Atomic variables-A:"></span><strong id="A:">A:</strong> By marking variables as volatile, you guarantee that they are written to and read from main memory, instead of the cache. Without using volatile you have no control over when the JVM reads or writes to and from cache to main memory or vice versa.
+
+</ul>
+
+
+<div id="Exam prep-10. Recap, Await language, Pre/Post-condition"><h2 id="10. Recap, Await language, Pre/Post-condition" class="header"><a href="#Exam prep-10. Recap, Await language, Pre/Post-condition">10. Recap, Await language, Pre/Post-condition</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> What is a preconditon? 
+
+<li>
+<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> A precondition is whats assumed to be true before a program runs
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> What is a postcondition?
+
+<li>
+<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> A postcondition is what will be true after a program is ran - if it terminates.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> Preconditions and postconditions are not executed?
+
+<li>
+<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> What does parralell execution operator (co S_1 || S_2 || ... || S_n oc
+
+</ul>
+<p>
+) terminate?
+</p>
+<ul>
+<li>
+<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> When all processes S_1, ..., S_n terminates
+
+</ul>
+
+<div id="Exam prep-11. Sequential consistency"><h2 id="11. Sequential consistency" class="header"><a href="#Exam prep-11. Sequential consistency">11. Sequential consistency</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-11. Sequential consistency-Q:"></span><strong id="Q:">Q:</strong> What is data race?
+
+<li>
+<span id="Exam prep-11. Sequential consistency-A:"></span><strong id="A:">A:</strong> Data race is when two processes concurrently access the same memory location and at least one of them is a write operation. Accesses are not synchronized.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-11. Sequential consistency-Q:"></span><strong id="Q:">Q:</strong> Consider the following program:
+<pre>
+co x=x+1; || x=x-1; oc
+</pre>
+
+<ul>
+<li>
+Assume that before this program is executed, the value of variable x is 0. We have discussed in the video that after this program is executed, the possible values of x are -1; 0; and 1. In your own words, what could be the reason for that? 
+
+</ul>
+<li>
+<span id="Exam prep-11. Sequential consistency-A:"></span><strong id="A:">A:</strong> A reason for that could be because when the program is ran concurrently,  both the compiler and hardware have the ability to reorder the statements which are being done concurrently, and because the possible values of x depends on the order of which the operations proceed, we can get these different values of x.
+
+</ul>
+
+<div id="Exam prep-12. Atomic operations"><h2 id="12. Atomic operations" class="header"><a href="#Exam prep-12. Atomic operations">12. Atomic operations</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-12. Atomic operations-Q:"></span><strong id="Q:">Q:</strong> Atomic operations cannot be subdivided, but all intermediate states of the execution are visible to other processes?
+
+<li>
+<span id="Exam prep-12. Atomic operations-A:"></span><strong id="A:">A:</strong> False
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-12. Atomic operations-Q:"></span><strong id="Q:">Q:</strong> In general, a statement with at least one atomic operation can be considered atomic?
+
+<li>
+<span id="Exam prep-12. Atomic operations-A:"></span><strong id="A:">A:</strong> False
+
+</ul>
+
+<div id="Exam prep-13. Interleaving example"><h2 id="13. Interleaving example" class="header"><a href="#Exam prep-13. Interleaving example">13. Interleaving example</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-13. Interleaving example-Q:"></span><strong id="Q:">Q:</strong> Write down the list of reads and writes in the following statement:
+<pre>
+x = a * b + c / d + sin(y*10*z);
+</pre>
+
+<ul>
+<li>
+Use "READ x" to denote that a variable x is read, and "WRITE x" to denote that a variable x is written to.
+
+</ul>
+<li>
+<span id="Exam prep-13. Interleaving example-A:"></span><strong id="A:">A:</strong> READ a * READ b + READ c / READd + sin(READ y * 10 * READ z) = WRITE x
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-13. Interleaving example-Q:"></span><strong id="Q:">Q:</strong> Consider the following paralell excution statement:
+<pre>
+co x = x + 1; || x = x + 1; oc
+</pre>
+
+<li>
+Assume that before executing this statement, the value of variable x is 0. In other words, the precondition is that x==0.
+
+<li>
+What are the possible values of x after this statement is executed? (In other words, what is the postcondition?)
+
+<li>
+<span id="Exam prep-13. Interleaving example-A:"></span><strong id="A:">A:</strong> The Postcondition is  either x = =1 or  x == 2. 
+
+</ul>
+
+<div id="Exam prep-14. Atomic actions, At-Most-Once property"><h2 id="14. Atomic actions, At-Most-Once property" class="header"><a href="#Exam prep-14. Atomic actions, At-Most-Once property">14. Atomic actions, At-Most-Once property</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-14. Atomic actions, At-Most-Once property-Q:"></span><strong id="Q:">Q:</strong> Given an assignment statement "z = e", when does it have at-most-once property?
+
+<li>
+<span id="Exam prep-14. Atomic actions, At-Most-Once property-A:"></span><strong id="A:">A:</strong> It has at-most-once property if either <span id="Exam prep-14. Atomic actions, At-Most-Once property-e"></span><strong id="e">e</strong> contains at most one critical reference, and <span id="Exam prep-14. Atomic actions, At-Most-Once property-z"></span><strong id="z">z</strong> is not read by another process. It would also satisfy a.m.o if <span id="Exam prep-14. Atomic actions, At-Most-Once property-e"></span><strong id="e">e</strong> does not contain any critical references.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Exam prep-14. Atomic actions, At-Most-Once property-Q:"></span><strong id="Q:">Q:</strong> Let V be the set of global variables in a statement or an expression; and let W be the set of global write-variables. Assume we have two statements S1 and S2.  How to formally express, using V and W, that S1 and S2 have no common variables?
+
+<li>
+<span id="Exam prep-14. Atomic actions, At-Most-Once property-A:"></span><strong id="A:">A:</strong> That can be formally expressed like this: V(S1)   ∩  V(S2) = Ø
+
+</ul>
+
+<div id="Exam prep-15. Await statement"><h2 id="15. Await statement" class="header"><a href="#Exam prep-15. Await statement">15. Await statement</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-15. Await statement-Q:"></span><strong id="Q:">Q:</strong>
+
+<li>
+<span id="Exam prep-15. Await statement-A:"></span><strong id="A:">A:</strong>
+
+</ul>
 
 
 
