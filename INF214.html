@@ -16,29 +16,29 @@
 
 </ul>
   
-<div id="Exam prep"><h1 id="Exam prep" class="header"><a href="#Exam prep">Exam prep</a></h1></div>
+<div id="Quizzes 1-59"><h1 id="Quizzes 1-59" class="header"><a href="#Quizzes 1-59">Quizzes 1-59</a></h1></div>
 
-<div id="Exam prep-1. Creating a thread in Java"><h2 id="1. Creating a thread in Java" class="header"><a href="#Exam prep-1. Creating a thread in Java">1. Creating a thread in Java</a></h2></div>
+<div id="Quizzes 1-59-1. Creating a thread in Java"><h2 id="1. Creating a thread in Java" class="header"><a href="#Quizzes 1-59-1. Creating a thread in Java">1. Creating a thread in Java</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-1. Creating a thread in Java-Q:"></span><strong id="Q:">Q:</strong> What would happen if we didn't invoke method Thread.yield(); at line 11?
+<span id="Quizzes 1-59-1. Creating a thread in Java-Q:"></span><strong id="Q:">Q:</strong> What would happen if we didn't invoke method Thread.yield(); at line 11?
 
 <li>
-<span id="Exam prep-1. Creating a thread in Java-A:"></span><strong id="A:">A:</strong> If Thread.yield() was not invoked, what would happen is that the main thread would be executed first, and then the specified thread myThread, to a fairly certain degree.
+<span id="Quizzes 1-59-1. Creating a thread in Java-A:"></span><strong id="A:">A:</strong> If Thread.yield() was not invoked, what would happen is that the main thread would be executed first, and then the specified thread myThread, to a fairly certain degree.
 
 </ul>
 
-<div id="Exam prep-2. First lock"><h2 id="2. First lock" class="header"><a href="#Exam prep-2. First lock">2. First lock</a></h2></div>
+<div id="Quizzes 1-59-2. First lock"><h2 id="2. First lock" class="header"><a href="#Quizzes 1-59-2. First lock">2. First lock</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-2. First lock-Q:"></span><strong id="Q:">Q:</strong> Run code given in video and what values were given and why?
+<span id="Quizzes 1-59-2. First lock-Q:"></span><strong id="Q:">Q:</strong> Run code given in video and what values were given and why?
 
 <li>
-<span id="Exam prep-2. First lock-A:"></span><strong id="A:">A:</strong> he code returns different values because without a type of synchronization of the threads, the threads will access the counter at the same time, and error occurs. Accessing at the same time means both will get the same value to increment from when one should have been incremented before the other, and the incrementation of one or the other will not be done properly.
+<span id="Quizzes 1-59-2. First lock-A:"></span><strong id="A:">A:</strong> he code returns different values because without a type of synchronization of the threads, the threads will access the counter at the same time, and error occurs. Accessing at the same time means both will get the same value to increment from when one should have been incremented before the other, and the incrementation of one or the other will not be done properly.
 
 </ul>
 
-<div id="Exam prep-3. Playing with memory"><h2 id="3. Playing with memory" class="header"><a href="#Exam prep-3. Playing with memory">3. Playing with memory</a></h2></div>
+<div id="Quizzes 1-59-3. Playing with memory"><h2 id="3. Playing with memory" class="header"><a href="#Quizzes 1-59-3. Playing with memory">3. Playing with memory</a></h2></div>
 <pre Java>
 public void run(){
 	while (!answerReady) {
@@ -49,215 +49,215 @@ public void run(){
 </pre>
 <ul>
 <li>
-<span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> Modify method run() of the second thread t2 as follows, what implications does this have?
+<span id="Quizzes 1-59-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> Modify method run() of the second thread t2 as follows, what implications does this have?
 
 <li>
-<span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> By modifying the code as such, the thread t2 would halt and sleep, until the condition becomes true, which would break the while loop and produce the output shown in the line under.
+<span id="Quizzes 1-59-3. Playing with memory-A:"></span><strong id="A:">A:</strong> By modifying the code as such, the thread t2 would halt and sleep, until the condition becomes true, which would break the while loop and produce the output shown in the line under.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> What could have switched lines 8 and 9 in the video?
+<span id="Quizzes 1-59-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> What could have switched lines 8 and 9 in the video?
 
 <li>
-<span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> The compiler, JVM or the hardware could have "switched" the lines 8 and 9, because they are all allowed to optimize code by reordering.
+<span id="Quizzes 1-59-3. Playing with memory-A:"></span><strong id="A:">A:</strong> The compiler, JVM or the hardware could have "switched" the lines 8 and 9, because they are all allowed to optimize code by reordering.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> What are the three main problems that may lead to an unexpected behaviour of a concurrent program?
+<span id="Quizzes 1-59-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> What are the three main problems that may lead to an unexpected behaviour of a concurrent program?
 
 <li>
-<span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> race condition, memory visibility and deadlock.
+<span id="Quizzes 1-59-3. Playing with memory-A:"></span><strong id="A:">A:</strong> race condition, memory visibility and deadlock.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> To guarantee correct execution of a concurrent program, it is enough that:
+<span id="Quizzes 1-59-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> To guarantee correct execution of a concurrent program, it is enough that:
 
 <li>
-<span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> both the reading and the writing thread use synchronization
+<span id="Quizzes 1-59-3. Playing with memory-A:"></span><strong id="A:">A:</strong> both the reading and the writing thread use synchronization
 
 </ul>
 
-<div id="Exam prep-4. Multiple locks and Dining Philosophers"><h2 id="4. Multiple locks and Dining Philosophers" class="header"><a href="#Exam prep-4. Multiple locks and Dining Philosophers">4. Multiple locks and Dining Philosophers</a></h2></div>
+<div id="Quizzes 1-59-4. Multiple locks and Dining Philosophers"><h2 id="4. Multiple locks and Dining Philosophers" class="header"><a href="#Quizzes 1-59-4. Multiple locks and Dining Philosophers">4. Multiple locks and Dining Philosophers</a></h2></div>
 
 <ul>
 <li>
-<span id="Exam prep-4. Multiple locks and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> In code, how do we express "taking the left chopstick"? 
+<span id="Quizzes 1-59-4. Multiple locks and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> In code, how do we express "taking the left chopstick"? 
 
 <li>
-<span id="Exam prep-4. Multiple locks and Dining Philosophers-A:"></span><strong id="A:">A:</strong> synchronized(left)
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-4. Multiple locks and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> Imagine that all the philosophers decide to eat at the same time, so they all grab their left chopstick. What will happen next?
-
-<li>
-<span id="Exam prep-4. Multiple locks and Dining Philosophers-A:"></span><strong id="A:">A:</strong> There will not be enough chopsticks for them to all eat at the same time, and they wont know what to do, the program will hang.
-
-</ul>
-
-<div id="Exam prep-5. Alien methods"><h2 id="5. Alien methods" class="header"><a href="#Exam prep-5. Alien methods">5. Alien methods</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-5. Alien methods-Q:"></span><strong id="Q:">Q:</strong> Several methods are all  <em>synchronized</em>, can multiple threads call them without "interfering" with eachother?
-
-<li>
-<span id="Exam prep-5. Alien methods-A:"></span><strong id="A:">A:</strong> Yes, true
+<span id="Quizzes 1-59-4. Multiple locks and Dining Philosophers-A:"></span><strong id="A:">A:</strong> synchronized(left)
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-5. Alien methods-Q:"></span><strong id="Q:">Q:</strong> Methods addListener(), removeListener(), and updateProgress() are all synchronized. Can the deadlock still happen?
+<span id="Quizzes 1-59-4. Multiple locks and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> Imagine that all the philosophers decide to eat at the same time, so they all grab their left chopstick. What will happen next?
 
 <li>
-<span id="Exam prep-5. Alien methods-A:"></span><strong id="A:">A:</strong> yes, the deadlock can still happen, because updateProgress() is calling an alien method, and that method could be aquiring another lock, and make a deadlock.
+<span id="Quizzes 1-59-4. Multiple locks and Dining Philosophers-A:"></span><strong id="A:">A:</strong> There will not be enough chopsticks for them to all eat at the same time, and they wont know what to do, the program will hang.
 
 </ul>
 
-<div id="Exam prep-Reentrant lock"><h2 id="Reentrant lock" class="header"><a href="#Exam prep-Reentrant lock">Reentrant lock</a></h2></div>
+<div id="Quizzes 1-59-5. Alien methods"><h2 id="5. Alien methods" class="header"><a href="#Quizzes 1-59-5. Alien methods">5. Alien methods</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Can we interrupt a thread that is blocked as a result of trying to acquire an intrinsic lock?
+<span id="Quizzes 1-59-5. Alien methods-Q:"></span><strong id="Q:">Q:</strong> Several methods are all  <em>synchronized</em>, can multiple threads call them without "interfering" with eachother?
 
 <li>
-<span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> No, false
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Why did the deadlock happen at 07 min 15 sec?
-
-<li>
-<span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> The deadlock at 7:15 happens because of the intrisic lock, and by rather using reentrant lock with the method lockInterruptedly(), it will work. That method acquires the lock unless the current thread is interrupted, which could happen here,
+<span id="Quizzes 1-59-5. Alien methods-A:"></span><strong id="A:">A:</strong> Yes, true
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is a livelock?
+<span id="Quizzes 1-59-5. Alien methods-Q:"></span><strong id="Q:">Q:</strong> Methods addListener(), removeListener(), and updateProgress() are all synchronized. Can the deadlock still happen?
 
 <li>
-<span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> A livelock is when all threads time out at the same time, and then entering deadlock again.
+<span id="Quizzes 1-59-5. Alien methods-A:"></span><strong id="A:">A:</strong> yes, the deadlock can still happen, because updateProgress() is calling an alien method, and that method could be aquiring another lock, and make a deadlock.
+
+</ul>
+
+<div id="Quizzes 1-59-Reentrant lock"><h2 id="Reentrant lock" class="header"><a href="#Quizzes 1-59-Reentrant lock">Reentrant lock</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Can we interrupt a thread that is blocked as a result of trying to acquire an intrinsic lock?
+
+<li>
+<span id="Quizzes 1-59-Reentrant lock-A:"></span><strong id="A:">A:</strong> No, false
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is the difference between methods lock() and tryLock()?
+<span id="Quizzes 1-59-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Why did the deadlock happen at 07 min 15 sec?
 
 <li>
-<span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> A tryLock() times out if it fails to acquire a lock, while lock() doesnt do that.
-
-</ul>
-
-<div id="Exam prep-7. Linked list"><h2 id="7. Linked list" class="header"><a href="#Exam prep-7. Linked list">7. Linked list</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-7. Linked list-Q:"></span><strong id="Q:">Q:</strong> How could you explain hand-over-hand locking?
-
-<li>
-<span id="Exam prep-7. Linked list-A:"></span><strong id="A:">A:</strong> Hand-over-hand locking works by only locking a small part of something, such that the whole object wont be locked and cant be interacted with. In a list hand-over-hand locking can be used to only lock a few elements at a time, instead of the whole list.
+<span id="Quizzes 1-59-Reentrant lock-A:"></span><strong id="A:">A:</strong> The deadlock at 7:15 happens because of the intrisic lock, and by rather using reentrant lock with the method lockInterruptedly(), it will work. That method acquires the lock unless the current thread is interrupted, which could happen here,
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-7. Linked list-Q:"></span><strong id="Q:">Q:</strong> Class ReentrantLock supports a fairness parameter. How do you think, what does it mean for a lock to be “fair”? 
+<span id="Quizzes 1-59-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is a livelock?
 
 <li>
-<span id="Exam prep-7. Linked list-A:"></span><strong id="A:">A:</strong> I think the fairness parameter thinks about time, and how long something has been locked or something like that, and by being fair i think the ReentrantLock prioritizes threads that has been locked the longest.
+<span id="Quizzes 1-59-Reentrant lock-A:"></span><strong id="A:">A:</strong> A livelock is when all threads time out at the same time, and then entering deadlock again.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-7. Linked list-Q:"></span><strong id="Q:">Q:</strong> Method insert() acquires locks starting with the head of the list. Assume we have another method that would acquire locks starting with the tail of the list (this, for example, could be your implementation of the method size()). Is it true that in such case we would break the rule of acquiring locks in a global, fixed order?
+<span id="Quizzes 1-59-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is the difference between methods lock() and tryLock()?
 
 <li>
-<span id="Exam prep-7. Linked list-A:"></span><strong id="A:">A:</strong> No, false
+<span id="Quizzes 1-59-Reentrant lock-A:"></span><strong id="A:">A:</strong> A tryLock() times out if it fails to acquire a lock, while lock() doesnt do that.
 
 </ul>
 
-<div id="Exam prep-8. Condition variables"><h2 id="8. Condition variables" class="header"><a href="#Exam prep-8. Condition variables">8. Condition variables</a></h2></div>
+<div id="Quizzes 1-59-7. Linked list"><h2 id="7. Linked list" class="header"><a href="#Quizzes 1-59-7. Linked list">7. Linked list</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-8. Condition variables-Q:"></span><strong id="Q:">Q:</strong> What is the difference between methods signal() and signalAll()?
+<span id="Quizzes 1-59-7. Linked list-Q:"></span><strong id="Q:">Q:</strong> How could you explain hand-over-hand locking?
 
 <li>
-<span id="Exam prep-8. Condition variables-A:"></span><strong id="A:">A:</strong> signal() wakes up one waiting thread, while signalAll() wakes up every waiting thread.
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-8. Condition variables-Q:"></span><strong id="Q:">Q:</strong> Why is the solution of the Dining Philosophers Problem that uses condition variables better than our previous solutions?
-
-<li>
-<span id="Exam prep-8. Condition variables-A:"></span><strong id="A:">A:</strong> It's better because this solution covers every possible solution to eating and waiting, while the other solutions could not counter the possibility of only one philosopher eating, and having only one chopstick available. 
-
-</ul>
-
-
-<div id="Exam prep-9. Atomic variables"><h2 id="9. Atomic variables" class="header"><a href="#Exam prep-9. Atomic variables">9. Atomic variables</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-9. Atomic variables-Q:"></span><strong id="Q:">Q:</strong> What are the advantages of using atomic variables?
-
-<li>
-<span id="Exam prep-9. Atomic variables-A:"></span><strong id="A:">A:</strong> The advantages of using atomic variables are that there is no locks, so not possible to deadlock or get asynchronized.
+<span id="Quizzes 1-59-7. Linked list-A:"></span><strong id="A:">A:</strong> Hand-over-hand locking works by only locking a small part of something, such that the whole object wont be locked and cant be interacted with. In a list hand-over-hand locking can be used to only lock a few elements at a time, instead of the whole list.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-9. Atomic variables-Q:"></span><strong id="Q:">Q:</strong> What are "volatile" variables? 
+<span id="Quizzes 1-59-7. Linked list-Q:"></span><strong id="Q:">Q:</strong> Class ReentrantLock supports a fairness parameter. How do you think, what does it mean for a lock to be “fair”? 
 
 <li>
-<span id="Exam prep-9. Atomic variables-A:"></span><strong id="A:">A:</strong> By marking variables as volatile, you guarantee that they are written to and read from main memory, instead of the cache. Without using volatile you have no control over when the JVM reads or writes to and from cache to main memory or vice versa.
-
-</ul>
-
-
-<div id="Exam prep-10. Recap, Await language, Pre/Post-condition"><h2 id="10. Recap, Await language, Pre/Post-condition" class="header"><a href="#Exam prep-10. Recap, Await language, Pre/Post-condition">10. Recap, Await language, Pre/Post-condition</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> What is a preconditon? 
-
-<li>
-<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> A precondition is whats assumed to be true before a program runs
+<span id="Quizzes 1-59-7. Linked list-A:"></span><strong id="A:">A:</strong> I think the fairness parameter thinks about time, and how long something has been locked or something like that, and by being fair i think the ReentrantLock prioritizes threads that has been locked the longest.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> What is a postcondition?
+<span id="Quizzes 1-59-7. Linked list-Q:"></span><strong id="Q:">Q:</strong> Method insert() acquires locks starting with the head of the list. Assume we have another method that would acquire locks starting with the tail of the list (this, for example, could be your implementation of the method size()). Is it true that in such case we would break the rule of acquiring locks in a global, fixed order?
 
 <li>
-<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> A postcondition is what will be true after a program is ran - if it terminates.
+<span id="Quizzes 1-59-7. Linked list-A:"></span><strong id="A:">A:</strong> No, false
+
+</ul>
+
+<div id="Quizzes 1-59-8. Condition variables"><h2 id="8. Condition variables" class="header"><a href="#Quizzes 1-59-8. Condition variables">8. Condition variables</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-8. Condition variables-Q:"></span><strong id="Q:">Q:</strong> What is the difference between methods signal() and signalAll()?
+
+<li>
+<span id="Quizzes 1-59-8. Condition variables-A:"></span><strong id="A:">A:</strong> signal() wakes up one waiting thread, while signalAll() wakes up every waiting thread.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> Preconditions and postconditions are not executed?
+<span id="Quizzes 1-59-8. Condition variables-Q:"></span><strong id="Q:">Q:</strong> Why is the solution of the Dining Philosophers Problem that uses condition variables better than our previous solutions?
 
 <li>
-<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> True
+<span id="Quizzes 1-59-8. Condition variables-A:"></span><strong id="A:">A:</strong> It's better because this solution covers every possible solution to eating and waiting, while the other solutions could not counter the possibility of only one philosopher eating, and having only one chopstick available. 
+
+</ul>
+
+
+<div id="Quizzes 1-59-9. Atomic variables"><h2 id="9. Atomic variables" class="header"><a href="#Quizzes 1-59-9. Atomic variables">9. Atomic variables</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-9. Atomic variables-Q:"></span><strong id="Q:">Q:</strong> What are the advantages of using atomic variables?
+
+<li>
+<span id="Quizzes 1-59-9. Atomic variables-A:"></span><strong id="A:">A:</strong> The advantages of using atomic variables are that there is no locks, so not possible to deadlock or get asynchronized.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> What does parralell execution operator (co S_1 || S_2 || ... || S_n oc
+<span id="Quizzes 1-59-9. Atomic variables-Q:"></span><strong id="Q:">Q:</strong> What are "volatile" variables? 
+
+<li>
+<span id="Quizzes 1-59-9. Atomic variables-A:"></span><strong id="A:">A:</strong> By marking variables as volatile, you guarantee that they are written to and read from main memory, instead of the cache. Without using volatile you have no control over when the JVM reads or writes to and from cache to main memory or vice versa.
+
+</ul>
+
+
+<div id="Quizzes 1-59-10. Recap, Await language, Pre/Post-condition"><h2 id="10. Recap, Await language, Pre/Post-condition" class="header"><a href="#Quizzes 1-59-10. Recap, Await language, Pre/Post-condition">10. Recap, Await language, Pre/Post-condition</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> What is a preconditon? 
+
+<li>
+<span id="Quizzes 1-59-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> A precondition is whats assumed to be true before a program runs
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> What is a postcondition?
+
+<li>
+<span id="Quizzes 1-59-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> A postcondition is what will be true after a program is ran - if it terminates.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> Preconditions and postconditions are not executed?
+
+<li>
+<span id="Quizzes 1-59-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-10. Recap, Await language, Pre/Post-condition-Q:"></span><strong id="Q:">Q:</strong> What does parralell execution operator (co S_1 || S_2 || ... || S_n oc
 
 </ul>
 <p>
@@ -265,23 +265,23 @@ public void run(){
 </p>
 <ul>
 <li>
-<span id="Exam prep-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> When all processes S_1, ..., S_n terminates
+<span id="Quizzes 1-59-10. Recap, Await language, Pre/Post-condition-A:"></span><strong id="A:">A:</strong> When all processes S_1, ..., S_n terminates
 
 </ul>
 
-<div id="Exam prep-11. Sequential consistency"><h2 id="11. Sequential consistency" class="header"><a href="#Exam prep-11. Sequential consistency">11. Sequential consistency</a></h2></div>
+<div id="Quizzes 1-59-11. Sequential consistency"><h2 id="11. Sequential consistency" class="header"><a href="#Quizzes 1-59-11. Sequential consistency">11. Sequential consistency</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-11. Sequential consistency-Q:"></span><strong id="Q:">Q:</strong> What is data race?
+<span id="Quizzes 1-59-11. Sequential consistency-Q:"></span><strong id="Q:">Q:</strong> What is data race?
 
 <li>
-<span id="Exam prep-11. Sequential consistency-A:"></span><strong id="A:">A:</strong> Data race is when two processes concurrently access the same memory location and at least one of them is a write operation. Accesses are not synchronized.
+<span id="Quizzes 1-59-11. Sequential consistency-A:"></span><strong id="A:">A:</strong> Data race is when two processes concurrently access the same memory location and at least one of them is a write operation. Accesses are not synchronized.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-11. Sequential consistency-Q:"></span><strong id="Q:">Q:</strong> Consider the following program:
+<span id="Quizzes 1-59-11. Sequential consistency-Q:"></span><strong id="Q:">Q:</strong> Consider the following program:
 <pre>
 co x=x+1; || x=x-1; oc
 </pre>
@@ -292,33 +292,33 @@ Assume that before this program is executed, the value of variable x is 0. We ha
 
 </ul>
 <li>
-<span id="Exam prep-11. Sequential consistency-A:"></span><strong id="A:">A:</strong> A reason for that could be because when the program is ran concurrently,  both the compiler and hardware have the ability to reorder the statements which are being done concurrently, and because the possible values of x depends on the order of which the operations proceed, we can get these different values of x.
+<span id="Quizzes 1-59-11. Sequential consistency-A:"></span><strong id="A:">A:</strong> A reason for that could be because when the program is ran concurrently,  both the compiler and hardware have the ability to reorder the statements which are being done concurrently, and because the possible values of x depends on the order of which the operations proceed, we can get these different values of x.
 
 </ul>
 
-<div id="Exam prep-12. Atomic operations"><h2 id="12. Atomic operations" class="header"><a href="#Exam prep-12. Atomic operations">12. Atomic operations</a></h2></div>
+<div id="Quizzes 1-59-12. Atomic operations"><h2 id="12. Atomic operations" class="header"><a href="#Quizzes 1-59-12. Atomic operations">12. Atomic operations</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-12. Atomic operations-Q:"></span><strong id="Q:">Q:</strong> Atomic operations cannot be subdivided, but all intermediate states of the execution are visible to other processes?
+<span id="Quizzes 1-59-12. Atomic operations-Q:"></span><strong id="Q:">Q:</strong> Atomic operations cannot be subdivided, but all intermediate states of the execution are visible to other processes?
 
 <li>
-<span id="Exam prep-12. Atomic operations-A:"></span><strong id="A:">A:</strong> False
+<span id="Quizzes 1-59-12. Atomic operations-A:"></span><strong id="A:">A:</strong> False
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-12. Atomic operations-Q:"></span><strong id="Q:">Q:</strong> In general, a statement with at least one atomic operation can be considered atomic?
+<span id="Quizzes 1-59-12. Atomic operations-Q:"></span><strong id="Q:">Q:</strong> In general, a statement with at least one atomic operation can be considered atomic?
 
 <li>
-<span id="Exam prep-12. Atomic operations-A:"></span><strong id="A:">A:</strong> False
+<span id="Quizzes 1-59-12. Atomic operations-A:"></span><strong id="A:">A:</strong> False
 
 </ul>
 
-<div id="Exam prep-13. Interleaving example"><h2 id="13. Interleaving example" class="header"><a href="#Exam prep-13. Interleaving example">13. Interleaving example</a></h2></div>
+<div id="Quizzes 1-59-13. Interleaving example"><h2 id="13. Interleaving example" class="header"><a href="#Quizzes 1-59-13. Interleaving example">13. Interleaving example</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-13. Interleaving example-Q:"></span><strong id="Q:">Q:</strong> Write down the list of reads and writes in the following statement:
+<span id="Quizzes 1-59-13. Interleaving example-Q:"></span><strong id="Q:">Q:</strong> Write down the list of reads and writes in the following statement:
 <pre>
 x = a * b + c / d + sin(y*10*z);
 </pre>
@@ -329,13 +329,13 @@ Use "READ x" to denote that a variable x is read, and "WRITE x" to denote that a
 
 </ul>
 <li>
-<span id="Exam prep-13. Interleaving example-A:"></span><strong id="A:">A:</strong> READ a * READ b + READ c / READd + sin(READ y * 10 * READ z) = WRITE x
+<span id="Quizzes 1-59-13. Interleaving example-A:"></span><strong id="A:">A:</strong> READ a * READ b + READ c / READd + sin(READ y * 10 * READ z) = WRITE x
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-13. Interleaving example-Q:"></span><strong id="Q:">Q:</strong> Consider the following paralell excution statement:
+<span id="Quizzes 1-59-13. Interleaving example-Q:"></span><strong id="Q:">Q:</strong> Consider the following paralell excution statement:
 <pre>
 co x = x + 1; || x = x + 1; oc
 </pre>
@@ -349,119 +349,119 @@ What are the possible values of x after this statement is executed? (In other wo
 
 </ul>
 <li>
-<span id="Exam prep-13. Interleaving example-A:"></span><strong id="A:">A:</strong> The Postcondition is  either x = =1 or  x == 2. 
+<span id="Quizzes 1-59-13. Interleaving example-A:"></span><strong id="A:">A:</strong> The Postcondition is  either x = =1 or  x == 2. 
 
 </ul>
 
-<div id="Exam prep-14. Atomic actions, At-Most-Once property"><h2 id="14. Atomic actions, At-Most-Once property" class="header"><a href="#Exam prep-14. Atomic actions, At-Most-Once property">14. Atomic actions, At-Most-Once property</a></h2></div>
+<div id="Quizzes 1-59-14. Atomic actions, At-Most-Once property"><h2 id="14. Atomic actions, At-Most-Once property" class="header"><a href="#Quizzes 1-59-14. Atomic actions, At-Most-Once property">14. Atomic actions, At-Most-Once property</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-14. Atomic actions, At-Most-Once property-Q:"></span><strong id="Q:">Q:</strong> Given an assignment statement "z = e", when does it have at-most-once property?
+<span id="Quizzes 1-59-14. Atomic actions, At-Most-Once property-Q:"></span><strong id="Q:">Q:</strong> Given an assignment statement "z = e", when does it have at-most-once property?
 
 <li>
-<span id="Exam prep-14. Atomic actions, At-Most-Once property-A:"></span><strong id="A:">A:</strong> It has at-most-once property if either <span id="Exam prep-14. Atomic actions, At-Most-Once property-e"></span><strong id="e">e</strong> contains at most one critical reference, and <span id="Exam prep-14. Atomic actions, At-Most-Once property-z"></span><strong id="z">z</strong> is not read by another process. It would also satisfy a.m.o if <span id="Exam prep-14. Atomic actions, At-Most-Once property-e"></span><strong id="e">e</strong> does not contain any critical references.
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-14. Atomic actions, At-Most-Once property-Q:"></span><strong id="Q:">Q:</strong> Let V be the set of global variables in a statement or an expression; and let W be the set of global write-variables. Assume we have two statements S1 and S2.  How to formally express, using V and W, that S1 and S2 have no common variables?
-
-<li>
-<span id="Exam prep-14. Atomic actions, At-Most-Once property-A:"></span><strong id="A:">A:</strong> That can be formally expressed like this: V(S1)   ∩  V(S2) = Ø
-
-</ul>
-
-<div id="Exam prep-15. Await statement"><h2 id="15. Await statement" class="header"><a href="#Exam prep-15. Await statement">15. Await statement</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> What is mutual exclusion?
-
-<li>
-<span id="Exam prep-15. Await statement-A:"></span><strong id="A:">A:</strong> Mutual exclusion is a type of synchronization that ensures that statements in different processes cannot execute at the same time.
+<span id="Quizzes 1-59-14. Atomic actions, At-Most-Once property-A:"></span><strong id="A:">A:</strong> It has at-most-once property if either <span id="Quizzes 1-59-14. Atomic actions, At-Most-Once property-e"></span><strong id="e">e</strong> contains at most one critical reference, and <span id="Quizzes 1-59-14. Atomic actions, At-Most-Once property-z"></span><strong id="z">z</strong> is not read by another process. It would also satisfy a.m.o if <span id="Quizzes 1-59-14. Atomic actions, At-Most-Once property-e"></span><strong id="e">e</strong> does not contain any critical references.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> What is condition synchronization?
+<span id="Quizzes 1-59-14. Atomic actions, At-Most-Once property-Q:"></span><strong id="Q:">Q:</strong> Let V be the set of global variables in a statement or an expression; and let W be the set of global write-variables. Assume we have two statements S1 and S2.  How to formally express, using V and W, that S1 and S2 have no common variables?
 
 <li>
-<span id="Exam prep-15. Await statement-A:"></span><strong id="A:">A:</strong> Condition  synchronization is a type of synchronization that involves delaying a process until some boolean condition is true.
+<span id="Quizzes 1-59-14. Atomic actions, At-Most-Once property-A:"></span><strong id="A:">A:</strong> That can be formally expressed like this: V(S1)   ∩  V(S2) = Ø
+
+</ul>
+
+<div id="Quizzes 1-59-15. Await statement"><h2 id="15. Await statement" class="header"><a href="#Quizzes 1-59-15. Await statement">15. Await statement</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> What is mutual exclusion?
+
+<li>
+<span id="Quizzes 1-59-15. Await statement-A:"></span><strong id="A:">A:</strong> Mutual exclusion is a type of synchronization that ensures that statements in different processes cannot execute at the same time.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> Assume that statement S is an assignment statement, and assume that it has the at-most-once property. Will it be executed atomically in this case?
+<span id="Quizzes 1-59-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> What is condition synchronization?
 
 <li>
-<span id="Exam prep-15. Await statement-A:"></span><strong id="A:">A:</strong> True
+<span id="Quizzes 1-59-15. Await statement-A:"></span><strong id="A:">A:</strong> Condition  synchronization is a type of synchronization that involves delaying a process until some boolean condition is true.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> Assume that a statement S is implemented by a single machine instruction. Will it be executed atomically in this case?
+<span id="Quizzes 1-59-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> Assume that statement S is an assignment statement, and assume that it has the at-most-once property. Will it be executed atomically in this case?
 
 <li>
-<span id="Exam prep-15. Await statement-A:"></span><strong id="A:">A:</strong> True
+<span id="Quizzes 1-59-15. Await statement-A:"></span><strong id="A:">A:</strong> True
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> Assume that S is a block of statements, and one of the statements in S has the at-most-once property. Will the block S be executed atomically in this case?
+<span id="Quizzes 1-59-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> Assume that a statement S is implemented by a single machine instruction. Will it be executed atomically in this case?
 
 <li>
-<span id="Exam prep-15. Await statement-A:"></span><strong id="A:">A:</strong> False
+<span id="Quizzes 1-59-15. Await statement-A:"></span><strong id="A:">A:</strong> True
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> Assume that S is a block of statements, and all but one of the statements in S have the at-most-once property. Will the block S be executed atomically in this case?
+<span id="Quizzes 1-59-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> Assume that S is a block of statements, and one of the statements in S has the at-most-once property. Will the block S be executed atomically in this case?
 
 <li>
-<span id="Exam prep-15. Await statement-A:"></span><strong id="A:">A:</strong> False
-
-</ul>
-
-<div id="Exam prep-16. Properties of concurrent programs"><h2 id="16. Properties of concurrent programs" class="header"><a href="#Exam prep-16. Properties of concurrent programs">16. Properties of concurrent programs</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-16. Properties of concurrent programs-Q:"></span><strong id="Q:">Q:</strong> Let P be a predicate over program history, i.e. a property. Assume that P is true for all possible histories of a given program. How is such property P then called?
-
-<li>
-<span id="Exam prep-16. Properties of concurrent programs-A:"></span><strong id="A:">A:</strong> If this is the case, then the property P is called a True property.
+<span id="Quizzes 1-59-15. Await statement-A:"></span><strong id="A:">A:</strong> False
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-16. Properties of concurrent programs-Q:"></span><strong id="Q:">Q:</strong> Give an example of a non-terminating program in your favourite programming language. Please don't forget to mention what language you used.
+<span id="Quizzes 1-59-15. Await statement-Q:"></span><strong id="Q:">Q:</strong> Assume that S is a block of statements, and all but one of the statements in S have the at-most-once property. Will the block S be executed atomically in this case?
 
 <li>
-<span id="Exam prep-16. Properties of concurrent programs-A:"></span><strong id="A:">A:</strong> a while loop which never stops because condition is always true
+<span id="Quizzes 1-59-15. Await statement-A:"></span><strong id="A:">A:</strong> False
 
 </ul>
 
-<div id="Exam prep-17. Safety and liveness properties"><h2 id="17. Safety and liveness properties" class="header"><a href="#Exam prep-17. Safety and liveness properties">17. Safety and liveness properties</a></h2></div>
+<div id="Quizzes 1-59-16. Properties of concurrent programs"><h2 id="16. Properties of concurrent programs" class="header"><a href="#Quizzes 1-59-16. Properties of concurrent programs">16. Properties of concurrent programs</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-17. Safety and liveness properties-Q:"></span><strong id="Q:">Q:</strong> What is a safety property? Give examples
+<span id="Quizzes 1-59-16. Properties of concurrent programs-Q:"></span><strong id="Q:">Q:</strong> Let P be a predicate over program history, i.e. a property. Assume that P is true for all possible histories of a given program. How is such property P then called?
 
 <li>
-<span id="Exam prep-17. Safety and liveness properties-A:"></span><strong id="A:">A:</strong> Safety property says that the final state is correct, and examples of this can be mutual exclusion, and the absence of a deadlock.
+<span id="Quizzes 1-59-16. Properties of concurrent programs-A:"></span><strong id="A:">A:</strong> If this is the case, then the property P is called a True property.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-17. Safety and liveness properties-Q:"></span><strong id="Q:">Q:</strong> What is a liveness property? Give examples
+<span id="Quizzes 1-59-16. Properties of concurrent programs-Q:"></span><strong id="Q:">Q:</strong> Give an example of a non-terminating program in your favourite programming language. Please don't forget to mention what language you used.
 
 <li>
-<span id="Exam prep-17. Safety and liveness properties-A:"></span><strong id="A:">A:</strong> Liveness property says that the program will terminate, and examples of liveness properties are:
+<span id="Quizzes 1-59-16. Properties of concurrent programs-A:"></span><strong id="A:">A:</strong> a while loop which never stops because condition is always true
+
+</ul>
+
+<div id="Quizzes 1-59-17. Safety and liveness properties"><h2 id="17. Safety and liveness properties" class="header"><a href="#Quizzes 1-59-17. Safety and liveness properties">17. Safety and liveness properties</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-17. Safety and liveness properties-Q:"></span><strong id="Q:">Q:</strong> What is a safety property? Give examples
+
+<li>
+<span id="Quizzes 1-59-17. Safety and liveness properties-A:"></span><strong id="A:">A:</strong> Safety property says that the final state is correct, and examples of this can be mutual exclusion, and the absence of a deadlock.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-17. Safety and liveness properties-Q:"></span><strong id="Q:">Q:</strong> What is a liveness property? Give examples
+
+<li>
+<span id="Quizzes 1-59-17. Safety and liveness properties-A:"></span><strong id="A:">A:</strong> Liveness property says that the program will terminate, and examples of liveness properties are:
 
 <ul>
 <li>
@@ -473,75 +473,75 @@ a message will eventually reach its destination
 </ul>
 </ul>
 
-<div id="Exam prep-18. Scheduling policies and fairness"><h2 id="18. Scheduling policies and fairness" class="header"><a href="#Exam prep-18. Scheduling policies and fairness">18. Scheduling policies and fairness</a></h2></div>
+<div id="Quizzes 1-59-18. Scheduling policies and fairness"><h2 id="18. Scheduling policies and fairness" class="header"><a href="#Quizzes 1-59-18. Scheduling policies and fairness">18. Scheduling policies and fairness</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-18. Scheduling policies and fairness-Q:"></span><strong id="Q:">Q:</strong> What is meant by "eligible atomic action"?
+<span id="Quizzes 1-59-18. Scheduling policies and fairness-Q:"></span><strong id="Q:">Q:</strong> What is meant by "eligible atomic action"?
 
 <li>
-<span id="Exam prep-18. Scheduling policies and fairness-A:"></span><strong id="A:">A:</strong> When an atomic action is an "eligible atomic action", that means that it is the next atomic action in the process that could be executed.
+<span id="Quizzes 1-59-18. Scheduling policies and fairness-A:"></span><strong id="A:">A:</strong> When an atomic action is an "eligible atomic action", that means that it is the next atomic action in the process that could be executed.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-18. Scheduling policies and fairness-Q:"></span><strong id="Q:">Q:</strong> Which kinds of scheduling policies were mentioned in the video?
+<span id="Quizzes 1-59-18. Scheduling policies and fairness-Q:"></span><strong id="Q:">Q:</strong> Which kinds of scheduling policies were mentioned in the video?
 
 <li>
-<span id="Exam prep-18. Scheduling policies and fairness-A:"></span><strong id="A:">A:</strong> unconditional fairness, weak fairness, strong fairness
+<span id="Quizzes 1-59-18. Scheduling policies and fairness-A:"></span><strong id="A:">A:</strong> unconditional fairness, weak fairness, strong fairness
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-18. Scheduling policies and fairness-Q:"></span><strong id="Q:">Q:</strong> How does round-robin work?
+<span id="Quizzes 1-59-18. Scheduling policies and fairness-Q:"></span><strong id="Q:">Q:</strong> How does round-robin work?
 
 <li>
-<span id="Exam prep-18. Scheduling policies and fairness-A:"></span><strong id="A:">A:</strong> Round robin works by giving processes time slices in equal portions and in circular order.
+<span id="Quizzes 1-59-18. Scheduling policies and fairness-A:"></span><strong id="A:">A:</strong> Round robin works by giving processes time slices in equal portions and in circular order.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-18. Scheduling policies and fairness-Q:"></span><strong id="Q:">Q:</strong> What is a weakly fair scheduling policy?
+<span id="Quizzes 1-59-18. Scheduling policies and fairness-Q:"></span><strong id="Q:">Q:</strong> What is a weakly fair scheduling policy?
 
 <li>
-<span id="Exam prep-18. Scheduling policies and fairness-A:"></span><strong id="A:">A:</strong> A weakly fair scheduling policy is a scheduling policy which is unconditionally fair, and every atomic action that is eligible will eventually be executed, assuming its condition becomes true and remains true until it is sen by the process that executes the conditional atomic action.
+<span id="Quizzes 1-59-18. Scheduling policies and fairness-A:"></span><strong id="A:">A:</strong> A weakly fair scheduling policy is a scheduling policy which is unconditionally fair, and every atomic action that is eligible will eventually be executed, assuming its condition becomes true and remains true until it is sen by the process that executes the conditional atomic action.
 
 </ul>
 
-<div id="Exam prep-19. Critical section problem"><h2 id="19. Critical section problem" class="header"><a href="#Exam prep-19. Critical section problem">19. Critical section problem</a></h2></div>
+<div id="Quizzes 1-59-19. Critical section problem"><h2 id="19. Critical section problem" class="header"><a href="#Quizzes 1-59-19. Critical section problem">19. Critical section problem</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-19. Critical section problem-Q:"></span><strong id="Q:">Q:</strong> Can a solution to critical section problem be used to implement await statements?
+<span id="Quizzes 1-59-19. Critical section problem-Q:"></span><strong id="Q:">Q:</strong> Can a solution to critical section problem be used to implement await statements?
 
 <li>
-<span id="Exam prep-19. Critical section problem-A:"></span><strong id="A:">A:</strong> True
+<span id="Quizzes 1-59-19. Critical section problem-A:"></span><strong id="A:">A:</strong> True
 
 </ul>
 
 <ul>
 <li>
-<span id="Exam prep-19. Critical section problem-Q:"></span><strong id="Q:">Q:</strong> Which properties must the entry and exit protocols satisfy?
+<span id="Quizzes 1-59-19. Critical section problem-Q:"></span><strong id="Q:">Q:</strong> Which properties must the entry and exit protocols satisfy?
 
 <li>
-<span id="Exam prep-19. Critical section problem-A:"></span><strong id="A:">A:</strong> They must satisfy: Mutual exclusion, Absence of deadlock(livelock) , Absence of unneccesary delay and Eventual entry.
+<span id="Quizzes 1-59-19. Critical section problem-A:"></span><strong id="A:">A:</strong> They must satisfy: Mutual exclusion, Absence of deadlock(livelock) , Absence of unneccesary delay and Eventual entry.
 
 </ul>
 
-<div id="Exam prep-20. Spin locks, Test and Set, Test and Test and Set"><h2 id="20. Spin locks, Test and Set, Test and Test and Set" class="header"><a href="#Exam prep-20. Spin locks, Test and Set, Test and Test and Set">20. Spin locks, Test and Set, Test and Test and Set</a></h2></div>
+<div id="Quizzes 1-59-20. Spin locks, Test and Set, Test and Test and Set"><h2 id="20. Spin locks, Test and Set, Test and Test and Set" class="header"><a href="#Quizzes 1-59-20. Spin locks, Test and Set, Test and Test and Set">20. Spin locks, Test and Set, Test and Test and Set</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-20. Spin locks, Test and Set, Test and Test and Set-Q:"></span><strong id="Q:">Q:</strong> Given a Boolean variable b, what is the semantics of the Test-and-Set instruction?
+<span id="Quizzes 1-59-20. Spin locks, Test and Set, Test and Test and Set-Q:"></span><strong id="Q:">Q:</strong> Given a Boolean variable b, what is the semantics of the Test-and-Set instruction?
 
 <li>
-<span id="Exam prep-20. Spin locks, Test and Set, Test and Test and Set-A:"></span><strong id="A:">A:</strong> &lt;bool x=b; b=true; return x;&gt; 
+<span id="Quizzes 1-59-20. Spin locks, Test and Set, Test and Test and Set-A:"></span><strong id="A:">A:</strong> &lt;bool x=b; b=true; return x;&gt; 
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-20. Spin locks, Test and Set, Test and Test and Set-Q:"></span><strong id="Q:">Q:</strong> Consider the Test and Test and Set instruction:
+<span id="Quizzes 1-59-20. Spin locks, Test and Set, Test and Test and Set-Q:"></span><strong id="Q:">Q:</strong> Consider the Test and Test and Set instruction:
 <pre>
 while(lock) {} 
 while(TestAndSet(lock)) {
@@ -555,33 +555,33 @@ What is special abiut the first and third uses of variable lock?
 
 </ul>
 <li>
-<span id="Exam prep-20. Spin locks, Test and Set, Test and Test and Set-A:"></span><strong id="A:">A:</strong> The process tests the lock until there is a possibility that TestAndSet can succeed, and the first and third uses of lock are of type spinlock.
+<span id="Quizzes 1-59-20. Spin locks, Test and Set, Test and Test and Set-A:"></span><strong id="A:">A:</strong> The process tests the lock until there is a possibility that TestAndSet can succeed, and the first and third uses of lock are of type spinlock.
 
 </ul>
 
-<div id="Exam prep-21. Implementing await statements"><h2 id="21. Implementing await statements" class="header"><a href="#Exam prep-21. Implementing await statements">21. Implementing await statements</a></h2></div>
+<div id="Quizzes 1-59-21. Implementing await statements"><h2 id="21. Implementing await statements" class="header"><a href="#Quizzes 1-59-21. Implementing await statements">21. Implementing await statements</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-21. Implementing await statements-Q:"></span><strong id="Q:">Q:</strong> Explain in your own ideas, why do we use <span id="Exam prep-21. Implementing await statements-Delay"></span><strong id="Delay">Delay</strong>?
+<span id="Quizzes 1-59-21. Implementing await statements-Q:"></span><strong id="Q:">Q:</strong> Explain in your own ideas, why do we use <span id="Quizzes 1-59-21. Implementing await statements-Delay"></span><strong id="Delay">Delay</strong>?
 
 <li>
-<span id="Exam prep-21. Implementing await statements-A:"></span><strong id="A:">A:</strong> We use delay because it is smart to make a process wait before reentering the critical section, because of the memory.
+<span id="Quizzes 1-59-21. Implementing await statements-A:"></span><strong id="A:">A:</strong> We use delay because it is smart to make a process wait before reentering the critical section, because of the memory.
 
 </ul>
 
-<div id="Exam prep-22. Tie-breaker algorithm"><h2 id="22. Tie-breaker algorithm" class="header"><a href="#Exam prep-22. Tie-breaker algorithm">22. Tie-breaker algorithm</a></h2></div>
+<div id="Quizzes 1-59-22. Tie-breaker algorithm"><h2 id="22. Tie-breaker algorithm" class="header"><a href="#Quizzes 1-59-22. Tie-breaker algorithm">22. Tie-breaker algorithm</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-22. Tie-breaker algorithm-Q:"></span><strong id="Q:">Q:</strong> Spin-lock solutions require a weakly fair scheduler to ensure eventual entry?
+<span id="Quizzes 1-59-22. Tie-breaker algorithm-Q:"></span><strong id="Q:">Q:</strong> Spin-lock solutions require a weakly fair scheduler to ensure eventual entry?
 
 <li>
-<span id="Exam prep-22. Tie-breaker algorithm-A:"></span><strong id="A:">A:</strong> False
+<span id="Quizzes 1-59-22. Tie-breaker algorithm-A:"></span><strong id="A:">A:</strong> False
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-22. Tie-breaker algorithm-Q:"></span><strong id="Q:">Q:</strong> Suppose we have two processes: P1 and P2. Suppose the entry protocol for the process P1 is this:
+<span id="Quizzes 1-59-22. Tie-breaker algorithm-Q:"></span><strong id="Q:">Q:</strong> Suppose we have two processes: P1 and P2. Suppose the entry protocol for the process P1 is this:
 <pre>
 in1 = true;
 while(in2) { skip; }
@@ -600,50 +600,50 @@ Is mutual exclusion ensured in this case?
 
 </ul>
 <li>
-<span id="Exam prep-22. Tie-breaker algorithm-A:"></span><strong id="A:">A:</strong> True, yes
+<span id="Quizzes 1-59-22. Tie-breaker algorithm-A:"></span><strong id="A:">A:</strong> True, yes
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-22. Tie-breaker algorithm-Q:"></span><strong id="Q:">Q:</strong> Suppose we have the entry protocols for two processes exactly as described in the previous question. Can deadlock happen?
+<span id="Quizzes 1-59-22. Tie-breaker algorithm-Q:"></span><strong id="Q:">Q:</strong> Suppose we have the entry protocols for two processes exactly as described in the previous question. Can deadlock happen?
 
 <li>
-<span id="Exam prep-22. Tie-breaker algorithm-A:"></span><strong id="A:">A:</strong> True, yes
+<span id="Quizzes 1-59-22. Tie-breaker algorithm-A:"></span><strong id="A:">A:</strong> True, yes
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-22. Tie-breaker algorithm-Q:"></span><strong id="Q:">Q:</strong> What is the meaning behind variable 'last'?
+<span id="Quizzes 1-59-22. Tie-breaker algorithm-Q:"></span><strong id="Q:">Q:</strong> What is the meaning behind variable 'last'?
 
 <li>
-<span id="Exam prep-22. Tie-breaker algorithm-A:"></span><strong id="A:">A:</strong> It indicates which process, P1 or P2, was the last to start executing its entry protocol 
+<span id="Quizzes 1-59-22. Tie-breaker algorithm-A:"></span><strong id="A:">A:</strong> It indicates which process, P1 or P2, was the last to start executing its entry protocol 
 
 </ul>
 
-<div id="Exam prep-23. Ticket algorithm"><h2 id="23. Ticket algorithm" class="header"><a href="#Exam prep-23. Ticket algorithm">23. Ticket algorithm</a></h2></div>
+<div id="Quizzes 1-59-23. Ticket algorithm"><h2 id="23. Ticket algorithm" class="header"><a href="#Quizzes 1-59-23. Ticket algorithm">23. Ticket algorithm</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-23. Ticket algorithm-Q:"></span><strong id="Q:">Q:</strong> Let x be an integer variable, and let z be an integer value. What is the semantics of the Fetch-and-Add instruction FA(x, z)?
+<span id="Quizzes 1-59-23. Ticket algorithm-Q:"></span><strong id="Q:">Q:</strong> Let x be an integer variable, and let z be an integer value. What is the semantics of the Fetch-and-Add instruction FA(x, z)?
 
 <li>
-<span id="Exam prep-23. Ticket algorithm-A:"></span><strong id="A:">A:</strong> &lt;int tmp = x; x = x+ z; return tmp; &gt; 
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-23. Ticket algorithm-Q:"></span><strong id="Q:">Q:</strong> Explain in your own words what the Fetch-and-Add instruction does.
-
-<li>
-<span id="Exam prep-23. Ticket algorithm-A:"></span><strong id="A:">A:</strong> The fetch-and-add instruction gets a value from memory, increments it and then returns it.
+<span id="Quizzes 1-59-23. Ticket algorithm-A:"></span><strong id="A:">A:</strong> &lt;int tmp = x; x = x+ z; return tmp; &gt; 
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-23. Ticket algorithm-Q:"></span><strong id="Q:">Q:</strong> In the ticket algorithm, consider the following entry protocol:
+<span id="Quizzes 1-59-23. Ticket algorithm-Q:"></span><strong id="Q:">Q:</strong> Explain in your own words what the Fetch-and-Add instruction does.
+
+<li>
+<span id="Quizzes 1-59-23. Ticket algorithm-A:"></span><strong id="A:">A:</strong> The fetch-and-add instruction gets a value from memory, increments it and then returns it.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-23. Ticket algorithm-Q:"></span><strong id="Q:">Q:</strong> In the ticket algorithm, consider the following entry protocol:
 <pre>
 turn[i]=FA(number, 1);
 while(turn[i] != next) skip;
@@ -655,55 +655,55 @@ Is this fine-grained or coarse-grained protocol?
 
 </ul>
 <li>
-<span id="Exam prep-23. Ticket algorithm-A:"></span><strong id="A:">A:</strong> Fine-grained
+<span id="Quizzes 1-59-23. Ticket algorithm-A:"></span><strong id="A:">A:</strong> Fine-grained
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-23. Ticket algorithm-Q:"></span><strong id="Q:">Q:</strong> If the ticket algorithm runs for a very long time, incrementing a counter will eventually cause arithmetic overflow. However, this is very unlikely to happen in practice.
+<span id="Quizzes 1-59-23. Ticket algorithm-Q:"></span><strong id="Q:">Q:</strong> If the ticket algorithm runs for a very long time, incrementing a counter will eventually cause arithmetic overflow. However, this is very unlikely to happen in practice.
 
 <li>
-<span id="Exam prep-23. Ticket algorithm-A:"></span><strong id="A:">A:</strong> False
+<span id="Quizzes 1-59-23. Ticket algorithm-A:"></span><strong id="A:">A:</strong> False
 
 </ul>
 
-<div id="Exam prep-24. Barriers intro"><h2 id="24. Barriers intro" class="header"><a href="#Exam prep-24. Barriers intro">24. Barriers intro</a></h2></div>
+<div id="Quizzes 1-59-24. Barriers intro"><h2 id="24. Barriers intro" class="header"><a href="#Quizzes 1-59-24. Barriers intro">24. Barriers intro</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-24. Barriers intro-Q:"></span><strong id="Q:">Q:</strong> Explain in your own words, how you understand barrier synchronization.
+<span id="Quizzes 1-59-24. Barriers intro-Q:"></span><strong id="Q:">Q:</strong> Explain in your own words, how you understand barrier synchronization.
 
 <li>
-<span id="Exam prep-24. Barriers intro-A:"></span><strong id="A:">A:</strong> The way i understand barrier synchronization is that its called barrier synchronization because the processes must all wait before they can continue, and they are all "stuck" behind this "barrier" waiting for all the tasks to be complete.
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-24. Barriers intro-This statement is true:"></span><strong id="This statement is true:">This statement is true:</strong> Suppose we have <span id="Exam prep-24. Barriers intro-n"></span><strong id="n">n</strong> processes that need to meet at a barrier. When a process arrives at the barrier, it increments <span id="Exam prep-24. Barriers intro-count"></span><strong id="count">count</strong>. When <span id="Exam prep-24. Barriers intro-count"></span><strong id="count">count</strong> is equal to <span id="Exam prep-24. Barriers intro-n"></span><strong id="n">n</strong>, all processes can proceed. 
-
-</ul>
-
-<div id="Exam prep-25. Flags and coordinators"><h2 id="25. Flags and coordinators" class="header"><a href="#Exam prep-25. Flags and coordinators">25. Flags and coordinators</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-25. Flags and coordinators-Q:"></span><strong id="Q:">Q:</strong> What are the flag synchronization principles? 
-
-<li>
-<span id="Exam prep-25. Flags and coordinators-A:"></span><strong id="A:">A:</strong> Flag should not be set before its known that its clear to do so, the same process that waits for sync flag should also be the one to clear it.
-
-</ul>
-
-<div id="Exam prep-26. Symmetric barriers"><h2 id="26. Symmetric barriers" class="header"><a href="#Exam prep-26. Symmetric barriers">26. Symmetric barriers</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-26. Symmetric barriers-This statement is true:"></span><strong id="This statement is true:">This statement is true:</strong> To construct a two-process barrier, we could use the coordinator worker technique. 
+<span id="Quizzes 1-59-24. Barriers intro-A:"></span><strong id="A:">A:</strong> The way i understand barrier synchronization is that its called barrier synchronization because the processes must all wait before they can continue, and they are all "stuck" behind this "barrier" waiting for all the tasks to be complete.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-26. Symmetric barriers-Q:"></span><strong id="Q:">Q:</strong> Consider the following barrier code for worker process W[i]:
+<span id="Quizzes 1-59-24. Barriers intro-This statement is true:"></span><strong id="This statement is true:">This statement is true:</strong> Suppose we have <span id="Quizzes 1-59-24. Barriers intro-n"></span><strong id="n">n</strong> processes that need to meet at a barrier. When a process arrives at the barrier, it increments <span id="Quizzes 1-59-24. Barriers intro-count"></span><strong id="count">count</strong>. When <span id="Quizzes 1-59-24. Barriers intro-count"></span><strong id="count">count</strong> is equal to <span id="Quizzes 1-59-24. Barriers intro-n"></span><strong id="n">n</strong>, all processes can proceed. 
+
+</ul>
+
+<div id="Quizzes 1-59-25. Flags and coordinators"><h2 id="25. Flags and coordinators" class="header"><a href="#Quizzes 1-59-25. Flags and coordinators">25. Flags and coordinators</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-25. Flags and coordinators-Q:"></span><strong id="Q:">Q:</strong> What are the flag synchronization principles? 
+
+<li>
+<span id="Quizzes 1-59-25. Flags and coordinators-A:"></span><strong id="A:">A:</strong> Flag should not be set before its known that its clear to do so, the same process that waits for sync flag should also be the one to clear it.
+
+</ul>
+
+<div id="Quizzes 1-59-26. Symmetric barriers"><h2 id="26. Symmetric barriers" class="header"><a href="#Quizzes 1-59-26. Symmetric barriers">26. Symmetric barriers</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-26. Symmetric barriers-This statement is true:"></span><strong id="This statement is true:">This statement is true:</strong> To construct a two-process barrier, we could use the coordinator worker technique. 
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-26. Symmetric barriers-Q:"></span><strong id="Q:">Q:</strong> Consider the following barrier code for worker process W[i]:
 <pre>
 &lt;await(arrive[i]==0);&gt;
 arrive[i]=1;
@@ -717,53 +717,53 @@ The first line waits for a process's own flag to be cleared. Why is that needed?
 
 </ul>
 <li>
-<span id="Exam prep-26. Symmetric barriers-A:"></span><strong id="A:">A:</strong> To guard against the possible situation when a processes races back to the barrier and sets its own flag before the other process from the previous use of the barrier cleared the flag
+<span id="Quizzes 1-59-26. Symmetric barriers-A:"></span><strong id="A:">A:</strong> To guard against the possible situation when a processes races back to the barrier and sets its own flag before the other process from the previous use of the barrier cleared the flag
 
 </ul>
 
-<div id="Exam prep-27. Semaphores intro"><h2 id="27. Semaphores intro" class="header"><a href="#Exam prep-27. Semaphores intro">27. Semaphores intro</a></h2></div>
+<div id="Quizzes 1-59-27. Semaphores intro"><h2 id="27. Semaphores intro" class="header"><a href="#Quizzes 1-59-27. Semaphores intro">27. Semaphores intro</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The value of a semaphore is a positive integer?
+<span id="Quizzes 1-59-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The value of a semaphore is a positive integer?
 
 <li>
-<span id="Exam prep-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> False, its a boolean value
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The V operation is used to signal the occurence of event
-
-<li>
-<span id="Exam prep-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> True
+<span id="Quizzes 1-59-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> False, its a boolean value
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The P operation is used to delay a process until an event is occured 
+<span id="Quizzes 1-59-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The V operation is used to signal the occurence of event
 
 <li>
-<span id="Exam prep-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> True
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The V operation increments the value of a semaphpore
-
-<li>
-<span id="Exam prep-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> True
+<span id="Quizzes 1-59-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> True
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The P operation waits until the value of a semaphore is positive and then decrements the value
+<span id="Quizzes 1-59-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The P operation is used to delay a process until an event is occured 
 
 <li>
-<span id="Exam prep-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> True
+<span id="Quizzes 1-59-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The V operation increments the value of a semaphpore
+
+<li>
+<span id="Quizzes 1-59-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The P operation waits until the value of a semaphore is positive and then decrements the value
+
+<li>
+<span id="Quizzes 1-59-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> True
 
 </ul>
 <hr />
@@ -773,149 +773,149 @@ The default value of a semaphore declared as (sem s;) is 0.
 
 </ul>
 
-<div id="Exam prep-28. Semaphores and Critical Section Problem"><h2 id="28. Semaphores and Critical Section Problem" class="header"><a href="#Exam prep-28. Semaphores and Critical Section Problem">28. Semaphores and Critical Section Problem</a></h2></div>
+<div id="Quizzes 1-59-28. Semaphores and Critical Section Problem"><h2 id="28. Semaphores and Critical Section Problem" class="header"><a href="#Quizzes 1-59-28. Semaphores and Critical Section Problem">28. Semaphores and Critical Section Problem</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-28. Semaphores and Critical Section Problem-Q:"></span><strong id="Q:">Q:</strong> In the critical section problem that uses semaphores, what is the entry protocol?
+<span id="Quizzes 1-59-28. Semaphores and Critical Section Problem-Q:"></span><strong id="Q:">Q:</strong> In the critical section problem that uses semaphores, what is the entry protocol?
 
 <li>
-<span id="Exam prep-28. Semaphores and Critical Section Problem-A:"></span><strong id="A:">A:</strong> Waiting for sem mutex to be 1
+<span id="Quizzes 1-59-28. Semaphores and Critical Section Problem-A:"></span><strong id="A:">A:</strong> Waiting for sem mutex to be 1
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-28. Semaphores and Critical Section Problem-Q:"></span><strong id="Q:">Q:</strong> What is the exit protocol?
+<span id="Quizzes 1-59-28. Semaphores and Critical Section Problem-Q:"></span><strong id="Q:">Q:</strong> What is the exit protocol?
 
 <li>
-<span id="Exam prep-28. Semaphores and Critical Section Problem-A:"></span><strong id="A:">A:</strong> Setting the sem mutex to 0
+<span id="Quizzes 1-59-28. Semaphores and Critical Section Problem-A:"></span><strong id="A:">A:</strong> Setting the sem mutex to 0
 
 </ul>
 
-<div id="Exam prep-29. Semaphores and Barriers"><h2 id="29. Semaphores and Barriers" class="header"><a href="#Exam prep-29. Semaphores and Barriers">29. Semaphores and Barriers</a></h2></div>
+<div id="Quizzes 1-59-29. Semaphores and Barriers"><h2 id="29. Semaphores and Barriers" class="header"><a href="#Quizzes 1-59-29. Semaphores and Barriers">29. Semaphores and Barriers</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-29. Semaphores and Barriers-True statement:"></span><strong id="True statement:">True statement:</strong> Semaphores make it relatively easy to implement barrier synchronization. The basic idea is to use one semaphore for each synchronization flag. A process set a flag by executing a <span id="Exam prep-29. Semaphores and Barriers-V"></span><strong id="V">V</strong> operation
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-29. Semaphores and Barriers-True statement:"></span><strong id="True statement:">True statement:</strong> A process waits for a flag to be set and then clears it by executing a <span id="Exam prep-29. Semaphores and Barriers-P"></span><strong id="P">P</strong> operation.
-
-</ul>
-
-<div id="Exam prep-30. Producers and Consumers"><h2 id="30. Producers and Consumers" class="header"><a href="#Exam prep-30. Producers and Consumers">30. Producers and Consumers</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-30. Producers and Consumers-Q:"></span><strong id="Q:">Q:</strong> Describe in your own words what Runnable interface is.
-
-<li>
-<span id="Exam prep-30. Producers and Consumers-A:"></span><strong id="A:">A:</strong> Runnable interface is an interface which is very useful and should be used when writing classes where something is going to be run and executed by threads. It gives Thread options for running and can f.eks be used to show when a thread is active or not. 
+<span id="Quizzes 1-59-29. Semaphores and Barriers-True statement:"></span><strong id="True statement:">True statement:</strong> Semaphores make it relatively easy to implement barrier synchronization. The basic idea is to use one semaphore for each synchronization flag. A process set a flag by executing a <span id="Quizzes 1-59-29. Semaphores and Barriers-V"></span><strong id="V">V</strong> operation
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-30. Producers and Consumers-Q:"></span><strong id="Q:">Q:</strong> What does the following command do?
+<span id="Quizzes 1-59-29. Semaphores and Barriers-True statement:"></span><strong id="True statement:">True statement:</strong> A process waits for a flag to be set and then clears it by executing a <span id="Quizzes 1-59-29. Semaphores and Barriers-P"></span><strong id="P">P</strong> operation.
+
+</ul>
+
+<div id="Quizzes 1-59-30. Producers and Consumers"><h2 id="30. Producers and Consumers" class="header"><a href="#Quizzes 1-59-30. Producers and Consumers">30. Producers and Consumers</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-30. Producers and Consumers-Q:"></span><strong id="Q:">Q:</strong> Describe in your own words what Runnable interface is.
+
+<li>
+<span id="Quizzes 1-59-30. Producers and Consumers-A:"></span><strong id="A:">A:</strong> Runnable interface is an interface which is very useful and should be used when writing classes where something is going to be run and executed by threads. It gives Thread options for running and can f.eks be used to show when a thread is active or not. 
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-30. Producers and Consumers-Q:"></span><strong id="Q:">Q:</strong> What does the following command do?
 <pre>
 queue.put(new PoisonPill());
 </pre>
 
 <li>
-<span id="Exam prep-30. Producers and Consumers-A:"></span><strong id="A:">A:</strong> The command tells that the data for processing has been finished and consumer should finish its work.
+<span id="Quizzes 1-59-30. Producers and Consumers-A:"></span><strong id="A:">A:</strong> The command tells that the data for processing has been finished and consumer should finish its work.
 
 </ul>
 
-<div id="Exam prep-31. Producers and Consumers - more"><h2 id="31. Producers and Consumers - more" class="header"><a href="#Exam prep-31. Producers and Consumers - more">31. Producers and Consumers - more</a></h2></div>
+<div id="Quizzes 1-59-31. Producers and Consumers - more"><h2 id="31. Producers and Consumers - more" class="header"><a href="#Quizzes 1-59-31. Producers and Consumers - more">31. Producers and Consumers - more</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-31. Producers and Consumers - more-Q:"></span><strong id="Q:">Q:</strong> What does the synchronization requirement "c &lt;= p &lt;= c + 1" mean?
+<span id="Quizzes 1-59-31. Producers and Consumers - more-Q:"></span><strong id="Q:">Q:</strong> What does the synchronization requirement "c &lt;= p &lt;= c + 1" mean?
 
 <li>
-<span id="Exam prep-31. Producers and Consumers - more-A:"></span><strong id="A:">A:</strong> c and p can differ by at most one, the producer can deposit at most one 1 element more that the consumer has fetched.
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-31. Producers and Consumers - more-Q:"></span><strong id="Q:">Q:</strong> Is it true that when p == c, then the buffer is empty?
-
-<li>
-<span id="Exam prep-31. Producers and Consumers - more-A:"></span><strong id="A:">A:</strong> Yes, true
-
-</ul>
-
-<div id="Exam prep-32. Producers and Consumers - Split binary semaphores"><h2 id="32. Producers and Consumers - Split binary semaphores" class="header"><a href="#Exam prep-32. Producers and Consumers - Split binary semaphores">32. Producers and Consumers - Split binary semaphores</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-32. Producers and Consumers - Split binary semaphores-Q:"></span><strong id="Q:">Q:</strong> Why is it necessary that the execution of deposit and fetch alternates?
-
-<li>
-<span id="Exam prep-32. Producers and Consumers - Split binary semaphores-A:"></span><strong id="A:">A:</strong> It is necessary for deposit and fetch to alternate because then we make sure that messages are not overwritten and only  fetched once.
+<span id="Quizzes 1-59-31. Producers and Consumers - more-A:"></span><strong id="A:">A:</strong> c and p can differ by at most one, the producer can deposit at most one 1 element more that the consumer has fetched.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-32. Producers and Consumers - Split binary semaphores-Q:"></span><strong id="Q:">Q:</strong> What is the "intuition" behind a fact that semaphore empty=1?
+<span id="Quizzes 1-59-31. Producers and Consumers - more-Q:"></span><strong id="Q:">Q:</strong> Is it true that when p == c, then the buffer is empty?
 
 <li>
-<span id="Exam prep-32. Producers and Consumers - Split binary semaphores-A:"></span><strong id="A:">A:</strong> The "intuition" behind empty being 1 is because the 1 signals that the make_buffer_empty event has occured, and by making this one we show that something has happened, as opposed to 0 that "signals" that nothing has happened yet.
+<span id="Quizzes 1-59-31. Producers and Consumers - more-A:"></span><strong id="A:">A:</strong> Yes, true
 
 </ul>
 
-<div id="Exam prep-33. Semaphores and Bounded Buffers"><h2 id="33. Semaphores and Bounded Buffers" class="header"><a href="#Exam prep-33. Semaphores and Bounded Buffers">33. Semaphores and Bounded Buffers</a></h2></div>
+<div id="Quizzes 1-59-32. Producers and Consumers - Split binary semaphores"><h2 id="32. Producers and Consumers - Split binary semaphores" class="header"><a href="#Quizzes 1-59-32. Producers and Consumers - Split binary semaphores">32. Producers and Consumers - Split binary semaphores</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-33. Semaphores and Bounded Buffers-Q:"></span><strong id="Q:">Q:</strong> What is the next element after buf[n-1]=
+<span id="Quizzes 1-59-32. Producers and Consumers - Split binary semaphores-Q:"></span><strong id="Q:">Q:</strong> Why is it necessary that the execution of deposit and fetch alternates?
 
 <li>
-<span id="Exam prep-33. Semaphores and Bounded Buffers-A:"></span><strong id="A:">A:</strong> buf[0] or 0
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Exam prep-33. Semaphores and Bounded Buffers-Q:"></span><strong id="Q:">Q:</strong> When neither deposit or fetch are being executed, what is the sum of the values of the semaphores empty and full, i.e. empty+full?
-
-<li>
-<span id="Exam prep-33. Semaphores and Bounded Buffers-A:"></span><strong id="A:">A:</strong> n or N or empty+full=N/n
-
-</ul>
-
-<div id="Exam prep-34. Semaphores and Dining Philosophers"><h2 id="34. Semaphores and Dining Philosophers" class="header"><a href="#Exam prep-34. Semaphores and Dining Philosophers">34. Semaphores and Dining Philosophers</a></h2></div>
-<ul>
-<li>
-<span id="Exam prep-34. Semaphores and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> How do we express "picking up a fork" using a semaphore? 
-
-<li>
-<span id="Exam prep-34. Semaphores and Dining Philosophers-A:"></span><strong id="A:">A:</strong> By executing P(sem) like this:  P(fork[i])
+<span id="Quizzes 1-59-32. Producers and Consumers - Split binary semaphores-A:"></span><strong id="A:">A:</strong> It is necessary for deposit and fetch to alternate because then we make sure that messages are not overwritten and only  fetched once.
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-34. Semaphores and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> Why do we have a special implementation of the process Philosopher[4]?
+<span id="Quizzes 1-59-32. Producers and Consumers - Split binary semaphores-Q:"></span><strong id="Q:">Q:</strong> What is the "intuition" behind a fact that semaphore empty=1?
 
 <li>
-<span id="Exam prep-34. Semaphores and Dining Philosophers-A:"></span><strong id="A:">A:</strong> We do this to avoid deadlock and for circular deadlock to not occur we get Philosopher4 pick up the right fork first.
+<span id="Quizzes 1-59-32. Producers and Consumers - Split binary semaphores-A:"></span><strong id="A:">A:</strong> The "intuition" behind empty being 1 is because the 1 signals that the make_buffer_empty event has occured, and by making this one we show that something has happened, as opposed to 0 that "signals" that nothing has happened yet.
 
 </ul>
 
-<div id="Exam prep-35. Readers Writers problem"><h2 id="35. Readers Writers problem" class="header"><a href="#Exam prep-35. Readers Writers problem">35. Readers Writers problem</a></h2></div>
+<div id="Quizzes 1-59-33. Semaphores and Bounded Buffers"><h2 id="33. Semaphores and Bounded Buffers" class="header"><a href="#Quizzes 1-59-33. Semaphores and Bounded Buffers">33. Semaphores and Bounded Buffers</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-35. Readers Writers problem-Q:"></span><strong id="Q:">Q:</strong> Explain (briefly) the Readers/Writers problem in your own words.
+<span id="Quizzes 1-59-33. Semaphores and Bounded Buffers-Q:"></span><strong id="Q:">Q:</strong> What is the next element after buf[n-1]=
 
 <li>
-<span id="Exam prep-35. Readers Writers problem-A:"></span><strong id="A:">A:</strong> The readers/writers problem is about readers and writers who both want to access a shared location, e.g a document. A reader should access the document while no writers are accessing, and a writer should not access the document while another writer is current accessing the document. This is about mutual exclusion of the two processes; reader and writer, and the general problem lies in when and how these two processes access the shared location.
+<span id="Quizzes 1-59-33. Semaphores and Bounded Buffers-A:"></span><strong id="A:">A:</strong> buf[0] or 0
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Exam prep-35. Readers Writers problem-Q:"></span><strong id="Q:">Q:</strong> How do we express the following atomic action using an (extra) semaphore:
+<span id="Quizzes 1-59-33. Semaphores and Bounded Buffers-Q:"></span><strong id="Q:">Q:</strong> When neither deposit or fetch are being executed, what is the sum of the values of the semaphores empty and full, i.e. empty+full?
+
+<li>
+<span id="Quizzes 1-59-33. Semaphores and Bounded Buffers-A:"></span><strong id="A:">A:</strong> n or N or empty+full=N/n
+
+</ul>
+
+<div id="Quizzes 1-59-34. Semaphores and Dining Philosophers"><h2 id="34. Semaphores and Dining Philosophers" class="header"><a href="#Quizzes 1-59-34. Semaphores and Dining Philosophers">34. Semaphores and Dining Philosophers</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-34. Semaphores and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> How do we express "picking up a fork" using a semaphore? 
+
+<li>
+<span id="Quizzes 1-59-34. Semaphores and Dining Philosophers-A:"></span><strong id="A:">A:</strong> By executing P(sem) like this:  P(fork[i])
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-34. Semaphores and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> Why do we have a special implementation of the process Philosopher[4]?
+
+<li>
+<span id="Quizzes 1-59-34. Semaphores and Dining Philosophers-A:"></span><strong id="A:">A:</strong> We do this to avoid deadlock and for circular deadlock to not occur we get Philosopher4 pick up the right fork first.
+
+</ul>
+
+<div id="Quizzes 1-59-35. Readers Writers problem"><h2 id="35. Readers Writers problem" class="header"><a href="#Quizzes 1-59-35. Readers Writers problem">35. Readers Writers problem</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-35. Readers Writers problem-Q:"></span><strong id="Q:">Q:</strong> Explain (briefly) the Readers/Writers problem in your own words.
+
+<li>
+<span id="Quizzes 1-59-35. Readers Writers problem-A:"></span><strong id="A:">A:</strong> The readers/writers problem is about readers and writers who both want to access a shared location, e.g a document. A reader should access the document while no writers are accessing, and a writer should not access the document while another writer is current accessing the document. This is about mutual exclusion of the two processes; reader and writer, and the general problem lies in when and how these two processes access the shared location.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-35. Readers Writers problem-Q:"></span><strong id="Q:">Q:</strong> How do we express the following atomic action using an (extra) semaphore:
 <pre>
 &lt;
 x = x + 1
@@ -924,7 +924,7 @@ if (condition) P(s);
 </pre>
 
 <li>
-<span id="Exam prep-35. Readers Writers problem-A:"></span><strong id="A:">A:</strong> 
+<span id="Quizzes 1-59-35. Readers Writers problem-A:"></span><strong id="A:">A:</strong> 
 <pre>
 sem mutexFirst = sem mutexSecond = 1;
 
@@ -939,29 +939,623 @@ V(mutexSecond);
 
 </ul>
 
-<div id="Exam prep-37. Readers Writers - Passing the baton"><h2 id="37. Readers Writers - Passing the baton" class="header"><a href="#Exam prep-37. Readers Writers - Passing the baton">37. Readers Writers - Passing the baton</a></h2></div>
+<div id="Quizzes 1-59-37. Readers Writers - Passing the baton"><h2 id="37. Readers Writers - Passing the baton" class="header"><a href="#Quizzes 1-59-37. Readers Writers - Passing the baton">37. Readers Writers - Passing the baton</a></h2></div>
 <ul>
 <li>
-<span id="Exam prep-37. Readers Writers - Passing the baton-Q:"></span><strong id="Q:">Q:</strong>
+<span id="Quizzes 1-59-37. Readers Writers - Passing the baton-Q:"></span><strong id="Q:">Q:</strong> If there are no active writers and there is a delayed reader, then a reader can be awakened by executing V(r), where r is the semaphore associated with the guard in reader processes?
 
 <li>
-<span id="Exam prep-37. Readers Writers - Passing the baton-A:"></span><strong id="A:">A:</strong>
+<span id="Quizzes 1-59-37. Readers Writers - Passing the baton-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-37. Readers Writers - Passing the baton-Q:"></span><strong id="Q:">Q:</strong> What is the idea behind the semaphore <span id="Quizzes 1-59-37. Readers Writers - Passing the baton-e"></span><strong id="e">e</strong>?
+
+<li>
+<span id="Quizzes 1-59-37. Readers Writers - Passing the baton-A:"></span><strong id="A:">A:</strong> The idea behind the semaphore e is to control entry into each atomic statement - e for entry.
 
 </ul>
 
+<div id="Quizzes 1-59-38. Monitors intro"><h2 id="38. Monitors intro" class="header"><a href="#Quizzes 1-59-38. Monitors intro">38. Monitors intro</a></h2></div>
+<ul>
+<li>
+Permanent variables are shared by all the procedures within the body of the monitor?
 
+<li>
+Statements within a monitor may not access variables declared outside the monitor?
 
+<li>
+Permanent variables exist and retain their values as long as the monitor exists?
 
+<li>
+In a monitor, permanent variables are initialized before any procedure is called?
 
+<li>
+Monitor procedures, by definition, execute with mutual exclusion.
 
+<li>
+At most one instance of one monitor procedure may be active at a time
 
+</ul>
 
+<div id="Quizzes 1-59-39. Monitors - condition variables"><h2 id="39. Monitors - condition variables" class="header"><a href="#Quizzes 1-59-39. Monitors - condition variables">39. Monitors - condition variables</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-39. Monitors - condition variables-Q:"></span><strong id="Q:">Q:</strong> What is a value of a condition variable?
 
+<li>
+<span id="Quizzes 1-59-39. Monitors - condition variables-A:"></span><strong id="A:">A:</strong> The value of a condition value is a queue of delayed processes.
 
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-39. Monitors - condition variables-Q:"></span><strong id="Q:">Q:</strong> Is this statement correct: "Function empty(cond_var) returns TRUE if the queue of cond_var is not empty"? 
 
+<li>
+<span id="Quizzes 1-59-39. Monitors - condition variables-A:"></span><strong id="A:">A:</strong> This statement is wrong. 
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-39. Monitors - condition variables-Q:"></span><strong id="Q:">Q:</strong> How can we block a process on a condition variable cond_var, i.e. what command do we execute?
+
+<li>
+<span id="Quizzes 1-59-39. Monitors - condition variables-A:"></span><strong id="A:">A:</strong> By executing wait(cond_var).
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-39. Monitors - condition variables-Q:"></span><strong id="Q:">Q:</strong> Consider function signal(cond_var). Assume that the delay queue of cond_var is non-empty. Then, what will signal(cond_var) do?
+
+<li>
+<span id="Quizzes 1-59-39. Monitors - condition variables-A:"></span><strong id="A:">A:</strong> Awaken the process at the front of the queue.
+
+</ul>
+
+<div id="Quizzes 1-59-40. Monitors - Signalling disicplines"><h2 id="40. Monitors - Signalling disicplines" class="header"><a href="#Quizzes 1-59-40. Monitors - Signalling disicplines">40. Monitors - Signalling disicplines</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-Q:"></span><strong id="Q:">Q:</strong> Which one is the "Signal and Continue" signalling discipline?
+
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-A:"></span><strong id="A:">A:</strong> The signaller continues and the signalled process executes at some later time
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-True statement:"></span><strong id="True statement:">True statement:</strong> When a process executes wait(cond_var), it moves from executing in the monitor to the queue associated with the condition variable cond_var
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-Q:"></span><strong id="Q:">Q:</strong> When a process executes signal(cond_var), the process at the front of the condition variable queue moves to the entry queue. Which signalling discipline is assumed here?
+
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-A:"></span><strong id="A:">A:</strong> Signal and Continue
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-Q:"></span><strong id="Q:">Q:</strong> When a process executes signal(cond_var), the process executing in the monitor moves to the entry queue and the process at the front of the condition variable queue moves to executing in the monitor. Which signalling discipline is assumed here?
+
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-A:"></span><strong id="A:">A:</strong> Signal and Wait
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-Q:"></span><strong id="Q:">Q:</strong> When a process calls the Vsem operation, it wants to awaken a delayed process, if there is one?
+
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-40. Monitors - Signalling disicplines-True statement:"></span><strong id="True statement:">True statement:</strong> One can say that condition variables are similar to the P and V operations on semaphores. 
+
+<ul>
+<li>
+The wait operation, like P, delays a process.
+
+<li>
+The signal operation, like V, awakens a process.
+
+<li>
+An important difference is that wait always delays a process until a later <span id="Quizzes 1-59-40. Monitors - Signalling disicplines-signal"></span><strong id="signal">signal</strong> is executed.
+
+</ul>
+</ul>
+
+<div id="Quizzes 1-59-41. Monitors - additional operations on condition variables"><h2 id="41. Monitors - additional operations on condition variables" class="header"><a href="#Quizzes 1-59-41. Monitors - additional operations on condition variables">41. Monitors - additional operations on condition variables</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-41. Monitors - additional operations on condition variables-Q:"></span><strong id="Q:">Q:</strong> With wait and signal, delayed processes are awakened in the order in which they delayed? 
+
+<li>
+<span id="Quizzes 1-59-41. Monitors - additional operations on condition variables-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-41. Monitors - additional operations on condition variables-Q:"></span><strong id="Q:">Q:</strong> With wait and signal, the delay queue is a FIFO (First-In-First-Out) queue?
+
+<li>
+<span id="Quizzes 1-59-41. Monitors - additional operations on condition variables-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-41. Monitors - additional operations on condition variables-Q:"></span><strong id="Q:">Q:</strong> Execution of signal_all(cond_var) awakens all processes delayed on cond_var, and it requires that the queue is not empty?
+
+<li>
+<span id="Quizzes 1-59-41. Monitors - additional operations on condition variables-A:"></span><strong id="A:">A:</strong> False
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-41. Monitors - additional operations on condition variables-Q:"></span><strong id="Q:">Q:</strong> Consider the following loop:
+<pre>
+while (!empty(cond_var)) { 
+   signal(cond_var);
+}
+</pre>
+
+<ul>
+<li>
+Rewrite shortest as possible 
+
+</ul>
+<li>
+<span id="Quizzes 1-59-41. Monitors - additional operations on condition variables-A:"></span><strong id="A:">A:</strong> signal_all(cv)
+
+</ul>
+
+<div id="Quizzes 1-59-42. Monitors - bounded buffers"><h2 id="42. Monitors - bounded buffers" class="header"><a href="#Quizzes 1-59-42. Monitors - bounded buffers">42. Monitors - bounded buffers</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-42. Monitors - bounded buffers-Q:"></span><strong id="Q:">Q:</strong> The signal statements in deposit and fetch are executed unconditionally because in both cases the signalled condition is true at the point of the signal?
+
+<li>
+<span id="Quizzes 1-59-42. Monitors - bounded buffers-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-42. Monitors - bounded buffers-Q:"></span><strong id="Q:">Q:</strong> Why is it necessary to recheck delay conditions?
+
+<li>
+<span id="Quizzes 1-59-42. Monitors - bounded buffers-A:"></span><strong id="A:">A:</strong> It is neccessary to recheck delay conditions because another producer could enter deposit and fill the empty slot, and a bad situation could occur with consumers.
+
+</ul>
+
+<div id="Quizzes 1-59-43. Monitors - Readers Writers"><h2 id="43. Monitors - Readers Writers" class="header"><a href="#Quizzes 1-59-43. Monitors - Readers Writers">43. Monitors - Readers Writers</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-43. Monitors - Readers Writers-Q:"></span><strong id="Q:">Q:</strong> Writers need to delay at the start of request_write until both nr and nw are zero?
+
+<li>
+<span id="Quizzes 1-59-43. Monitors - Readers Writers-A:"></span><strong id="A:">A:</strong> True
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-43. Monitors - Readers Writers-Q:"></span><strong id="Q:">Q:</strong> Readers need to delay at the start of request_read until both nr and nw are zero?
+
+<li>
+<span id="Quizzes 1-59-43. Monitors - Readers Writers-A:"></span><strong id="A:">A:</strong> False
+
+</ul>
+
+<div id="Quizzes 1-59-44. Monitors - The Sleeping Barber"><h2 id="44. Monitors - The Sleeping Barber" class="header"><a href="#Quizzes 1-59-44. Monitors - The Sleeping Barber">44. Monitors - The Sleeping Barber</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-44. Monitors - The Sleeping Barber-Q:"></span><strong id="Q:">Q:</strong> Formulate in your own words The Sleeping Barber problem.
+
+<li>
+<span id="Quizzes 1-59-44. Monitors - The Sleeping Barber-A:"></span><strong id="A:">A:</strong> The Sleeping Barber problem is about the processes customer and barber, and the barbershop as the monitor in which these processes happen. When there is no customers, the barber sleeps, and when a customer arrives, the customer wakes up the barber and sleeps while getting hair cut. When second customer arrives - it sleeps until its their turn, and the barber lets out the finished customer. Barber goes back to sleep when done and waits to be awakened by a new customer.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-44. Monitors - The Sleeping Barber-Q:"></span><strong id="Q:">Q:</strong> What are the two important stages that the customers have?
+
+<li>
+<span id="Quizzes 1-59-44. Monitors - The Sleeping Barber-A:"></span><strong id="A:">A:</strong> Sitting in the barber chair and leaving the shop
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-44. Monitors - The Sleeping Barber-Q:"></span><strong id="Q:">Q:</strong> What are the three important stages that the barber has?
+
+<li>
+<span id="Quizzes 1-59-44. Monitors - The Sleeping Barber-A:"></span><strong id="A:">A:</strong> Becoming available, giving a haircut and finishing a haircut
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-44. Monitors - The Sleeping Barber-Q:"></span><strong id="Q:">Q:</strong> Explain in your own words how procedure get_next_customer() works.
+
+<li>
+<span id="Quizzes 1-59-44. Monitors - The Sleeping Barber-A:"></span><strong id="A:">A:</strong> get_next_customer() works by incrementing the barber variable, then calling barber_available to check if there is room for the next customer, and if there is not, the while loop will wait until the chair is free. Lastly it decrements the chair variable.
+
+</ul>
+
+<div id="Quizzes 1-59-45. Program correctness intro"><h2 id="45. Program correctness intro" class="header"><a href="#Quizzes 1-59-45. Program correctness intro">45. Program correctness intro</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-45. Program correctness intro-Q:"></span><strong id="Q:">Q:</strong> What does soundness mean?
+
+<li>
+<span id="Quizzes 1-59-45. Program correctness intro-A:"></span><strong id="A:">A:</strong> Soundness means theorems are a subset of facts
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-45. Program correctness intro-Q:"></span><strong id="Q:">Q:</strong> What does completeness mean?
+
+<li>
+<span id="Quizzes 1-59-45. Program correctness intro-A:"></span><strong id="A:">A:</strong> Completeness means that facts is a subset of theorems.
+
+</ul>
+
+<div id="Quizzes 1-59-46. Programming logic"><h2 id="46. Programming logic" class="header"><a href="#Quizzes 1-59-46. Programming logic">46. Programming logic</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-46. Programming logic-Q:"></span><strong id="Q:">Q:</strong> Consider the following three Hoare triples:
+<pre>
+1. {x==0} x=x+1; {x==1}
+2. {x==0} x=x+1; {x&gt;0}
+3. {x&gt;0} x=x+1; {x&gt;=0}
+</pre>
+
+<ul>
+<li>
+Whose *pre*condition is the <span id="Quizzes 1-59-46. Programming logic-weakest"></span><strong id="weakest">weakest</strong>?
+
+</ul>
+<li>
+<span id="Quizzes 1-59-46. Programming logic-A:"></span><strong id="A:">A:</strong> 3.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-46. Programming logic-Q:"></span><strong id="Q:">Q:</strong> Consider the same triples from the question above, whose *post*condition is the <span id="Quizzes 1-59-46. Programming logic-strongest"></span><strong id="strongest">strongest</strong>?
+
+<li>
+<span id="Quizzes 1-59-46. Programming logic-A:"></span><strong id="A:">A:</strong> 1.
+
+</ul>
+
+<div id="Quizzes 1-59-47. Semantics of concurrent execution"><h2 id="47. Semantics of concurrent execution" class="header"><a href="#Quizzes 1-59-47. Semantics of concurrent execution">47. Semantics of concurrent execution</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-47. Semantics of concurrent execution-Q:"></span><strong id="Q:">Q:</strong> Consider the following rule:
+<pre>
+hypotheses: {P} S {Q}, {S} R {T}
+conclusion: {P &amp;&amp; S} co S || R oc; {Q &amp;&amp; T}
+</pre>
+
+<ul>
+<li>
+What should we assume for this rule to work correctly in the general case?
+
+</ul>
+<li>
+<span id="Quizzes 1-59-47. Semantics of concurrent execution-A:"></span><strong id="A:">A:</strong> We should  assume that there is noninterference for this rule to work correctly in the general case.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-47. Semantics of concurrent execution-Q:"></span><strong id="Q:">Q:</strong> What is an assignment action?
+
+<li>
+<span id="Quizzes 1-59-47. Semantics of concurrent execution-A:"></span><strong id="A:">A:</strong> An assignment action contains one or more assignments
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-47. Semantics of concurrent execution-Q:"></span><strong id="Q:">Q:</strong> What is a critical assertion?
+
+<li>
+<span id="Quizzes 1-59-47. Semantics of concurrent execution-A:"></span><strong id="A:">A:</strong> A critical assertion is a precondition or a postcondition which is not within an await statement.
+
+</ul>
+
+<div id="Quizzes 1-59-48. Avoiding interference"><h2 id="48. Avoiding interference" class="header"><a href="#Quizzes 1-59-48. Avoiding interference">48. Avoiding interference</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-48. Avoiding interference-Q:"></span><strong id="Q:">Q:</strong> What is a reference set?
+
+<li>
+<span id="Quizzes 1-59-48. Avoiding interference-A:"></span><strong id="A:">A:</strong> A reference set is a set of variables which appear in the assertions in a proof of that process.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-48. Avoiding interference-Q:"></span><strong id="Q:">Q:</strong> What is L at 6min 45sec?
+
+<li>
+<span id="Quizzes 1-59-48. Avoiding interference-A:"></span><strong id="A:">A:</strong> L is predicate for local variables, and each variables references in L is either local to process P_j or its a global variable that only P_j assigns to.
+
+</ul>
+
+<div id="Quizzes 1-59-49. Distributed programming intro"><h2 id="49. Distributed programming intro" class="header"><a href="#Quizzes 1-59-49. Distributed programming intro">49. Distributed programming intro</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-49. Distributed programming intro-Q:"></span><strong id="Q:">Q:</strong> Which of the following kinds of communication is blocking?
+
+<li>
+<span id="Quizzes 1-59-49. Distributed programming intro-A:"></span><strong id="A:">A:</strong> synchronous
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-49. Distributed programming intro-True statement:"></span><strong id="True statement:">True statement:</strong> Channels are FIFO (First in First out) queues of pending messages
+
+</ul>
+
+<div id="Quizzes 1-59-50. Actor programming"><h2 id="50. Actor programming" class="header"><a href="#Quizzes 1-59-50. Actor programming">50. Actor programming</a></h2></div>
+<ul>
+<li>
+In actor programming, messages are sent asynchronously
+
+<li>
+In actor programming, messages are being sent directly to an actor
+
+<li>
+An actor handles messages sequentially, in the order they were added to the mailbox
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-50. Actor programming-Q:"></span><strong id="Q:">Q:</strong> Is this true or false: "An actor runs concurrently with other actors, and thus cannot handle messages sequentially"?
+
+<li>
+<span id="Quizzes 1-59-50. Actor programming-A:"></span><strong id="A:">A:</strong> False
+
+</ul>
+
+<div id="Quizzes 1-59-51. Actor programming - stateful actors"><h2 id="51. Actor programming - stateful actors" class="header"><a href="#Quizzes 1-59-51. Actor programming - stateful actors">51. Actor programming - stateful actors</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-51. Actor programming - stateful actors-Q:"></span><strong id="Q:">Q:</strong> Why actor Counter can safely access count without any issues related to concurrency?
+
+<li>
+<span id="Quizzes 1-59-51. Actor programming - stateful actors-A:"></span><strong id="A:">A:</strong> Because messages are handled sequentially.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-51. Actor programming - stateful actors-Q:"></span><strong id="Q:">Q:</strong> Is this true or false: "The actor model provides direct support for replies"?
+
+<li>
+<span id="Quizzes 1-59-51. Actor programming - stateful actors-A:"></span><strong id="A:">A:</strong> False
+
+</ul>
+
+<div id="Quizzes 1-59-52. Actor programming - paralell map"><h2 id="52. Actor programming - paralell map" class="header"><a href="#Quizzes 1-59-52. Actor programming - paralell map">52. Actor programming - paralell map</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-52. Actor programming - paralell map-Q:"></span><strong id="Q:">Q:</strong> Describe briefly the first stage of the solution as given in Parallel.
+
+<li>
+<span id="Quizzes 1-59-52. Actor programming - paralell map-A:"></span><strong id="A:">A:</strong> The first stage of the solution as given in Parallel works by creating one process for each element of the collection, then each of these actors will apply a function to the relevant element and send the result back to the parent process.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-52. Actor programming - paralell map-Q:"></span><strong id="Q:">Q:</strong> Describe briefly the second stage of the solution as given in Parallel.
+
+<li>
+<span id="Quizzes 1-59-52. Actor programming - paralell map-A:"></span><strong id="A:">A:</strong> The second stage of the solution as given in Parallel works by making the parent wait for each result when it receives message.
+
+</ul>
+
+<div id="Quizzes 1-59-53. Asynchronous message passing intro"><h2 id="53. Asynchronous message passing intro" class="header"><a href="#Quizzes 1-59-53. Asynchronous message passing intro">53. Asynchronous message passing intro</a></h2></div>
+<ul>
+<li>
+Execution of <span id="Quizzes 1-59-53. Asynchronous message passing intro-send"></span><strong id="send">send</strong> never causes delay
+
+<li>
+Execution of <span id="Quizzes 1-59-53. Asynchronous message passing intro-receive"></span><strong id="receive">receive</strong> can cause delay
+
+<li>
+The effect of executing send ch(e1, ..., en) is to append a message containing the values e1, ..., en to the <span id="Quizzes 1-59-53. Asynchronous message passing intro-end"></span><strong id="end">end</strong> of the queue associated with the channel ch
+
+<li>
+The effect of executing receive ch(var1, ..., varn) is to delay the <span id="Quizzes 1-59-53. Asynchronous message passing intro-receiver"></span><strong id="receiver">receiver</strong> until there is at least one message on the channel's queue. Then the message at the <span id="Quizzes 1-59-53. Asynchronous message passing intro-front"></span><strong id="front">front</strong> of the queue is removed, and its fields are assigned to the var_i".
+
+</ul>
+
+<div id="Quizzes 1-59-54. Filters - a sorting network"><h2 id="54. Filters - a sorting network" class="header"><a href="#Quizzes 1-59-54. Filters - a sorting network">54. Filters - a sorting network</a></h2></div>
+<ul>
+<li>
+In filters such like Merge, the output produced by one filter must meet the input assumptions of another filter
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-54. Filters - a sorting network-Q:"></span><strong id="Q:">Q:</strong> Why do we use sentinel values?
+
+<li>
+<span id="Quizzes 1-59-54. Filters - a sorting network-A:"></span><strong id="A:">A:</strong> We use sentinel values because its the most optimal and gives the possibility to find the end scope without knowing how many values are going to be passing through.
+
+</ul>
+
+<div id="Quizzes 1-59-55. Active monitors"><h2 id="55. Active monitors" class="header"><a href="#Quizzes 1-59-55. Active monitors">55. Active monitors</a></h2></div>
+<ul>
+<li>
+In the code for Clients and server with one operation, some Client[i] must not use the reply channel of some other Client[j] 
+
+<li>
+In the code for Clients and server with multiple operations, according to the assumptions that we've made, the body of each operation op1, ..., opn is a sequence of sequential statements
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-55. Active monitors-Q:"></span><strong id="Q:">Q:</strong> Consider the server part of the code for Resource allocator and clients. What part of this code corresponds to the statements in the monitor?
+
+<li>
+<span id="Quizzes 1-59-55. Active monitors-A:"></span><strong id="A:">A:</strong> inner IF statements 
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-55. Active monitors-Q:"></span><strong id="Q:">Q:</strong> Match the ideas from monitor-based programs and message-based programs
+
+<li>
+permanent variables = local server variables
+
+<li>
+procedure call = send request(); receive reply
+
+<li>
+monitor entry = receive request()
+
+<li>
+wait statement = save pending request
+
+<li>
+procedure bodies = arms of case statement on operation kind
+
+</ul>
+
+<div id="Quizzes 1-59-56. Interacting peers - exchanging values"><h2 id="56. Interacting peers - exchanging values" class="header"><a href="#Quizzes 1-59-56. Interacting peers - exchanging values">56. Interacting peers - exchanging values</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-56. Interacting peers - exchanging values-Q:"></span><strong id="Q:">Q:</strong> Which of the solutions was the shortest?
+
+<li>
+<span id="Quizzes 1-59-56. Interacting peers - exchanging values-A:"></span><strong id="A:">A:</strong> Symmetric
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-56. Interacting peers - exchanging values-Q:"></span><strong id="Q:">Q:</strong> Which of the solutions uses the largest number of messages?
+
+<li>
+<span id="Quizzes 1-59-56. Interacting peers - exchanging values-A:"></span><strong id="A:">A:</strong> Symmetric
+
+</ul>
+<hr />
+<ul>
+<li>
+In the ring solution, all processes are both producers and consumers
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-56. Interacting peers - exchanging values-Q:"></span><strong id="Q:">Q:</strong> Is this true or false: "In the ring solution, messages have to circulate around the pipeline N full times before every process has learned the global result, where N is the number of processes"?
+
+<li>
+<span id="Quizzes 1-59-56. Interacting peers - exchanging values-A:"></span><strong id="A:">A:</strong> False
+
+</ul>
+
+<div id="Quizzes 1-59-57. Synchronous message passing"><h2 id="57. Synchronous message passing" class="header"><a href="#Quizzes 1-59-57. Synchronous message passing">57. Synchronous message passing</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-57. Synchronous message passing-Q:"></span><strong id="Q:">Q:</strong> What are the two problems/disadvantages of synchronous message passing? 
+
+<li>
+<span id="Quizzes 1-59-57. Synchronous message passing-A:"></span><strong id="A:">A:</strong> concurrency is reduced and programs that use it are more prone to deadlock
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-57. Synchronous message passing-Q:"></span><strong id="Q:">Q:</strong> Is this true or false: "send and synch_send are almost never interchangeable."
+
+<li>
+<span id="Quizzes 1-59-57. Synchronous message passing-A:"></span><strong id="A:">A:</strong> False
+
+</ul>
+
+<div id="Quizzes 1-59-58. Communicating Sequential Processes intro"><h2 id="58. Communicating Sequential Processes intro" class="header"><a href="#Quizzes 1-59-58. Communicating Sequential Processes intro">58. Communicating Sequential Processes intro</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-58. Communicating Sequential Processes intro-Q:"></span><strong id="Q:">Q:</strong> What does notation Source[*] mean?
+
+<li>
+<span id="Quizzes 1-59-58. Communicating Sequential Processes intro-A:"></span><strong id="A:">A:</strong> Source[*] means that it can read from any process in an array of processes
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-58. Communicating Sequential Processes intro-Q:"></span><strong id="Q:">Q:</strong> Using CSP notation, write down "input character c from north".
+
+<li>
+<span id="Quizzes 1-59-58. Communicating Sequential Processes intro-A:"></span><strong id="A:">A:</strong> north?c
+
+</ul>
+
+<div id="Quizzes 1-59-59. CSP guarded communication"><h2 id="59. CSP guarded communication" class="header"><a href="#Quizzes 1-59-59. CSP guarded communication">59. CSP guarded communication</a></h2></div>
+<ul>
+<li>
+<span id="Quizzes 1-59-59. CSP guarded communication-Q:"></span><strong id="Q:">Q:</strong> Consider the following program:
+<pre>
+process Copy {
+
+   char c1, c2;
+
+   West?c1;
+
+   do West?c2 -&gt; East!c1; c1 = c2;
+
+   [] East!c1 -&gt; West?c1;
+
+   od
+}
+</pre>
+
+<ul>
+<li>
+What happens when the both arms of the do statement succeed?
+
+</ul>
+<li>
+<span id="Quizzes 1-59-59. CSP guarded communication-A:"></span><strong id="A:">A:</strong> either of the arms can be chosen; this happens nondeterministically
+
+</ul>
+
+<div id="Extra questions"><h1 id="Extra questions" class="header"><a href="#Extra questions">Extra questions</a></h1></div>
+<div id="Extra questions-What does 'synchronized' do in Java?"><h2 id="What does 'synchronized' do in Java?" class="header"><a href="#Extra questions-What does 'synchronized' do in Java?">What does 'synchronized' do in Java?</a></h2></div>
 <p>
-What does 'synchronized' do in Java?
-What is a semaphore?
+Synchronized methods enable a simple strategy for preventing thread interference and memory consistency errors: if an object is visible to more than one thread, all reads or writes to that object's variables are done through synchronized methods. (An important exception: final fields, which cannot be modified after the object is constructed, can be safely read through non-synchronized methods, once the object is constructed) This strategy is effective, but can present problems with liveness, as we'll see later in this lesson.
 </p>
 
 </body>
