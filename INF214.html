@@ -16,223 +16,160 @@
 
 </ul>
   
-<div id="Exam information"><h1 id="Exam information" class="header"><a href="#Exam information">Exam information</a></h1></div>
+<div id="Exam prep"><h1 id="Exam prep" class="header"><a href="#Exam prep">Exam prep</a></h1></div>
+
+<div id="Exam prep-1. Creating a thread in Java"><h2 id="1. Creating a thread in Java" class="header"><a href="#Exam prep-1. Creating a thread in Java">1. Creating a thread in Java</a></h2></div>
 <ul>
 <li>
-Look briefly through quizzes before exam
+<span id="Exam prep-1. Creating a thread in Java-Q:"></span><strong id="Q:">Q:</strong> What would happen if we didn't invoke method Thread.yield(); at line 11?
 
 <li>
-Course videos enough
-
-<li>
-3 hours exam
-
-<li>
-No negative points for wrong answer
-
-<li>
-Can use course material, notes and videos, but not google
+<span id="Exam prep-1. Creating a thread in Java-A:"></span><strong id="A:">A:</strong> If Thread.yield() was not invoked, what would happen is that the main thread would be executed first, and then the specified thread myThread, to a fairly certain degree.
 
 </ul>
 
-<p>
-= Crash Course = == The await language ==
-</p>
+<div id="Exam prep-2. First lock"><h2 id="2. First lock" class="header"><a href="#Exam prep-2. First lock">2. First lock</a></h2></div>
 <ul>
 <li>
-Declarations as usual (int x = 5)
+<span id="Exam prep-2. First lock-Q:"></span><strong id="Q:">Q:</strong> Run code given in video and what values were given and why?
 
 <li>
-Sequential statements: if (condition) statements; while;...
-
-<li>
-Arrays: a[n]
-
-<li>
-For loops: for [i = 0 to n]...
-
-<li>
-Concurrent statements: co statement1; || ...; || statementN; oc
-
-<li>
-Processes:
-
-<ul>
-<li>
-Process A {...}
-
-<li>
-Process B [i = 1 to N] {...}
-
-<li>
-A process declaration is essentially an abbreviation for a co statement with one arm and/or one quantifier.
-
-<li>
-Process declaration occurs at the syntactic level of a procecure declaration.
-
-<li>
-Informal: process ~thread.
-
-</ul>
-</ul>
-
-<div id="Exam information-Shared-Variable Programming"><h2 id="Shared-Variable Programming" class="header"><a href="#Exam information-Shared-Variable Programming">Shared-Variable Programming</a></h2></div>
-<div id="Exam information-Shared-Variable Programming-Synchronization"><h3 id="Synchronization" class="header"><a href="#Exam information-Shared-Variable Programming-Synchronization">Synchronization</a></h3></div>
-<ul>
-<li>
-States, Actions, Histories, Properties (safety properties, liveness properties)
-
-</ul>
-<p>
-Section 2.1 in book
-</p>
-<ul>
-<li>
-Mutual exclusion
-
-<li>
-Deadlock
-
-<li>
-Livelock
+<span id="Exam prep-2. First lock-A:"></span><strong id="A:">A:</strong> he code returns different values because without a type of synchronization of the threads, the threads will access the counter at the same time, and error occurs. Accessing at the same time means both will get the same value to increment from when one should have been incremented before the other, and the incrementation of one or the other will not be done properly.
 
 </ul>
 
-<div id="Exam information-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book"><h3 id="Atomic actions and await statements - 2.4 in book" class="header"><a href="#Exam information-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book">Atomic actions and await statements - 2.4 in book</a></h3></div>
+<div id="Exam prep-3. Playing with memory"><h2 id="3. Playing with memory" class="header"><a href="#Exam prep-3. Playing with memory">3. Playing with memory</a></h2></div>
+<pre Java>
+public void run(){
+	while (!answerReady) {
+		Thread.sleep(100);
+	}
+	System.out.println("The meaning of life is: " + answer);
+}
+</pre>
 <ul>
 <li>
-Fine-grained atomicity
+<span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> Modify method run() of the second thread t2 as follows, what implications does this have?
 
 <li>
-a fine grained atomic action is one that is implemented directly by the hardware
+<span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> By modifying the code as such, the thread t2 would halt and sleep, until the condition becomes true, which would break the while loop and produce the output shown in the line under.
 
 </ul>
-<p>
-on which a concurrent program executes.
-</p>
-<ul>
-<li>
-At most once property
-
-<li>
-Read the cheat sheet MittUib -&gt; glossary.pfd
 
 <ul>
 <li>
-Understand definitions, not just remember
+<span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> What could have switched lines 8 and 9 in the video?
+
+<li>
+<span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> The compiler, JVM or the hardware could have "switched" the lines 8 and 9, because they are all allowed to optimize code by reordering.
 
 </ul>
-</ul>
-<hr />
-<p>
-<span id="Exam information-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book-The Await statement"></span><strong id="The Await statement">The Await statement</strong>
-</p>
 
-<p>
-&lt;await (B) S;&gt;
-B - Boolean condition (delay condition)
-S - a list of statements
-</p>
-
-<p>
-&lt;await (x == y) z = a + b; w = c + d; &gt;
-</p>
 <ul>
 <li>
-Atomic actions are specified by means of the angle brackets &lt;..&gt;
+<span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> What are the three main problems that may lead to an unexpected behaviour of a concurrent program?
 
 <li>
-The await statement can be used to specify arbitrary coarse-grained atomic
+<span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> race condition, memory visibility and deadlock.
+
+</ul>
+
+<ul>
+<li>
+<span id="Exam prep-3. Playing with memory-Q:"></span><strong id="Q:">Q:</strong> To guarantee correct execution of a concurrent program, it is enough that:
+
+<li>
+<span id="Exam prep-3. Playing with memory-A:"></span><strong id="A:">A:</strong> both the reading and the writing thread use synchronization
+
+</ul>
+
+<div id="Exam prep-4. Multiple locks and Dining Philosophers"><h2 id="4. Multiple locks and Dining Philosophers" class="header"><a href="#Exam prep-4. Multiple locks and Dining Philosophers">4. Multiple locks and Dining Philosophers</a></h2></div>
+
+<ul>
+<li>
+<span id="Exam prep-4. Multiple locks and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> In code, how do we express "taking the left chopstick"? 
+
+<li>
+<span id="Exam prep-4. Multiple locks and Dining Philosophers-A:"></span><strong id="A:">A:</strong> synchronized(left)
+
+</ul>
+
+
+<ul>
+<li>
+<span id="Exam prep-4. Multiple locks and Dining Philosophers-Q:"></span><strong id="Q:">Q:</strong> Imagine that all the philosophers decide to eat at the same time, so they all grab their left chopstick. What will happen next?
+
+<li>
+<span id="Exam prep-4. Multiple locks and Dining Philosophers-A:"></span><strong id="A:">A:</strong> There will not be enough chopsticks for them to all eat at the same time, and they wont know what to do, the program will hang.
+
+</ul>
+
+<div id="Exam prep-5. Alien methods"><h2 id="5. Alien methods" class="header"><a href="#Exam prep-5. Alien methods">5. Alien methods</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-5. Alien methods-Q:"></span><strong id="Q:">Q:</strong> Several methods are all  <em>synchronized</em>, can multiple threads call them without "interfering" with eachother?
+
+<li>
+<span id="Exam prep-5. Alien methods-A:"></span><strong id="A:">A:</strong> Yes, true
+
+</ul>
+
+<ul>
+<li>
+<span id="Exam prep-5. Alien methods-Q:"></span><strong id="Q:">Q:</strong> Methods addListener(), removeListener(), and updateProgress() are all synchronized.
 
 </ul>
 <p>
-actions.
+Can the deadlock still happen?
 </p>
 <ul>
 <li>
-The general form of the await statement specifies both mutual exclusion and
+<span id="Exam prep-5. Alien methods-A:"></span><strong id="A:">A:</strong> yes, the deadlock can still happen, because updateProgress() is calling an alien method, and that method could be aquiring another lock, and make a deadlock.
 
 </ul>
+
+<div id="Exam prep-Reentrant lock"><h2 id="Reentrant lock" class="header"><a href="#Exam prep-Reentrant lock">Reentrant lock</a></h2></div>
+<ul>
+<li>
+<span id="Exam prep-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Can we interrupt a thread that is blocked as a result of trying to acquire an intrinsic lock?
+
+<li>
+<span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> No, false
+
+</ul>
+
+<ul>
+<li>
+<span id="Exam prep-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Why did the deadlock happen at 07 min 15 sec?
+
+<li>
+<span id="Exam prep-Reentrant lock-A:"></span><strong id="A:">A:</strong> The deadlock at 7:15 happens because of the intrisic lock, and by rather using reentrant lock with the method lockInterruptedly(), it will work. That method acquires the lock unless the current thread is interrupted, which could happen here,
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p>
-condition synchronization.
+What does 'synchronized' do in Java?
+What is a semaphore?
 </p>
-<ul>
-<li>
-To specify only mutual exclusion we abbriviate the await statement: &lt;S;&gt;
-
-<li>
-To specify only condition synchronization, we abbriviate the await statement:
-
-</ul>
-<p>
-&lt;await(B);&gt;
-</p>
-<ul>
-<li>
-<span id="Exam information-Shared-Variable Programming-Atomic actions and await statements - 2.4 in book-Example:"></span><strong id="Example:">Example:</strong> Delaying the executing process until count &gt; 0; &lt;await (count&gt;0);&gt;
-
-<li>
-If B meets the requirements of the At-Most-Once Property, then &lt;await(B);&gt; can be implemented as:
-
-<ul>
-<li>
-While (not B);
-
-</ul>
-<li>
-an unconditional atomic action
-
-<li>
-a conditional atomic action
-
-</ul>
-
-<div id="Exam information-Shared-Variable Programming-Producer / Consumer Synchronization - 2.5 in book"><h3 id="Producer / Consumer Synchronization - 2.5 in book" class="header"><a href="#Exam information-Shared-Variable Programming-Producer / Consumer Synchronization - 2.5 in book">Producer / Consumer Synchronization - 2.5 in book</a></h3></div>
-<ul>
-<li>
-Producer: local array a[n]
-
-<li>
-Consumer: local array b[n]
-
-<li>
-Goal: copy the contents of a into b
-
-<li>
-Let: buf be a single shared variable that will serve as a communications buffer
-
-<li>
-We used &lt;await(...);&gt; See video 31.
-
-</ul>
-
-<div id="Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs"><h3 id="Axiomatic Semantics / Reasonning about Concurrent Programs" class="header"><a href="#Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs">Axiomatic Semantics / Reasonning about Concurrent Programs</a></h3></div>
-<ul>
-<li>
-Videos 45-48 + extra material
-
-</ul>
-
-<ul>
-<li>
-Triples
-
-<li>
-{P} S {Q}
-
-<li>
-<span id="Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs-S:"></span><strong id="S:">S:</strong> a list of statements
-
-<li>
-<span id="Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs-P:"></span><strong id="P:">P:</strong> precondition
-
-<li>
-<span id="Exam information-Shared-Variable Programming-Axiomatic Semantics / Reasonning about Concurrent Programs-Q:"></span><strong id="Q:">Q:</strong> postcondition
-
-<li>
-Interferece rules (conposition rule, if statement rule, while statement rule)
-
-</ul>
 
 </body>
 </html>
