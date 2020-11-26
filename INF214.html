@@ -122,40 +122,40 @@ public void run(){
 
 </ul>
 
-<div id="Quizzes 1-59-Reentrant lock"><h2 id="Reentrant lock" class="header"><a href="#Quizzes 1-59-Reentrant lock">Reentrant lock</a></h2></div>
+<div id="Quizzes 1-59-6. Reentrant lock"><h2 id="6. Reentrant lock" class="header"><a href="#Quizzes 1-59-6. Reentrant lock">6. Reentrant lock</a></h2></div>
 <ul>
 <li>
-<span id="Quizzes 1-59-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Can we interrupt a thread that is blocked as a result of trying to acquire an intrinsic lock?
+<span id="Quizzes 1-59-6. Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Can we interrupt a thread that is blocked as a result of trying to acquire an intrinsic lock?
 
 <li>
-<span id="Quizzes 1-59-Reentrant lock-A:"></span><strong id="A:">A:</strong> No, false
+<span id="Quizzes 1-59-6. Reentrant lock-A:"></span><strong id="A:">A:</strong> No, false
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Quizzes 1-59-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Why did the deadlock happen at 07 min 15 sec?
+<span id="Quizzes 1-59-6. Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> Why did the deadlock happen at 07 min 15 sec?
 
 <li>
-<span id="Quizzes 1-59-Reentrant lock-A:"></span><strong id="A:">A:</strong> The deadlock at 7:15 happens because of the intrisic lock, and by rather using reentrant lock with the method lockInterruptedly(), it will work. That method acquires the lock unless the current thread is interrupted, which could happen here,
-
-</ul>
-<hr />
-<ul>
-<li>
-<span id="Quizzes 1-59-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is a livelock?
-
-<li>
-<span id="Quizzes 1-59-Reentrant lock-A:"></span><strong id="A:">A:</strong> A livelock is when all threads time out at the same time, and then entering deadlock again.
+<span id="Quizzes 1-59-6. Reentrant lock-A:"></span><strong id="A:">A:</strong> The deadlock at 7:15 happens because of the intrisic lock, and by rather using reentrant lock with the method lockInterruptedly(), it will work. That method acquires the lock unless the current thread is interrupted, which could happen here,
 
 </ul>
 <hr />
 <ul>
 <li>
-<span id="Quizzes 1-59-Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is the difference between methods lock() and tryLock()?
+<span id="Quizzes 1-59-6. Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is a livelock?
 
 <li>
-<span id="Quizzes 1-59-Reentrant lock-A:"></span><strong id="A:">A:</strong> A tryLock() times out if it fails to acquire a lock, while lock() doesnt do that.
+<span id="Quizzes 1-59-6. Reentrant lock-A:"></span><strong id="A:">A:</strong> A livelock is when all threads time out at the same time, and then entering deadlock again.
+
+</ul>
+<hr />
+<ul>
+<li>
+<span id="Quizzes 1-59-6. Reentrant lock-Q:"></span><strong id="Q:">Q:</strong> What is the difference between methods lock() and tryLock()?
+
+<li>
+<span id="Quizzes 1-59-6. Reentrant lock-A:"></span><strong id="A:">A:</strong> A tryLock() times out if it fails to acquire a lock, while lock() doesnt do that.
 
 </ul>
 
@@ -727,7 +727,7 @@ The first line waits for a process's own flag to be cleared. Why is that needed?
 <span id="Quizzes 1-59-27. Semaphores intro-Q:"></span><strong id="Q:">Q:</strong> The value of a semaphore is a positive integer?
 
 <li>
-<span id="Quizzes 1-59-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> False, its a boolean value
+<span id="Quizzes 1-59-27. Semaphores intro-A:"></span><strong id="A:">A:</strong> False
 
 </ul>
 <hr />
@@ -1530,9 +1530,7 @@ In the ring solution, all processes are both producers and consumers
 <pre>
 process Copy {
 
-   char c1, c2;
-
-   West?c1;
+   ynchronized methods enable a simple strategy for preventing thread interference and memory consistency errors: if an object is visible to more than one thread, all reads or writes to that object's variables are done through synchronized methods. (An important exception: final fields, which cannot be modified after the object is constructed, can be safely read through non-synchronized methods, once the object is constructed) This strategy is effective, but can present problems with liveness, as we'll see later in this lesson.
 
    do West?c2 -&gt; East!c1; c1 = c2;
 
