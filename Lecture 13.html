@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 13</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="13th Lecture - Resorces"><h1 id="13th Lecture - Resorces" class="header"><a href="#13th Lecture - Resorces">13th Lecture - Resorces</a></h1></div>
+
+<div id="13th Lecture - Resorces-Online security-related databases"><h2 id="Online security-related databases" class="header"><a href="#13th Lecture - Resorces-Online security-related databases">Online security-related databases</a></h2></div>
+<ul>
+<li>
+CVE – specific vulnerabilities in specific software
+
+<li>
+CVSS – scoring vulnerabilties in specific software
+
+<li>
+CWE - kinds of vulnerabilities
+
+<li>
+NVD – Connects CVE entries with other data (CWE, CVSS,...)
+
+<li>
+OWASP Top 10
+
+<li>
+SANS TOP 25
+
+</ul>
+
+<div id="13th Lecture - Resorces-CVE"><h2 id="CVE" class="header"><a href="#13th Lecture - Resorces-CVE">CVE</a></h2></div>
+<p>
+Common Vulnerabilities and Exposures (CVE) is a database of software vulnerabilities. Maintained by The Mitre Corporation in USA. The list has entries consisting of:
+</p>
+<ul>
+<li>
+A unique number (CVE–YYYY–XXXX) identifying the vulnerability
+
+<li>
+A desciption
+
+<li>
+At least one public reference
+
+</ul>
+
+<div id="13th Lecture - Resorces-CVE-CVE number assignment"><h3 id="CVE number assignment" class="header"><a href="#13th Lecture - Resorces-CVE-CVE number assignment">CVE number assignment</a></h3></div>
+<p>
+Assigning the CVE numbers is taken care of by the CVE Numbering Authorities (CNAs), which each have different scopes. These include:
+</p>
+<ul>
+<li>
+The Mitre Corporation (Primary CNA)
+
+<li>
+Distributed Weakness Filing Project (For open-source projects)
+
+<li>
+Many corporations (Google,Microsoft,Intel,Netflix,...)
+
+</ul>
+
+<div id="13th Lecture - Resorces-CVE-What is CVE used for?"><h3 id="What is CVE used for?" class="header"><a href="#13th Lecture - Resorces-CVE-What is CVE used for?">What is CVE used for?</a></h3></div>
+<p>
+CVE allows referencing vulnerabilities accross systems:
+</p>
+<ul>
+<li>
+Easier than referencing product/version/description:
+
+<ul>
+<li>
+Easy: CVE-2018-7492
+
+<li>
+Difficult: “That NULL pointer dereference in net/rds/rdma.c in Linux before 4.14.7.”
+
+</ul>
+<li>
+Easy to track vulnerability fixes:
+
+<ul>
+<li>
+From links we quickly find which Debian or Ubuntu packages contain the fixes.
+
+</ul>
+<li>
+Provides a quick way to look up vulnerabilities for a given piece of software.
+
+</ul>
+<p>
+CVE numbers are often reported by vulnerability scanners which finger-print running services.
+</p>
+
+<div id="13th Lecture - Resorces-CVSS"><h2 id="CVSS" class="header"><a href="#13th Lecture - Resorces-CVSS">CVSS</a></h2></div>
+<p>
+Common Vulnerability Scoring System (CVSS) is a system for assigning a score to a vulnerability.
+Includes three kinds of metrics:
+</p>
+<ul>
+<li>
+Base metrics, intrinsic properties
+
+<li>
+Temporal metrics, changes over the vulnerability life-time
+
+<li>
+Environmental metrics, specific to the environment of the software.
+
+</ul>
+<p>
+CVSS results in sevaral scores on a scale from 0–10, based on a vector of metrics.
+</p>
+
+<p>
+Two different versions of CVSS are commonly used:
+</p>
+<ul>
+<li>
+Version 2 and Version 3
+
+<li>
+Link to the specification of version 3 on syllabus page.
+
+</ul>
+
+<p>
+Base metrics in CVSS Version 2:
+</p>
+<ul>
+<li>
+Access vector:†
+
+<ul>
+<li>
+Local
+
+<li>
+Adjacent network
+
+<li>
+Network
+
+</ul>
+<li>
+Attack complexity (High/Medium/Low)
+
+<li>
+Authentication (Multiple/Single/None)
+
+</ul>
+<p>
+†: Version 3 adds “physical”
+</p>
+
+<p>
+Impact metrics in CVSS Version 2:
+</p>
+<ul>
+<li>
+Rated on a scale of None/Partial/Complete impact:
+
+<ul>
+<li>
+Confidentiality
+
+<li>
+Integrity
+
+<li>
+Availability
+
+</ul>
+</ul>
+
+<p>
+Temporal metrics in CVSS Version 2:
+</p>
+<ul>
+<li>
+The following metrics change over time:
+
+<ul>
+<li>
+Exploitability
+
+<li>
+Remediation level
+
+<li>
+Report confidence
+
+</ul>
+</ul>
+
+<div id="13th Lecture - Resorces-CVSS-Exploitability"><h3 id="Exploitability" class="header"><a href="#13th Lecture - Resorces-CVSS-Exploitability">Exploitability</a></h3></div>
+<p>
+Exploitability is measured on a the scale:
+</p>
+<ul>
+<li>
+Unproven
+
+<li>
+Proof-of-concept
+
+<li>
+Functional
+
+<li>
+High
+
+</ul>
+
+<div id="13th Lecture - Resorces-CVSS-Remediation level"><h3 id="Remediation level" class="header"><a href="#13th Lecture - Resorces-CVSS-Remediation level">Remediation level</a></h3></div>
+<p>
+Remediation level is measured on the scale:
+</p>
+<ul>
+<li>
+Official fix
+
+<li>
+Temporary fix
+
+<li>
+Workaround
+
+<li>
+Unavailable
+
+</ul>
+
+<div id="13th Lecture - Resorces-CVSS-Report confidence"><h3 id="Report confidence" class="header"><a href="#13th Lecture - Resorces-CVSS-Report confidence">Report confidence</a></h3></div>
+<p>
+Report confidence is measured on the scale:
+</p>
+<ul>
+<li>
+Unconfirmed
+
+<li>
+Uncorroborated
+
+<li>
+Confirmed
+
+</ul>
+
+<div id="13th Lecture - Resorces-CVSS-CVSS example"><h3 id="CVSS example" class="header"><a href="#13th Lecture - Resorces-CVSS-CVSS example">CVSS example</a></h3></div>
+<p>
+...
+<hr />
+</p>
+<div id="13th Lecture - Resorces-CWE"><h2 id="CWE" class="header"><a href="#13th Lecture - Resorces-CWE">CWE</a></h2></div>
+<p>
+Common Weakness Enumeration (CWE) is a list of common weaknesses occuring in software.
+Contains more than 600 classes of weaknesses.
+Similar in intent to OWASP Top 10, but more general and fine grained.
+</p>
+
+<div id="13th Lecture - Resorces-CWE-Usage of CWE"><h3 id="Usage of CWE" class="header"><a href="#13th Lecture - Resorces-CWE-Usage of CWE">Usage of CWE</a></h3></div>
+<ul>
+<li>
+CWE numbers are often given as output from security analysis tools (such as ZAP or SonarQube).
+
+<li>
+CWE is a hiearchy of weakness descirptions, usefully structured:
+
+<ul>
+<li>
+By architecture concepts
+
+<li>
+By development concepts
+
+<li>
+By research concepts
+
+</ul>
+</ul>
+<hr />
+<div id="13th Lecture - Resorces-NVD"><h2 id="NVD" class="header"><a href="#13th Lecture - Resorces-NVD">NVD</a></h2></div>
+<p>
+The National Vulnerability Database (NVD) contains analysis of known vulnerabilities:
+</p>
+<ul>
+<li>
+CVE numbers
+
+<li>
+CWE numbers
+
+<li>
+CVSS
+
+<li>
+Versions affected
+
+</ul>
+
+<div id="13th Lecture - Resorces-NVD-Vendor security advisories"><h3 id="Vendor security advisories" class="header"><a href="#13th Lecture - Resorces-NVD-Vendor security advisories">Vendor security advisories</a></h3></div>
+<p>
+Software vendors often have separate security advisories.
+Examples:
+</p>
+<ul>
+<li>
+Microsoft Security Bulletin
+
+<li>
+Apple Security Advisory (APPLE-SA)
+
+<li>
+Debian Security Advisory (DSA)
+
+</ul>
+<p>
+It is good practise to subscribe to advisories of the vendors of your platform.
+<hr />
+</p>
+<div id="13th Lecture - Resorces-OWASP Top 10"><h2 id="OWASP Top 10" class="header"><a href="#13th Lecture - Resorces-OWASP Top 10">OWASP Top 10</a></h2></div>
+<ol>
+<li>
+A1:2017-Injection
+
+<li>
+A2:2017-Broken Authentication
+
+<li>
+A3:2017-Sensitive Data Exposure
+
+<li>
+A4:2017-XML External Entities (XXE)
+
+<li>
+A5:2017-Broken Access Control
+
+<li>
+A6:2017-Security Misconfiguration
+
+<li>
+A7:2017-Cross-Site Scripting (XSS)
+
+<li>
+A8:2017-Insecure Deserialization
+
+<li>
+A9:2017-Using Components with Known Vulnerabilities
+
+<li>
+A10:2017-Insufficient Logging&amp;Monitoring
+
+</ol>
+
+</body>
+</html>

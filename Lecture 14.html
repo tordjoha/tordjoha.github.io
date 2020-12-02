@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 14</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="14th Lecture - Privacy"><h1 id="14th Lecture - Privacy" class="header"><a href="#14th Lecture - Privacy">14th Lecture - Privacy</a></h1></div>
+
+<p>
+Pricacy - a human right?
+Article 12 of the Universal Declaration of Human Rights (1948):
+</p>
+<ul>
+<li>
+<em>No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honor and reputation.</em>
+
+</ul>
+<hr />
+<p>
+Article 8 of the European Convention on Human Rights (1953):
+</p>
+<ul>
+<li>
+Right to respect for private and family life:
+
+<ul>
+<li>
+<em>Everyone has the right to respect for his private and family life, his home and his correspondence.</em>
+
+<li>
+<em>There shall be no interference by a public authority with the exercise of this right except such as is in accordance with the law and is necessary in a democratic society in the interests of national security, public safety or the economic well-being of the country, for the prevention of disorder or crime, for the protection of health or morals, or for the protection of the rights and freedoms of others.</em>
+
+</ul>
+</ul>
+<hr />
+<p>
+Article 8 of the Charter of Fundamental Rights of the European Union (2009):
+</p>
+<ul>
+<li>
+Everyone has the right to the protection of personal data concerning him or her.
+
+<li>
+Such data must be processed fairly for specified purposes and on the basis of the consent of the person concerned or some other legitimate basis laid down by law. Everyone has the right of access to data which has been collected concerning him or her, and the right to have it rectified.
+
+<li>
+Compliance with these rules shall be subject to control by an independent authority.
+
+</ul>
+
+<div id="14th Lecture - Privacy-Definition"><h2 id="Definition" class="header"><a href="#14th Lecture - Privacy-Definition">Definition</a></h2></div>
+<p>
+<span id="14th Lecture - Privacy-Definition-Information privacy"></span><strong id="Information privacy">Information privacy</strong> refers to the ability of the individual to control their personal information.
+</p>
+
+<p>
+Personal information is any information attachable to a specific (physical) person and includes:
+</p>
+<ul>
+<li>
+Name and ID number
+
+<li>
+Birtdate and gender
+
+<li>
+Residence and location
+
+<li>
+Healthcare records
+
+<li>
+Political information
+
+<li>
+Criminal records
+
+<li>
+...
+
+</ul>
+
+<div id="14th Lecture - Privacy-Definition-What constitutes threats to privacy"><h3 id="What constitutes threats to privacy" class="header"><a href="#14th Lecture - Privacy-Definition-What constitutes threats to privacy">What constitutes threats to privacy</a></h3></div>
+<ul>
+<li>
+Collection of information
+
+<li>
+Aggregation of information
+
+<li>
+Dissemination of information
+
+</ul>
+
+<p>
+<span id="14th Lecture - Privacy-Definition-What constitutes threats to privacy-Collection of information:"></span><strong id="Collection of information:">Collection of information:</strong>
+</p>
+<ul>
+<li>
+Many events in our daily lives are recorded in various computer systems:
+
+<ul>
+<li>
+Health-care and other public services (Example: NAV)
+
+<li>
+School records
+
+<li>
+Credit-card usage
+
+<li>
+Traveling
+
+<li>
+Surveilance cameras
+
+<li>
+Internet browsing
+
+</ul>
+<li>
+Who has access to this information? How do we know these systems are secure?
+
+</ul>
+
+<p>
+<span id="14th Lecture - Privacy-Definition-What constitutes threats to privacy-Aggregation of information:"></span><strong id="Aggregation of information:">Aggregation of information:</strong>
+</p>
+<ul>
+<li>
+Aggregation means to combine existing data to infer new information:
+
+<ul>
+<li>
+Combining different data bases (Example: Credit rating)
+
+<li>
+De-anonymisation
+
+<li>
+Security breaches
+
+<li>
+Using data for a different purpose
+
+</ul>
+</ul>
+
+<p>
+<span id="14th Lecture - Privacy-Definition-What constitutes threats to privacy-Dissemination of information:"></span><strong id="Dissemination of information:">Dissemination of information:</strong>
+</p>
+<ul>
+<li>
+Spreading personal information:
+
+<ul>
+<li>
+Selling personal data to advertisers / credit lenders / employers.
+
+<li>
+Exposing emotionally important or taboo information about a subject (life expriences, nudity, private relationships · · · )
+
+<li>
+Exposing someone’s personal information to encourage harrassment (doxing)
+
+<li>
+. . . or threatening to do so (blackmail).
+
+</ul>
+</ul>
+
+<div id="14th Lecture - Privacy-Definition-Pan-opticlick"><h3 id="Pan-opticlick" class="header"><a href="#14th Lecture - Privacy-Definition-Pan-opticlick">Pan-opticlick</a></h3></div>
+<p>
+Electronic Frontier Foundation has a website to make people aware how unique their browser’s fingerprint is: <a href="https://panopticlick.eff.org/">https://panopticlick.eff.org/</a>
+Note: A low score (few bits) does not mean that you cannot be tracked: tracking companies have access to more data (writing style, typing speed, click movement and timing, CSS tricks· · · ).
+</p>
+
+<div id="14th Lecture - Privacy-Definition-Who poses a threat?"><h3 id="Who poses a threat?" class="header"><a href="#14th Lecture - Privacy-Definition-Who poses a threat?">Who poses a threat?</a></h3></div>
+<ul>
+<li>
+Other individuals
+
+<li>
+Companies
+
+<li>
+Non-governmental organisations
+
+<li>
+Government organisations
+
+<li>
+Criminals
+
+</ul>
+
+<div id="14th Lecture - Privacy-Definition-The privacy paradox"><h3 id="The privacy paradox" class="header"><a href="#14th Lecture - Privacy-Definition-The privacy paradox">The privacy paradox</a></h3></div>
+<p>
+The privacy paradox: Many users say that they value their privacy, but they act in ways which endanger their privacy. (For instance by sharing a lot of information on Facebook)
+</p>
+
+<p>
+<span id="14th Lecture - Privacy-Definition-The privacy paradox-Questions:"></span><strong id="Questions:">Questions:</strong> To what extent do you think the following factors contribute to this paradox?
+</p>
+<ul>
+<li>
+The users are not aware of the privacy implications of their actions. For instance, because of lack of technical understanding.
+
+<li>
+Social pressure to share (impression management).
+
+</ul>
+
+<p>
+<span id="14th Lecture - Privacy-Definition-The privacy paradox-Question:"></span><strong id="Question:">Question:</strong> Think of two examples where software can pose a threat to the privacy of its users.
+</p>
+<ul>
+<li>
+What can the software developers do to protect the privacy of their users?
+
+</ul>
+<hr />
+<div id="14th Lecture - Privacy-Legal protection"><h2 id="Legal protection" class="header"><a href="#14th Lecture - Privacy-Legal protection">Legal protection</a></h2></div>
+<div id="14th Lecture - Privacy-Legal protection-Current law"><h3 id="Current law" class="header"><a href="#14th Lecture - Privacy-Legal protection-Current law">Current law</a></h3></div>
+<p>
+The currently applicable laws on privacy in Norway/EEA:
+</p>
+<ul>
+<li>
+EU directive:
+
+<ul>
+<li>
+General Data Protection Regulation (GDPR)
+
+</ul>
+<li>
+Norwegian law:
+
+<ul>
+<li>
+Personopplysningsloven av 2018 incorporates GDPR into Norwegian law.
+
+<li>
+Datatilsynet is the Norwegian supervisory authority on privacy issues.
+
+</ul>
+</ul>
+
+<div id="14th Lecture - Privacy-Legal protection-GDPR"><h3 id="GDPR" class="header"><a href="#14th Lecture - Privacy-Legal protection-GDPR">GDPR</a></h3></div>
+<p>
+General Data Protection Regulation (GDPR), is an EU directive which came into effect 25th of May 2018.
+Specifies:
+</p>
+<ul>
+<li>
+the rights of individuals and
+
+<li>
+the obligations of data processors.
+
+</ul>
+<p>
+More specific than the 1995 directive it replaces.
+</p>
+
+<p>
+Where to find information?
+</p>
+<ul>
+<li>
+The GDPR law: while the GDPR is a law text, its language is quite clear.
+
+<li>
+Datatilsynet has both explainations of the law, and examples of how this is implemented in specific cases.
+
+</ul>
+
+<p>
+<span id="14th Lecture - Privacy-Legal protection-GDPR-Fundamental principles:"></span><strong id="Fundamental principles:">Fundamental principles:</strong>
+</p>
+<ul>
+<li>
+The fundamental principles for data processing according to GDPR:
+
+<ul>
+<li>
+Lawfulness
+
+<li>
+Fairness
+
+<li>
+Transparency
+
+</ul>
+<li>
+Terms used: “data subject”, “controller” and “processor”.
+
+</ul>
+
+<ul>
+<li>
+Article 6: Lawfulness
+
+<li>
+Article 9: Special categories of data
+
+</ul>
+
+<div id="14th Lecture - Privacy-Legal protection-Separating necessary from optional"><h3 id="Separating necessary from optional" class="header"><a href="#14th Lecture - Privacy-Legal protection-Separating necessary from optional">Separating necessary from optional</a></h3></div>
+<p>
+When processing data, one should separate between:
+</p>
+<ul>
+<li>
+Data collected based on optional consent
+
+<li>
+Data necessary to provide the given service
+
+</ul>
+
+<div id="14th Lecture - Privacy-Legal protection-Minimise data collection"><h3 id="Minimise data collection" class="header"><a href="#14th Lecture - Privacy-Legal protection-Minimise data collection">Minimise data collection</a></h3></div>
+<p>
+As developers of software:
+</p>
+<ul>
+<li>
+Do not collect data you do not need.
+
+<li>
+Keep the data only as log as you need:
+
+<ul>
+<li>
+Example: Delete shipping data once package is shipped.
+
+</ul>
+</ul>
+
+<div id="14th Lecture - Privacy-Legal protection-What constitutes consent?"><h3 id="What constitutes consent?" class="header"><a href="#14th Lecture - Privacy-Legal protection-What constitutes consent?">What constitutes consent?</a></h3></div>
+<ul>
+<li>
+Must be demonstratable
+
+<li>
+Formulated:
+
+<ul>
+<li>
+in an intelligible and easily accessible form, using clear and plain language.
+
+</ul>
+<li>
+Must be specific to each kind of data
+
+<li>
+Must be possible to withdraw 
+
+<li>
+Not sufficient: Prefilled checkboxes
+
+<li>
+Not sufficient: Checkbox with -&gt; I agree to the terms.
+
+</ul>
+
+<p>
+One technical solution: keep separate fields in database, for each consent.
+</p>
+
+<div id="14th Lecture - Privacy-Legal protection-Aquiring consent"><h3 id="Aquiring consent" class="header"><a href="#14th Lecture - Privacy-Legal protection-Aquiring consent">Aquiring consent</a></h3></div>
+<p>
+As developers of software: Define clearly what kind of data the service collects/aggregates/disseminates.
+</p>
+<ul>
+<li>
+Divide into categories.
+
+<li>
+Ask for consent for each category upon registration of a user.
+
+<li>
+Store the separate consent as fields in database.
+
+<li>
+Make an interface for changing consent settings.
+
+<li>
+No prefilled checkboxes.
+
+</ul>
+<p>
+Not enough to have “I accept these terms”. . .
+</p>
+
+<div id="14th Lecture - Privacy-Legal protection-Fairness"><h3 id="Fairness" class="header"><a href="#14th Lecture - Privacy-Legal protection-Fairness">Fairness</a></h3></div>
+<p>
+The data processing should not exceed what the data subject can reasonably expect.
+</p>
+<ul>
+<li>
+Controllers are obliged to protect the fundamental rights of the data subject.
+
+<li>
+Automated decisions should be predictable.
+
+</ul>
+
+<div id="14th Lecture - Privacy-Legal protection-Transparency"><h3 id="Transparency" class="header"><a href="#14th Lecture - Privacy-Legal protection-Transparency">Transparency</a></h3></div>
+<p>
+Information about what is collected must be clearly stated where the data is collected.
+</p>
+
+<div id="14th Lecture - Privacy-GDPR: Rights of the individual"><h2 id="GDPR: Rights of the individual" class="header"><a href="#14th Lecture - Privacy-GDPR: Rights of the individual">GDPR: Rights of the individual</a></h2></div>
+<p>
+According to GDPR the following are the rights of the data subject:
+</p>
+<ul>
+<li>
+Right of access
+
+<li>
+Right to rectification
+
+<li>
+Right to erasure
+
+<li>
+Right to data restriction
+
+<li>
+Right to data portability
+
+<li>
+Right to object
+
+</ul>
+
+<div id="14th Lecture - Privacy-GDPR: Rights of the individual-Right of access (article 15)"><h3 id="Right of access (article 15)" class="header"><a href="#14th Lecture - Privacy-GDPR: Rights of the individual-Right of access (article 15)">Right of access (article 15)</a></h3></div>
+<p>
+The data subject has the right to obtain from the controller:
+</p>
+<ul>
+<li>
+Wether data is processed
+
+<li>
+The purpose of the processing
+
+<li>
+What kinds of data is collected
+
+<li>
+Recipients of data
+
+<li>
+Duration of the data collection
+
+<li>
+To which extent data can be deleted, rectified or minimised
+
+<li>
+To which extent objections can be made
+
+<li>
+Logic behind automated decisions
+
+</ul>
+
+<div id="14th Lecture - Privacy-GDPR: Rights of the individual-Right to rectification (article 16)"><h3 id="Right to rectification (article 16)" class="header"><a href="#14th Lecture - Privacy-GDPR: Rights of the individual-Right to rectification (article 16)">Right to rectification (article 16)</a></h3></div>
+<p>
+<em>The data subject shall have the right to obtain from the controller without undue delay the rectification of inaccu- rate personal data concerning him or her.</em>
+</p>
+
+<div id="14th Lecture - Privacy-GDPR: Rights of the individual-Allow editing of profile"><h3 id="Allow editing of profile" class="header"><a href="#14th Lecture - Privacy-GDPR: Rights of the individual-Allow editing of profile">Allow editing of profile</a></h3></div>
+<p>
+As software developers: To provide rectification, allow the users to edit their profile.
+</p>
+<ul>
+<li>
+Minimal requirement: Allow user to:
+
+<ul>
+<li>
+see the data in their profile.
+
+<li>
+request manual rectification.
+
+</ul>
+<li>
+More useful to have a fully automated process.
+
+</ul>
+<hr />
+<p>
+<span id="14th Lecture - Privacy-GDPR: Rights of the individual-Allow editing of profile-Example:"></span><strong id="Example:">Example:</strong> Deindexing from search engines
+</p>
+<ul>
+<li>
+Search engines are now obliged to consider requests from individuals to deindex search results on their name.
+
+<li>
+Also covers search suggestions (John Doe criminal)
+
+<li>
+Restricted to search results deemed either:
+
+<ul>
+<li>
+incorrect or
+
+<li>
+irrelevant or
+
+<li>
+burdensome
+
+</ul>
+</ul>
+<p>
+45% of the requests leads to deindexing (source: Google transparency report).
+</p>
+
+<div id="14th Lecture - Privacy-GDPR: Rights of the individual-Right to erasure (article 17)"><h3 id="Right to erasure (article 17)" class="header"><a href="#14th Lecture - Privacy-GDPR: Rights of the individual-Right to erasure (article 17)">Right to erasure (article 17)</a></h3></div>
+<p>
+The data subject can in some circumstances request data to be deleted by the data controller:
+</p>
+<ul>
+<li>
+Consent has been withdrawn
+
+<li>
+The data is no longer necessary
+
+<li>
+Data was collected unlawfully
+
+<li>
+Deletion is required by (EU or national) law
+
+<li>
+Data subject was a minor and using a social website
+
+</ul>
+
+<p>
+<span id="14th Lecture - Privacy-GDPR: Rights of the individual-Right to erasure (article 17)-“Forget me”"></span><strong id="“Forget me”">“Forget me”</strong>
+</p>
+<ul>
+<li>
+As software developers: The service should have a method which takes a UserID and deletes personal data attached to it.
+
+<li>
+Easy enough to delete a record in a DB
+
+<li>
+More difficult with foreign keys to this object.
+
+<li>
+Even more difficult with hash-chain/tamper-evident data structures.
+
+<li>
+How about restoration from backup?
+
+<li>
+Notify third parties of erasure.
+
+</ul>
+
+<div id="14th Lecture - Privacy-GDPR: Rights of the individual-Right to data portability (article 20)"><h3 id="Right to data portability (article 20)" class="header"><a href="#14th Lecture - Privacy-GDPR: Rights of the individual-Right to data portability (article 20)">Right to data portability (article 20)</a></h3></div>
+<ul>
+<li>
+If data was collected based on consent or contract,the data subject has the right to receive the information in a:
+
+<ul>
+<li>
+structured, commonly used and machine-readable format
+
+<li>
+and have the right to transmit those data to another controller
+
+</ul>
+</ul>
+<hr />
+<p>
+<span id="14th Lecture - Privacy-GDPR: Rights of the individual-Right to data portability (article 20)-Export data"></span><strong id="Export data">Export data</strong>
+</p>
+<ul>
+<li>
+As software developers: There should be a button “Export data” which gives the user all the data associated with them.
+
+<li>
+Use a standard format: JSON, XML, CSV,· · ·
+
+<li>
+Does not have to be automatic
+
+</ul>
+
+<div id="14th Lecture - Privacy-GDPR: Rights of the individual-See data collected"><h3 id="See data collected" class="header"><a href="#14th Lecture - Privacy-GDPR: Rights of the individual-See data collected">See data collected</a></h3></div>
+<p>
+Similar to export, but is part of the interface displaying the data in a human readable way.
+</p>
+
+<div id="14th Lecture - Privacy-GDPR: Rights of the individual-Implement pseudonymisation"><h3 id="Implement pseudonymisation" class="header"><a href="#14th Lecture - Privacy-GDPR: Rights of the individual-Implement pseudonymisation">Implement pseudonymisation</a></h3></div>
+<p>
+As software developers:
+</p>
+<ul>
+<li>
+If you want to do statistical analysis on your users data, consider hashing+salting, or better use a KDF, on UserID to pseudonymise the data before processing.
+
+<li>
+Important if using third-party service for analysis.
+
+<li>
+Reversable if you keep the salt.
+
+<li>
+Non-reversable if salt is deleted.
+
+</ul>
+
+<div id="14th Lecture - Privacy-GDPR: Rights of the individual-Be careful about third part access to data"><h3 id="Be careful about third part access to data" class="header"><a href="#14th Lecture - Privacy-GDPR: Rights of the individual-Be careful about third part access to data">Be careful about third part access to data</a></h3></div>
+<p>
+As software developers:
+</p>
+<ul>
+<li>
+If third parties get access to data:
+
+<ul>
+<li>
+Make sure they comply with GDPR
+
+<li>
+Log access (e.g. through APIs)
+
+<li>
+Do not give more access than needed
+
+<li>
+Coordinate data erasure / processing restriction
+
+</ul>
+</ul>
+
+<div id="14th Lecture - Privacy-GDPR: Obligations of the controll and processor"><h2 id="GDPR: Obligations of the controll and processor" class="header"><a href="#14th Lecture - Privacy-GDPR: Obligations of the controll and processor">GDPR: Obligations of the controll and processor</a></h2></div>
+<p>
+Some highlights:
+</p>
+<ul>
+<li>
+Data protection by design and by default
+
+<li>
+Security of processing
+
+<li>
+Communication of a personal data breach to the data subject
+
+<li>
+Notificatoin of a personal data breach to the supervisory authority
+
+<li>
+Data protection impact assessment
+
+<li>
+Position of the data protection officer
+
+</ul>
+<p>
+Fines up to 20 000 000 EUR, or in the case of an undertaking, up to 4 % of the total worldwide annual turnover of the preceding financial year, whichever is higher.
+</p>
+
+<div id="14th Lecture - Privacy-GDPR: Obligations of the controll and processor-Security of processing (article 32)"><h3 id="Security of processing (article 32)" class="header"><a href="#14th Lecture - Privacy-GDPR: Obligations of the controll and processor-Security of processing (article 32)">Security of processing (article 32)</a></h3></div>
+<p>
+Taking into account the state of the art (· · · ) the controller and the processor shall implement (· · · ) measures (· · · ) including (· · · ):
+</p>
+<ul>
+<li>
+a) the pseudonymisation and encryption of personal data;
+
+<li>
+b) the ability to ensure the ongoing:
+
+<ul>
+<li>
+confidentiality, integrity, availability and resilience of processing systems and services;
+
+</ul>
+<li>
+(Contratst US gov’s “Crypto wars”)
+
+<li>
+c) the ability to restore the availability and access to personal data in a timely manner in theevent of a physical or technical incident;
+
+<li>
+d) a process for regularly testing, assessing and evaluating the effectiveness of technical and organisational measures for ensuring the security of the processing.
+
+</ul>
+
+<div id="14th Lecture - Privacy-GDPR: Obligations of the controll and processor-Notification of a personal data breach to the supervisory authority"><h3 id="Notification of a personal data breach to the supervisory authority" class="header"><a href="#14th Lecture - Privacy-GDPR: Obligations of the controll and processor-Notification of a personal data breach to the supervisory authority">Notification of a personal data breach to the supervisory authority</a></h3></div>
+<p>
+In the case of a personal data breach, the controller shall (· · · )
+</p>
+<ul>
+<li>
+not later than 72 hours after having become aware of it (· · · )
+
+<li>
+notify the personal data breach to the supervisory authority.
+
+</ul>
+
+<div id="14th Lecture - Privacy-GDPR: Obligations of the controll and processor-Data Protection Officer"><h3 id="Data Protection Officer" class="header"><a href="#14th Lecture - Privacy-GDPR: Obligations of the controll and processor-Data Protection Officer">Data Protection Officer</a></h3></div>
+<p>
+The Data Protection Officer is meant to ensure that the organization complies with privacy laws:
+</p>
+<ul>
+<li>
+Shall have direct communication with organization leaders who make decisions in privacy matters.
+
+<li>
+Must perform audits of compliance, and work proactively.
+
+<li>
+Protection from being layed-off.
+
+</ul>
+
+<div id="14th Lecture - Privacy-Dark UI-patterns"><h2 id="Dark UI-patterns" class="header"><a href="#14th Lecture - Privacy-Dark UI-patterns">Dark UI-patterns</a></h2></div>
+<ul>
+<li>
+Report: Deceived by design (Forbrukerådet, June 27th 2018).
+
+<li>
+Analyzed a sample of settings in Facebook, Google and Windows 10.
+
+<li>
+The findings include:
+
+<ul>
+<li>
+privacy intrusive default settings,
+
+<li>
+misleading wording,
+
+<li>
+giving users an illusion of control,
+
+<li>
+hiding away privacy-friendly choices,
+
+<li>
+take-it-or-leave-it choices
+
+<li>
+(...)
+
+</ul>
+</ul>
+
+<div id="14th Lecture - Privacy-Dark UI-patterns-Tracking"><h3 id="Tracking" class="header"><a href="#14th Lecture - Privacy-Dark UI-patterns-Tracking">Tracking</a></h3></div>
+<p>
+Tracking of peolpe’s browsing is done using many different techniques:
+</p>
+<ul>
+<li>
+Cookies and web-storage
+
+<li>
+HTML5 canvas finger printing.
+
+<li>
+“Like”-buttons (even without pressing it)
+
+<li>
+Web-beacons
+
+<li>
+Analytics software
+
+<li>
+Advertisement
+
+<li>
+Cross-device tracking (ultra-sonic tracking)
+
+</ul>
+<p>
+Anti-tracking software: Focussed on blocking network requests to known tracker domains.
+</p>
+
+</body>
+</html>
