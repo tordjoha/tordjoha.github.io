@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 7</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="7th Lecture - Capability based security"><h1 id="7th Lecture - Capability based security" class="header"><a href="#7th Lecture - Capability based security">7th Lecture - Capability based security</a></h1></div>
+
+<div id="7th Lecture - Capability based security-Access control"><h2 id="Access control" class="header"><a href="#7th Lecture - Capability based security-Access control">Access control</a></h2></div>
+<p>
+Basic security concern on any multi-user system: How to control access to objects?
+More specifically:
+</p>
+<ul>
+<li>
+Preventing access
+
+<li>
+Limiting access
+
+<li>
+Granting access
+
+<li>
+Revoking access
+
+</ul>
+
+<div id="7th Lecture - Capability based security-Access control-Principle of least priviledge"><h3 id="Principle of least priviledge" class="header"><a href="#7th Lecture - Capability based security-Access control-Principle of least priviledge">Principle of least priviledge</a></h3></div>
+<p>
+A process/object/user/service... should only have as much priviledge as needed to perform their intended task
+</p>
+
+<div id="7th Lecture - Capability based security-Access control-Access control lists"><h3 id="Access control lists" class="header"><a href="#7th Lecture - Capability based security-Access control-Access control lists">Access control lists</a></h3></div>
+<ul>
+<li>
+An access control list associates to each object a list who can access the object.
+
+<li>
+ACLs is the conventional solution for access control
+
+<li>
+<span id="7th Lecture - Capability based security-Access control-Access control lists-Example:"></span><strong id="Example:">Example:</strong> File permissions
+
+</ul>
+
+<div id="7th Lecture - Capability based security-The confused deputy"><h2 id="The confused deputy" class="header"><a href="#7th Lecture - Capability based security-The confused deputy">The confused deputy</a></h2></div>
+<p>
+Typical failure of ACLs:
+</p>
+<ul>
+<li>
+Priviledged process (deputy) is tricked into performing a bad action when acting on behalf of less priviledged process.
+
+<li>
+This pattern was identified by Noam Hardy, when thinking about a security hole in a system’s Fortran compiler
+
+</ul>
+
+<div id="7th Lecture - Capability based security-The confused deputy-Hardy’s confused deputy"><h3 id="Hardy’s confused deputy" class="header"><a href="#7th Lecture - Capability based security-The confused deputy-Hardy’s confused deputy">Hardy’s confused deputy</a></h3></div>
+<p>
+A fortran compiler located in /sysx/fort:
+</p>
+<ul>
+<li>
+Accessible for all users
+
+<li>
+Has special priviledges to /sysx/ to: Write usage statistics to /sysx/stats
+
+<li>
+Takes input/output files from command line args
+
+</ul>
+<p>
+<img src="../vimwiki/INF226_lecture7_pic1" />
+<img src="../vimwiki/INF226_lecture7_pic2" />
+</p>
+
+<p>
+Why did this failure occur?
+</p>
+<ul>
+<li>
+<em>fort</em> has legitimate access to /sysx/stats
+
+<li>
+Users have to specify input/output files
+
+</ul>
+<p>
+<em>fort</em> inadvertedly beomes a confused deputy.
+How can we solve this?
+</p>
+
+<div id="7th Lecture - Capability based security-The confused deputy-Ambient authority"><h3 id="Ambient authority" class="header"><a href="#7th Lecture - Capability based security-The confused deputy-Ambient authority">Ambient authority</a></h3></div>
+<p>
+Hardy indentifies cause as <span id="7th Lecture - Capability based security-The confused deputy-Ambient authority-ambient authority"></span><strong id="ambient authority">ambient authority</strong>:
+</p>
+<ul>
+<li>
+An ACL system tries as hard as possible to allow operation using session cookie, UID/GID etc.
+
+<li>
+Processes do not have prove their access permit, which is stored in the (ambient) environment.
+
+</ul>
+
+<div id="7th Lecture - Capability based security-The confused deputy-Cross-site request forgery: The confused deputy browser"><h3 id="Cross-site request forgery: The confused deputy browser" class="header"><a href="#7th Lecture - Capability based security-The confused deputy-Cross-site request forgery: The confused deputy browser">Cross-site request forgery: The confused deputy browser</a></h3></div>
+<p>
+Remember, cross site request forgery is possible when: 
+</p>
+<ul>
+<li>
+User is logged into site A (with a session cookie).
+
+<li>
+Site A will perform actions when the user makes request (send message, transfer money, · · · )
+
+<li>
+User visits site B, which makes the browser send requests to site A. (form.send() or &lt;iframe&gt; or &lt;img&gt; or · · · )
+
+</ul>
+<p>
+In this case the confused deputy is the browser.
+</p>
+
+<div id="7th Lecture - Capability based security-Capabilities"><h2 id="Capabilities" class="header"><a href="#7th Lecture - Capability based security-Capabilities">Capabilities</a></h2></div>
+<p>
+A <em>capability</em> consists of:
+</p>
+<ul>
+<li>
+A reference to an object
+
+<li>
+A set of permissions for that object
+
+</ul>
+<p>
+A capability is used whenever a resource is accessed.
+Simple to check if an operation is allowed.
+<span id="7th Lecture - Capability based security-Capabilities-Example:"></span><strong id="Example:">Example:</strong> read(capability)
+</p>
+<ul>
+<li>
+Reads from the object pointed to by capability
+
+<li>
+if capability allows reading.
+
+</ul>
+
+<div id="7th Lecture - Capability based security-Capabilities-Using capabilities"><h3 id="Using capabilities" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Using capabilities">Using capabilities</a></h3></div>
+<p>
+Restricting access to programs:
+</p>
+<ul>
+<li>
+Give only the capabilities needed.
+
+<li>
+What capabilities should given to:
+
+<ul>
+<li>
+a word processor?
+
+<li>
+a web site?
+
+<li>
+a system login manager?
+
+</ul>
+</ul>
+<p>
+This allowes very fine grained applications of the principle of least priviledge.
+</p>
+
+<div id="7th Lecture - Capability based security-Capabilities-Capability properties: Unforgeable"><h3 id="Capability properties: Unforgeable" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Capability properties: Unforgeable">Capability properties: Unforgeable</a></h3></div>
+<ul>
+<li>
+If a capability can be forged, it is useless as a security measure.
+
+<li>
+Two approaches to unforgeability:
+
+<ul>
+<li>
+Enforced by supervisor (operating system, virtual machine, compiler, · · · )
+
+<li>
+Unguessable capabilities (random tokens, cryptographic signatures, · · · )
+
+</ul>
+</ul>
+
+<div id="7th Lecture - Capability based security-Capabilities-Enforced by supervisor"><h3 id="Enforced by supervisor" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Enforced by supervisor">Enforced by supervisor</a></h3></div>
+<p>
+In an OS, the kernel can keep a table of capabilties for each process.
+</p>
+<ul>
+<li>
+A capability is just an index in the table.
+
+<li>
+Since the process cannot access its table, it cannot forge capabilities
+
+<li>
+<span id="7th Lecture - Capability based security-Capabilities-Enforced by supervisor-Example:"></span><strong id="Example:">Example:</strong> file descriptors on Unix.
+
+</ul>
+
+<div id="7th Lecture - Capability based security-Capabilities-Unguessable capabilities"><h3 id="Unguessable capabilities" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Unguessable capabilities">Unguessable capabilities</a></h3></div>
+<p>
+Unguessable capabilities relies on entropy and cryptographic security to prevent forging:
+</p>
+<ul>
+<li>
+A capability can be referenced by a random number.
+
+<li>
+A capability can be signed.
+
+</ul>
+<p>
+Unguessable capabilities must be used when tranferring capabilities over networks.
+</p>
+
+<div id="7th Lecture - Capability based security-Capabilities-Capability properties: Transferrable"><h3 id="Capability properties: Transferrable" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Capability properties: Transferrable">Capability properties: Transferrable</a></h3></div>
+<p>
+Capabilities could be transferrable:
+</p>
+<ul>
+<li>
+If I have a capability, I should be able to transfer it to you.
+
+</ul>
+<p>
+Capabilities do not care who uses them. Access control is decoupled from identity. This is what prevents possibly confused deputities.
+</p>
+
+<div id="7th Lecture - Capability based security-Capabilities-Example: Hardy’s confused deputy"><h3 id="Example: Hardy’s confused deputy" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Example: Hardy’s confused deputy">Example: Hardy’s confused deputy</a></h3></div>
+<ul>
+<li>
+<span id="7th Lecture - Capability based security-Capabilities-Example: Hardy’s confused deputy-Before:"></span><strong id="Before:">Before:</strong> Fortran compiler takes file names from user.
+
+<li>
+<span id="7th Lecture - Capability based security-Capabilities-Example: Hardy’s confused deputy-Now:"></span><strong id="Now:">Now:</strong> User transfer their capability for the output file to the fortran compiler.
+
+</ul>
+
+<ul>
+<li>
+When writing ouputs the user given capability is used.
+
+<li>
+When writing to /sysx/, the compiler has a separate capabilities.
+
+</ul>
+
+<div id="7th Lecture - Capability based security-Capabilities-Abstraction"><h3 id="Abstraction" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Abstraction">Abstraction</a></h3></div>
+<ul>
+<li>
+Capabilities are described by what you can do with the object (permissions, or interface).
+
+<li>
+<span id="7th Lecture - Capability based security-Capabilities-Abstraction-Not:"></span><strong id="Not:">Not:</strong> What <span id="7th Lecture - Capability based security-Capabilities-Abstraction-is"></span><strong id="is">is</strong> the object.
+
+</ul>
+
+<p>
+In principle, the following are treated the same:
+</p>
+<ul>
+<li>
+The capability of reading from a file.
+
+<li>
+The capability of reading from a network connection.
+
+</ul>
+<p>
+This means capabilities can be a means of abstraction.
+</p>
+
+</body>
+</html>
