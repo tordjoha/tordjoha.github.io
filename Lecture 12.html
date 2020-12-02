@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Lecture 12</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="12th Lecture - Insecure deserialisation"><h1 id="12th Lecture - Insecure deserialisation" class="header"><a href="#12th Lecture - Insecure deserialisation">12th Lecture - Insecure deserialisation</a></h1></div>
+
+<ul>
+<li>
+<span id="12th Lecture - Insecure deserialisation-Serialization"></span><strong id="Serialization">Serialization</strong> is the process of turning objects of a programming language into byte arrays for transport.
+
+<li>
+<span id="12th Lecture - Insecure deserialisation-Deserialization"></span><strong id="Deserialization">Deserialization</strong> is the process of turning these byte arrays back into objects.
+
+<li>
+Examples of serialization libraries:
+
+<ul>
+<li>
+Java serialization
+
+<li>
+JSON (Multiple language support)
+
+<li>
+Pickle (Python)
+
+<li>
+Protocol buffers
+
+</ul>
+</ul>
+
+<div id="12th Lecture - Insecure deserialisation-Incorrect deserialization"><h2 id="Incorrect deserialization" class="header"><a href="#12th Lecture - Insecure deserialisation-Incorrect deserialization">Incorrect deserialization</a></h2></div>
+<ul>
+<li>
+The code doing deserialization is at the forefront of the program security.
+
+<li>
+Bugs in deserialization can often lead to remote code execution.
+
+</ul>
+
+<div id="12th Lecture - Insecure deserialisation-Pickles"><h2 id="Pickles" class="header"><a href="#12th Lecture - Insecure deserialisation-Pickles">Pickles</a></h2></div>
+<p>
+The Pickle Python library is explicitly dangerous:
+</p>
+<ul>
+<li>
+The pickle module is not secure against erro- neous or maliciously constructed data. Never unpickle data received from an untrusted or unauthenticated source. (The python documentation).
+
+<li>
+<span id="12th Lecture - Insecure deserialisation-Pickles-Example exploit:"></span><strong id="Example exploit:">Example exploit:</strong> <a href="https://www2.cs.uic.edu/~s/musings/pickle/">https://www2.cs.uic.edu/~s/musings/pickle/</a>
+
+<li>
+Vulnerability on a Facebook server a couple of years ago: <a href="https://blog.scrt.ch/2018/08/24/remote-code-execution-on-a-facebook-server/">https://blog.scrt.ch/2018/08/24/remote-code-execution-on-a-facebook-server/</a>
+
+</ul>
+
+<div id="12th Lecture - Insecure deserialisation-Java serialization"><h2 id="Java serialization" class="header"><a href="#12th Lecture - Insecure deserialisation-Java serialization">Java serialization</a></h2></div>
+
+<pre Java>
+import java.io.Serializable;
+public class Person implements Serializable {
+    private static final long serialVersionUID
+       = -7181352062979002929L;
+    private final String name;
+private final Integer age; // ···
+</pre>
+
+<p>
+Constructors some times do sanity/security checks:
+</p>
+<pre>
+public Person(String name, Integer age)
+    throws NegativeAgeException {
+       this.name = name;
+       if(age &lt; 0) throw new NegativeAgeException();
+       this.age=age;
+}
+</pre>
+
+<p>
+Writing an object:
+</p>
+<pre>
+Person per = new Person("Per", 50);
+ObjectOutputStream oos
+  = new ObjectOutputStream(
+     new FileOutputStream("/tmp/person.bin"));
+oos.writeObject(per);
+oos.flush();
+oos.close();
+</pre>
+
+<p>
+Reading an object:
+</p>
+<pre>
+ObjectInputStream ois
+  = new ObjectInputStream(
+     new FileInputStream("/tmp/person.bin"));
+Person per = (Person)ois.readObject();
+ois.close();
+System.out.println(per.getAge());
+</pre>
+
+<div id="12th Lecture - Insecure deserialisation-Security holes"><h2 id="Security holes" class="header"><a href="#12th Lecture - Insecure deserialisation-Security holes">Security holes</a></h2></div>
+<p>
+For Person this might not lead to a security hole directly, but what if the constructor is used to escape HTML, or SQL data?
+Then we could get XSS or SQL injection vulnerabilities.
+</p>
+
+<div id="12th Lecture - Insecure deserialisation-Java reflection &amp; deserialization"><h2 id="Java reflection &amp; deserialization" class="header"><a href="#12th Lecture - Insecure deserialisation-Java reflection &amp; deserialization">Java reflection &amp; deserialization</a></h2></div>
+<p>
+Java has relfection, which gives dynamic method invocation:
+</p>
+<ul>
+<li>
+Takes a method name string, and argument strings
+
+<li>
+Applies it to an object
+
+</ul>
+<p>
+Together with insecure deserialization this gives remote code execution, when the attacker can alter the method name and arguments to something malicious.
+Some details: <a href="https://www.youtube.com/watch?v=VviY3O-euVQ">https://www.youtube.com/watch?v=VviY3O-euVQ</a>
+</p>
+
+</body>
+</html>
