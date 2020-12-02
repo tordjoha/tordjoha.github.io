@@ -288,6 +288,219 @@ The capability of reading from a network connection.
 <p>
 This means capabilities can be a means of abstraction.
 </p>
+<ul>
+<li>
+<span id="7th Lecture - Capability based security-Capabilities-Abstraction-Example:"></span><strong id="Example:">Example:</strong> File descriptors in UNIX
+
+</ul>
+
+<div id="7th Lecture - Capability based security-Capabilities-Enforced by language: Memory safe capabilities"><h3 id="Enforced by language: Memory safe capabilities" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Enforced by language: Memory safe capabilities">Enforced by language: Memory safe capabilities</a></h3></div>
+<p>
+In a memory safe object capability system can be obtained by:
+</p>
+<ul>
+<li>
+<span id="7th Lecture - Capability based security-Capabilities-Enforced by language: Memory safe capabilities-endowment:"></span><strong id="endowment:">endowment:</strong> Alice might have intrinsic capabilities given to her at her creation
+
+<li>
+<span id="7th Lecture - Capability based security-Capabilities-Enforced by language: Memory safe capabilities-creation:"></span><strong id="creation:">creation:</strong> Alice gets capability to access an object she creates.
+
+<li>
+<span id="7th Lecture - Capability based security-Capabilities-Enforced by language: Memory safe capabilities-introduction:"></span><strong id="introduction:">introduction:</strong> Alice transfers a capability to Bob
+
+</ul>
+<p>
+This approach relies on the memory safety of the language.
+</p>
+
+<p>
+<span id="7th Lecture - Capability based security-Capabilities-Enforced by language: Memory safe capabilities-Example: banking"></span><strong id="Example: banking">Example: banking</strong>
+</p>
+<ul>
+<li>
+Bank account capabilities:
+
+<ul>
+<li>
+Deposit D
+
+<li>
+Withdraw W
+
+<li>
+Read balance R
+
+</ul>
+<li>
+Attenuation:
+
+<ul>
+<li>
+Alice wants Bob to transfer her some money.
+
+<li>
+Alice has a (D,W,R) capability to her own account.
+
+<li>
+Alice creates a new (D) capability to her account and transfers it to Bob.
+
+</ul>
+</ul>
+
+<p>
+<span id="7th Lecture - Capability based security-Capabilities-Enforced by language: Memory safe capabilities-Example 2: Banking"></span><strong id="Example 2: Banking">Example 2: Banking</strong>
+</p>
+<ul>
+<li>
+Instead of bank accounts, we could have a capability purse which
+
+</ul>
+<p>
+references an amount of money.
+</p>
+<ul>
+<li>
+Anyone can create an empty purse.
+
+<li>
+transfer(src,dst,amount) transfers between purses.
+
+</ul>
+<li>
+When Bob wants to transfer $10 to alice:
+
+<ul>
+<li>
+Bob creates an empty purse
+
+<li>
+Bob transfers $10 from his main purse to new purse.
+
+<li>
+Bob sends the purse with $10 to Alice.
+
+<li>
+Alice transfers to her main purse.
+
+</ul>
+
+<div id="7th Lecture - Capability based security-Capabilities-Capability properties: Revokability"><h3 id="Capability properties: Revokability" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Capability properties: Revokability">Capability properties: Revokability</a></h3></div>
+<ul>
+<li>
+The creator of a capability should be able to revoke it.
+
+<li>
+Revokation can be temporary, partial.
+
+</ul>
+
+<div id="7th Lecture - Capability based security-Capabilities-Example: CSRF-tokens as capabilities"><h3 id="Example: CSRF-tokens as capabilities" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Example: CSRF-tokens as capabilities">Example: CSRF-tokens as capabilities</a></h3></div>
+<p>
+CSRF-tokens can be viewed as capabilities:
+</p>
+<ul>
+<li>
+Denotes an object (form target) and permission (POST,GET,· · · )
+
+<li>
+Unforgeable (unguessable)
+
+</ul>
+<p>
+Tokens are principle transferrable.
+</p>
+
+<div id="7th Lecture - Capability based security-Capabilities-Capabilities for collaboration"><h3 id="Capabilities for collaboration" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Capabilities for collaboration">Capabilities for collaboration</a></h3></div>
+<p>
+Capabilities can be useful for collaboration:
+</p>
+<ul>
+<li>
+Run a program with capabilities to acess shared resources.
+
+</ul>
+
+<div id="7th Lecture - Capability based security-Capabilities-Universal persistence"><h3 id="Universal persistence" class="header"><a href="#7th Lecture - Capability based security-Capabilities-Universal persistence">Universal persistence</a></h3></div>
+<p>
+Some capability based system feature universal persistence:
+</p>
+<ul>
+<li>
+Program state remembered, along with capabilities. So that a program is never “restarted”.
+
+<li>
+This solves the problem: How are capabilities retained when a program restarts?
+
+<ul>
+<li>
+When a user logs in, the login manager reconnects them to their running programs.
+
+</ul>
+</ul>
+
+<div id="7th Lecture - Capability based security-Capabilities summary"><h2 id="Capabilities summary" class="header"><a href="#7th Lecture - Capability based security-Capabilities summary">Capabilities summary</a></h2></div>
+<p>
+A capability consists of:
+</p>
+<ul>
+<li>
+A reference to an object
+
+<li>
+A set of permissions for that object
+
+</ul>
+<p>
+A capability is a unforgeable, transferrable token of authority.
+</p>
+
+<div id="7th Lecture - Capability based security-History"><h2 id="History" class="header"><a href="#7th Lecture - Capability based security-History">History</a></h2></div>
+<p>
+A lot of papers, systems and languages are based on capabilities.
+</p>
+<ul>
+<li>
+Dennis &amp; van Horn 1966, coined the term “Capability”
+
+<ul>
+<li>
+Ideas implemented in MIT’s PDP-1
+
+</ul>
+<li>
+Several systems in the 70’s (GNOSIS, KeyKOS, Cambridge CAP)
+
+<li>
+More recently:
+
+<ul>
+<li>
+E language / Joe-E (Java subset)
+
+<li>
+Capsicum (FreeBSD)
+
+<li>
+Genode
+
+<li>
+Google Fuchsia
+
+</ul>
+</ul>
+
+<div id="7th Lecture - Capability based security-Other things called “capabilities”"><h2 id="Other things called “capabilities”" class="header"><a href="#7th Lecture - Capability based security-Other things called “capabilities”">Other things called “capabilities”</a></h2></div>
+<p>
+There are several things called “cabilities” which are unrelated to capabality based security:
+</p>
+<ul>
+<li>
+POSIX capabilities
+
+<li>
+Docker capabilties
+
+</ul>
 
 </body>
 </html>
